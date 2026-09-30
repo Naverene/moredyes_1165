@@ -1,6 +1,10 @@
 package net.neverandy.moredyes;
 
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraft.entity.EntityType;
+import net.neverandy.moredyes.client.DyedSheepRenderer;
+import net.neverandy.moredyes.network.ModNetwork;
 import net.neverandy.moredyes.client.ChestRenderer;
 import net.neverandy.moredyes.tileentity.ModTileEntities;
 import net.minecraft.client.renderer.RenderType;
@@ -93,12 +97,14 @@ public class MoreDyes
 
     private void setup(final FMLCommonSetupEvent event)
     {
+        ModNetwork.register();
         event.enqueueWork(ModWorldGen::setup);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
     {
         ClientRegistry.bindTileEntityRenderer(ModTileEntities.CHEST.get(), ChestRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityType.SHEEP, DyedSheepRenderer::new);
         // do something that can only be done on the client
         //LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         for (BlockGlass block: MDBlock.glassArray)

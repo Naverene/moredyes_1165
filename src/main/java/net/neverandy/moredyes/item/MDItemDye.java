@@ -8,6 +8,9 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.neverandy.moredyes.MoreDyes;
+import net.minecraft.entity.passive.SheepEntity;
+import net.neverandy.moredyes.entity.DyedSheep;
+import net.neverandy.moredyes.reference.ColorStrings;
 
 public class MDItemDye extends Item
 {
@@ -45,6 +48,24 @@ public class MDItemDye extends Item
        {
            return false;
        }*/
-        return null;
+        if (target instanceof SheepEntity)
+        {
+            return DyedSheep.dye((SheepEntity) target, colorIndex(), stack);
+        }
+        return ActionResultType.PASS;
+    }
+
+    /** This dye's index in ColorStrings.ALL. */
+    public int colorIndex()
+    {
+        String hex = color.substring(0, color.indexOf('_'));
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            if (ColorStrings.ALL[i].equals(hex))
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 }
