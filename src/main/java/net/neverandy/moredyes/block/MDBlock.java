@@ -2,8 +2,6 @@ package net.neverandy.moredyes.block;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -408,7 +406,6 @@ public class MDBlock
             String glass_name = "glass_" + color;
             final BlockGlass glass = new BlockGlass(Reference.BLOCK_INFO_GLASS);
             final BlockItem glassItem = new BlockItem(glass, new Item.Properties().group(MoreDyes.tabBlocks));
-            RenderTypeLookup.setRenderLayer(glass, RenderType.getCutout());
             glassArray[i] = glass;
             glassItemBlockArray[i] = glassItem;
             BLOCKS.register(glass_name, () -> glass);
