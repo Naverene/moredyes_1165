@@ -81,6 +81,7 @@ SOURCES = {
     'tulip_stem': ('block/white_tulip', KEEP_IF_GREEN),
     'dye': ('item/white_dye', GREY),
     'glass_pane_top': ('block/glass_pane_top', GREY),
+    'bookshelf': ('block/bookshelf', GREY),
 }
 for w in WOODS:
     SOURCES[w + '_planks'] = ('block/%s_planks' % w, GREY)

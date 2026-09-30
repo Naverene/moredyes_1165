@@ -72,6 +72,11 @@ public class ModBlockStateProvider extends BlockStateProvider
             // The chest itself is drawn by client/ChestRenderer; its block model only gives the breaking particles.
             simpleBlock(MDBlock.chestArray[i], models().getExistingFile(modLoc("block/tinted/chest")));
 
+            Block shelf = MDBlock.bookshelfArray[i];
+            simpleBlock(shelf, tinted(shelf, "cube_column")
+                    .texture("side", tex("bookshelf"))
+                    .texture("end", tex("oak_planks")));
+
             pane(MDBlock.glassPaneArray[i], "glass");
             pane(MDBlock.glassFoggyPaneArray[i], "glass_foggy");
 

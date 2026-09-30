@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "BBB",
+    "PPP"
+  ],
+  "key": {
+    "P": [
+      {
+        "item": "moredyes:plank_734cc5"
+      },
+      {
+        "item": "moredyes:birchplanks_734cc5"
+      },
+      {
+        "item": "moredyes:spruceplanks_734cc5"
+      },
+      {
+        "item": "moredyes:jungleplanks_734cc5"
+      },
+      {
+        "item": "moredyes:acaciaplanks_734cc5"
+      },
+      {
+        "item": "moredyes:darkoakplanks_734cc5"
+      }
+    ],
+    "B": {
+      "item": "minecraft:book"
+    }
+  },
+  "result": {
+    "item": "moredyes:bookshelf_734cc5"
+  }
+}

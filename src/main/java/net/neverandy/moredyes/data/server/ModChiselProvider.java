@@ -69,6 +69,7 @@ public class ModChiselProvider implements IDataProvider
         own("concrete_powder", "white_concrete_powder", MDBlock.concretePowderArray);
         own("glass_pane", "glass_pane", MDBlock.glassPaneArray);
         own("chest", "chest", MDBlock.chestArray);
+        own("bookshelf", "bookshelf", MDBlock.bookshelfArray);
     }
 
     private void rechiseled(String group, Block[]... dyed)

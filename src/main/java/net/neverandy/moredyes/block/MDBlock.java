@@ -160,6 +160,7 @@ public class MDBlock
 
     public static BlockGlassPane[] glassPaneArray = new BlockGlassPane[totalColorCount];
     public static BlockGlassPane[] glassFoggyPaneArray = new BlockGlassPane[totalColorCount];
+    public static BlockBookshelf[] bookshelfArray = new BlockBookshelf[totalColorCount];
     public static BlockChest[] chestArray = new BlockChest[totalColorCount];
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
@@ -203,6 +204,7 @@ public class MDBlock
         registerWorkbench();
         registerChest();
         registerGlassPanes();
+        registerBookshelves();
         registerTulip();
         registerRedstone();
         registerOakLog();
@@ -828,6 +830,19 @@ public class MDBlock
             workbenchItemBlockArray[i] = workbenchItem;
             BLOCKS.register(workbench_name, () -> workbench);
             ITEMS.register(workbench_name, () -> workbenchItem);
+        }
+    }
+
+    private static void registerBookshelves()
+    {
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            String name = "bookshelf_" + ColorStrings.ALL[i];
+            final BlockBookshelf shelf = new BlockBookshelf(Reference.BLOCK_INFO_BOOKSHELF);
+            final BlockItem shelfItem = new BlockItem(shelf, new Item.Properties().group(MoreDyes.tabBlocks));
+            bookshelfArray[i] = shelf;
+            BLOCKS.register(name, () -> shelf);
+            ITEMS.register(name, () -> shelfItem);
         }
     }
 

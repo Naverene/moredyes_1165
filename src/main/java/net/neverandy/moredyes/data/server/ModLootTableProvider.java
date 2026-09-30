@@ -6,6 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.LootTableProvider;
 import net.minecraft.data.loot.BlockLootTables;
+import net.minecraft.item.Items;
+import net.minecraft.loot.ConstantRange;
 import net.minecraft.loot.LootParameterSet;
 import net.minecraft.loot.LootParameterSets;
 import net.minecraft.loot.LootTable;
@@ -62,6 +64,7 @@ public class ModLootTableProvider extends LootTableProvider
                 registerLootTable(MDBlock.glassArray[i], BlockLootTables::onlyWithSilkTouch);
                 registerLootTable(MDBlock.glassFoggyArray[i], BlockLootTables::onlyWithSilkTouch);
                 registerLootTable(MDBlock.glassPaneArray[i], BlockLootTables::onlyWithSilkTouch);
+                registerLootTable(MDBlock.bookshelfArray[i], shelf -> droppingWithSilkTouchOrRandomly(shelf, Items.BOOK, ConstantRange.of(3)));
                 registerLootTable(MDBlock.glassFoggyPaneArray[i], BlockLootTables::onlyWithSilkTouch);
                 for (String wood : DyeTrees.WOODS)
                 {

@@ -251,6 +251,12 @@ public class ModRecipeProvider extends RecipeProvider
                     .addCriterion("has_dye", hasItem(MDItem.dye[i])).build(out, id("dyeing/" + name(chest)));
             washable(chest, "chest");
 
+            Block shelf = MDBlock.bookshelfArray[i];
+            ShapedRecipeBuilder.shapedRecipe(shelf).key('P', Ingredient.fromItems(allPlanks)).key('B', Items.BOOK)
+                    .patternLine("PPP").patternLine("BBB").patternLine("PPP")
+                    .addCriterion("has_planks", hasItem(allPlanks[0])).build(out, id(name(shelf)));
+            dyeable(i, shelf, "bookshelf");
+
             // Six glass make sixteen panes, like vanilla; clear panes can also be dyed and washed.
             panes(MDBlock.glassArray[i], MDBlock.glassPaneArray[i]);
             panes(MDBlock.glassFoggyArray[i], MDBlock.glassFoggyPaneArray[i]);
