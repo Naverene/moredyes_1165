@@ -1,8 +1,8 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "parent": "moredyes:block/tinted/cube_bottom_top",
   "textures": {
-    "side": "moredyes:block/sandstonecarved/8c6ca5",
-    "bottom": "moredyes:block/sandstone/bottom/8c6ca5",
-    "top": "moredyes:block/sandstone/top/8c6ca5"
+    "side": "moredyes:block/tinted/sandstone_carved",
+    "top": "moredyes:block/tinted/sandstone_top",
+    "bottom": "moredyes:block/tinted/sandstone_bottom"
   }
 }

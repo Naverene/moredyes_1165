@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "moredyes:block/tulip/6673a5"
+    "layer0": "moredyes:block/tinted/tulip_petals",
+    "layer1": "moredyes:block/tinted/tulip_stem"
   }
 }

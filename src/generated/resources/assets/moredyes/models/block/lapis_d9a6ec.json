@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "moredyes:block/tinted/cube_all",
   "textures": {
-    "all": "moredyes:block/lapis/d9a6ec"
+    "all": "moredyes:block/tinted/lapis"
   }
 }

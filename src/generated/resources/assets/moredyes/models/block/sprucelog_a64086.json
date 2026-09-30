@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "moredyes:block/tinted/log",
   "textures": {
-    "side": "moredyes:block/spruce_log",
-    "end": "moredyes:block/sprucelog/a64086"
+    "end": "moredyes:block/tinted/spruce_log_top",
+    "side": "minecraft:block/spruce_log"
   }
 }

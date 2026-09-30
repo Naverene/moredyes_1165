@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/fence_side",
+  "parent": "moredyes:block/tinted/fence_side",
   "textures": {
-    "texture": "moredyes:block/jungleplank/bfe68c"
+    "texture": "moredyes:block/tinted/jungle_planks"
   }
 }

@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/fence_inventory",
-  "textures": {
-    "texture": "moredyes:block/spruceplank/ac5f72"
-  }
+  "parent": "moredyes:block/sprucefence_ac5f72_inventory"
 }

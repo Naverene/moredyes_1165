@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "moredyes:block/tinted/cube_all",
   "textures": {
-    "all": "moredyes:block/darkoakleaf/7f99b9"
+    "all": "minecraft:block/dark_oak_leaves"
   }
 }

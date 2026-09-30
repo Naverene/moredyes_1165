@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "moredyes:block/acaciasapling/b98c66"
+    "layer0": "moredyes:block/tinted/acacia_sapling_leaves",
+    "layer1": "moredyes:block/tinted/acacia_sapling_trunk"
   }
 }

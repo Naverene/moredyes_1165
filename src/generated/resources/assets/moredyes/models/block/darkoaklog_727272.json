@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "moredyes:block/tinted/log",
   "textures": {
-    "side": "moredyes:block/darkoak_log",
-    "end": "moredyes:block/darkoaklog/727272"
+    "end": "moredyes:block/tinted/dark_oak_log_top",
+    "side": "minecraft:block/dark_oak_log"
   }
 }

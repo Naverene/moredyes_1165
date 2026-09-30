@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "moredyes:block/tinted/cross_layered",
   "textures": {
-    "cross": "moredyes:block/tulip/4c2c66"
+    "cross": "moredyes:block/tinted/tulip_petals",
+    "overlay": "moredyes:block/tinted/tulip_stem"
   }
 }

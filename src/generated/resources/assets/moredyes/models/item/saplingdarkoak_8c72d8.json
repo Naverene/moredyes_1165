@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "moredyes:block/darkoaksapling/8c72d8"
+    "layer0": "moredyes:block/tinted/dark_oak_sapling_leaves",
+    "layer1": "moredyes:block/tinted/dark_oak_sapling_trunk"
   }
 }

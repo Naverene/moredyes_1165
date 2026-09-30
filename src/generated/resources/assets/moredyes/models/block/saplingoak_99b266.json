@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "moredyes:block/tinted/cross_layered",
   "textures": {
-    "cross": "moredyes:block/oaksapling/99b266"
+    "cross": "moredyes:block/tinted/oak_sapling_leaves",
+    "overlay": "moredyes:block/tinted/oak_sapling_trunk"
   }
 }

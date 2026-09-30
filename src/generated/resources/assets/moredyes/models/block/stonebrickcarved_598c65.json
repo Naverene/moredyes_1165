@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "moredyes:block/tinted/cube_all",
   "textures": {
-    "all": "moredyes:block/stonebrickcarved/598c65"
+    "all": "moredyes:block/tinted/stonebrick_carved"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "moredyes:block/tinted/cube_all",
   "textures": {
-    "all": "moredyes:block/andesite/9366ab"
+    "all": "moredyes:block/tinted/andesite"
   }
 }

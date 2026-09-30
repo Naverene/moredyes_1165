@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "moredyes:block/tinted/cross_layered",
   "textures": {
-    "cross": "moredyes:block/junglesapling/9f8c85"
+    "cross": "moredyes:block/tinted/jungle_sapling_leaves",
+    "overlay": "moredyes:block/tinted/jungle_sapling_trunk"
   }
 }
