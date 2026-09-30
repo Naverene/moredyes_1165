@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.registries.DeferredRegister;
+import net.neverandy.moredyes.world.DyeTrees;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neverandy.moredyes.ConfigHandler;
 import net.neverandy.moredyes.MoreDyes;
@@ -711,7 +712,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingoak_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_OAK_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_OAK_SAPLING, DyeTrees.sapling("oak", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             oakSaplingArray[i] = sapling;
             oakSaplingItemBlockArray[i] = saplingItem;
@@ -726,7 +727,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingbirch_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_BIRCH_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_BIRCH_SAPLING, DyeTrees.sapling("birch", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             birchSaplingArray[i] = sapling;
             birchSaplingItemBlockArray[i] = saplingItem;
@@ -741,7 +742,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingdarkoak_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_DARK_OAK_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_DARK_OAK_SAPLING, DyeTrees.sapling("dark_oak", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             darkOakSaplingArray[i] = sapling;
             darkOakSaplingItemBlockArray[i] = saplingItem;
@@ -755,7 +756,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingacacia_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_ACACIA_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_ACACIA_SAPLING, DyeTrees.sapling("acacia", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             acaciaSaplingArray[i] = sapling;
             acaciaSaplingItemBlockArray[i] = saplingItem;
@@ -770,7 +771,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingspruce_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_SPRUCE_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_SPRUCE_SAPLING, DyeTrees.sapling("spruce", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             spruceSaplingArray[i] = sapling;
             spruceSaplingItemBlockArray[i] = saplingItem;
@@ -784,7 +785,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingjungle_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_JUNGLE_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_JUNGLE_SAPLING, DyeTrees.sapling("jungle", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             jungleSaplingArray[i] = sapling;
             jungleSaplingItemBlockArray[i] = saplingItem;

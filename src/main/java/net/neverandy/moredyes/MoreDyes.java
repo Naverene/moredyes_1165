@@ -20,6 +20,7 @@ import net.neverandy.moredyes.block.BlockGlass;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.item.MDItem;
 import net.neverandy.moredyes.reference.ColorStrings;
+import net.neverandy.moredyes.world.ModWorldGen;
 import net.neverandy.moredyes.reference.Reference;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -82,11 +83,13 @@ public class MoreDyes
         //RegistryHandler.init();
         MDBlock.initialize();
         MDItem.initialize();
+        ModWorldGen.register(FMLJavaModLoadingContext.get().getModEventBus());
+        MinecraftForge.EVENT_BUS.addListener(ModWorldGen::onBiomeLoading);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(ModWorldGen::setup);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
