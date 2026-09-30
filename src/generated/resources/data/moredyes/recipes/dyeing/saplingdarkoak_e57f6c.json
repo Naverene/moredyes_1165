@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dark_oak_sapling"
+    },
+    {
+      "item": "moredyes:e57f6c_dye"
+    }
+  ],
+  "result": {
+    "item": "moredyes:saplingdarkoak_e57f6c"
+  }
+}

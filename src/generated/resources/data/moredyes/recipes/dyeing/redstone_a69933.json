@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:redstone_block"
+    },
+    "D": {
+      "item": "moredyes:a69933_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:redstone_a69933",
+    "count": 8
+  }
+}

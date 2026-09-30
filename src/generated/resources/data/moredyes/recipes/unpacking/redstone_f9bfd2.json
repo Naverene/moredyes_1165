@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moredyes:redstone_f9bfd2"
+    }
+  ],
+  "result": {
+    "item": "minecraft:redstone",
+    "count": 9
+  }
+}

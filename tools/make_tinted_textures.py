@@ -50,7 +50,7 @@ SOURCES = {
     'glass_foggy': ('base:glass_foggy', GREY),
     'sand': ('block/sand', GREY),
     'brick': ('block/bricks', GREY),
-    'clay': ('block/white_terracotta', GREY),
+    'clay': ('block/clay', GREY),
     'hardened_clay': ('block/terracotta', GREY),
     'wool': ('block/white_wool', GREY),
     'cobble': ('block/cobblestone', GREY),

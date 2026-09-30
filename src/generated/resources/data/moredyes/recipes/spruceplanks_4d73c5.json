@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moredyes:sprucelog_4d73c5"
+    }
+  ],
+  "result": {
+    "item": "moredyes:spruceplanks_4d73c5",
+    "count": 4
+  }
+}

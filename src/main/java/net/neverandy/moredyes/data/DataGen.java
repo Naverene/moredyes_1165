@@ -32,7 +32,6 @@ public final class DataGen
         gen.addProvider(new ModItemTagsProvider(gen, blockTags, existingFileHelper));
         gen.addProvider(new ModRecipeProvider(gen));
         gen.addProvider(new ModLangProvider(gen, Reference.MOD_ID, "en_us"));
-        // Loot table provider is unfinished (getTables() returns null), so it would crash runData.
-        //gen.addProvider(new ModLootTableProvider(gen));
+        gen.addProvider(new ModLootTableProvider(gen));
     }
 }

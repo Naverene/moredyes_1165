@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:obsidian"
+    },
+    "D": {
+      "item": "moredyes:b3bf99_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:obsidian_b3bf99",
+    "count": 8
+  }
+}

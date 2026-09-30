@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "moredyes:cobble_c6596c"
-  },
-  "result": "moredyes:stone_c6596c",
-  "experience": 0.1,
-  "cookingtime": 20
-}

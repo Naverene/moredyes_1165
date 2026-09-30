@@ -103,4 +103,43 @@ public final class DyeTrees
             default: return MDBlock.oakLeafArray;
         }
     }
+
+    public static Block[] planks(String wood)
+    {
+        switch (wood)
+        {
+            case "birch": return MDBlock.birchPlankArray;
+            case "spruce": return MDBlock.sprucePlankArray;
+            case "jungle": return MDBlock.junglePlankArray;
+            case "acacia": return MDBlock.acaciaPlankArray;
+            case "dark_oak": return MDBlock.darkOakPlankArray;
+            default: return MDBlock.oakPlankArray;
+        }
+    }
+
+    public static Block[] saplings(String wood)
+    {
+        switch (wood)
+        {
+            case "birch": return MDBlock.birchSaplingArray;
+            case "spruce": return MDBlock.spruceSaplingArray;
+            case "jungle": return MDBlock.jungleSaplingArray;
+            case "acacia": return MDBlock.acaciaSaplingArray;
+            case "dark_oak": return MDBlock.darkOakSaplingArray;
+            default: return MDBlock.oakSaplingArray;
+        }
+    }
+
+    public static Block[] fences(String wood)
+    {
+        switch (wood)
+        {
+            case "birch": return MDBlock.birchFenceArray;
+            case "spruce": return MDBlock.spruceFenceArray;
+            case "jungle": return MDBlock.jungleFenceArray;
+            case "acacia": return MDBlock.acaciaFenceArray;
+            case "dark_oak": return MDBlock.darkOakFenceArray;
+            default: return MDBlock.oakFenceArray;
+        }
+    }
 }

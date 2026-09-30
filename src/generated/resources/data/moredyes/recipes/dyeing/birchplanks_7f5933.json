@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:birch_planks"
+    },
+    "D": {
+      "item": "moredyes:7f5933_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:birchplanks_7f5933",
+    "count": 8
+  }
+}

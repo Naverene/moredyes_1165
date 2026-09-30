@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:spruce_sapling"
+    },
+    {
+      "item": "moredyes:664073_dye"
+    }
+  ],
+  "result": {
+    "item": "moredyes:saplingspruce_664073"
+  }
+}

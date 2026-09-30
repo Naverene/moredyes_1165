@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:quartz_block"
+    },
+    "D": {
+      "item": "moredyes:66a659_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:quartz_66a659",
+    "count": 8
+  }
+}

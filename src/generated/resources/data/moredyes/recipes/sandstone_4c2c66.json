@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "moredyes:sand_4c2c66"
+    }
+  },
+  "result": {
+    "item": "moredyes:sandstone_4c2c66",
+    "count": 4
+  }
+}

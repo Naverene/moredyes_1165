@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:oak_planks"
+    },
+    "D": {
+      "item": "moredyes:7f7f26_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:plank_7f7f26",
+    "count": 8
+  }
+}

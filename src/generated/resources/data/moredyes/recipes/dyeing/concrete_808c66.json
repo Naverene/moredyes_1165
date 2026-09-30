@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:white_concrete"
+    },
+    "D": {
+      "item": "moredyes:808c66_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:concrete_808c66",
+    "count": 8
+  }
+}

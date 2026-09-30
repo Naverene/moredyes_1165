@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:cracked_stone_bricks"
+    },
+    "D": {
+      "item": "moredyes:598cb9_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:stonebrickcracked_598cb9",
+    "count": 8
+  }
+}

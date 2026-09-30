@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:clay"
+    },
+    "D": {
+      "item": "moredyes:655fa5_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:clay_655fa5",
+    "count": 8
+  }
+}

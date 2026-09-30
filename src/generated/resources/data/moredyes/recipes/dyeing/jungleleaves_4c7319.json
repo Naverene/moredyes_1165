@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:jungle_leaves"
+    },
+    "D": {
+      "item": "moredyes:4c7319_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:jungleleaves_4c7319",
+    "count": 8
+  }
+}

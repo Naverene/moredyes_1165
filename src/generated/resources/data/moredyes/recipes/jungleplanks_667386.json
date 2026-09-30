@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moredyes:junglelog_667386"
+    }
+  ],
+  "result": {
+    "item": "moredyes:jungleplanks_667386",
+    "count": 4
+  }
+}
