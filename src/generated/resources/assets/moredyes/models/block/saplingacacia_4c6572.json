@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "moredyes:block/acaciasapling/4c6572"
+  }
+}

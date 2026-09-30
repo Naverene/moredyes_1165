@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "moredyes:block/birch_log",
+    "end": "moredyes:block/birchlog/726cc5"
+  }
+}

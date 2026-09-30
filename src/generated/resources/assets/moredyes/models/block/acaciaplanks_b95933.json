@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "moredyes:block/acaciaplank/b95933"
+  }
+}

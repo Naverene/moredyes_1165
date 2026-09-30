@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "side": "moredyes:block/workbench/side/ac5f72",
+    "front": "moredyes:block/workbench/front/ac5f72",
+    "bottom": "moredyes:block/oakplank/ac5f72",
+    "top": "moredyes:block/workbench/top/ac5f72"
+  }
+}

@@ -19,6 +19,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neverandy.moredyes.block.BlockGlass;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.item.MDItem;
+import net.neverandy.moredyes.reference.ColorStrings;
 import net.neverandy.moredyes.reference.Reference;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -96,6 +97,25 @@ public class MoreDyes
         {
             event.enqueueWork(() -> RenderTypeLookup.setRenderLayer(block, RenderType.getCutout()));
         }
+        event.enqueueWork(() ->
+        {
+            for (int i = 0; i < ColorStrings.ALL.length; i++)
+            {
+                RenderTypeLookup.setRenderLayer(MDBlock.tulipArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.oakSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.birchSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.acaciaSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.darkOakSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.jungleSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.spruceSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.oakLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.birchLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.acaciaLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.darkOakLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.jungleLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.spruceLafArray[i], RenderType.getCutoutMipped());
+            }
+        });
 
     }
 

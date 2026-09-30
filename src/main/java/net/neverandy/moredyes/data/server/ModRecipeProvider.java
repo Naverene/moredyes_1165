@@ -30,7 +30,7 @@ public class ModRecipeProvider extends ForgeRecipeProvider
         craftingTables(consumer);
         smeltingRecipe(consumer);
         washingRecipes(consumer);
-        pistonRecipe(consumer);
+        //pistonRecipe(consumer); // pistons are not registered yet (see MDBlock.initialize)
         dyeLogs(consumer);
 
     }
@@ -539,17 +539,17 @@ public class ModRecipeProvider extends ForgeRecipeProvider
                     .addIngredient(Blocks.JUNGLE_LOG)
                     .addIngredient(MDItem.dye[i])
                     .addCriterion("stone",InventoryChangeTrigger.Instance.forItems(Blocks.STONE))
-                    .build(consumer, "birch_logs_from_dye" + ColorStrings.ALL[i]);
+                    .build(consumer, "jungle_logs_from_dye" + ColorStrings.ALL[i]);
             ShapelessRecipeBuilder.shapelessRecipe(MDBlock.spruceLogArray[i], 1)
                     .addIngredient(Blocks.SPRUCE_LOG)
                     .addIngredient(MDItem.dye[i])
                     .addCriterion("stone",InventoryChangeTrigger.Instance.forItems(Blocks.STONE))
-                    .build(consumer, "birch_logs_from_dye" + ColorStrings.ALL[i]);
+                    .build(consumer, "spruce_logs_from_dye" + ColorStrings.ALL[i]);
             ShapelessRecipeBuilder.shapelessRecipe(MDBlock.darkOakLogArray[i], 1)
                     .addIngredient(Blocks.DARK_OAK_LOG)
                     .addIngredient(MDItem.dye[i])
                     .addCriterion("stone",InventoryChangeTrigger.Instance.forItems(Blocks.STONE))
-                    .build(consumer, "birch_logs_from_dye" + ColorStrings.ALL[i]);
+                    .build(consumer, "dark_oak_logs_from_dye" + ColorStrings.ALL[i]);
         }
     }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "moredyes:block/darkoak_log",
+    "end": "moredyes:block/darkoaklog/8c72d8"
+  }
+}

@@ -1,7 +1,0 @@
-{
-	"parent": "block/cube_column",
-	"textures": {
-		"end": "moredyes:block/log/top/927f66",
-		"side": "moredyes:block/log/log_side"
-	}
-}

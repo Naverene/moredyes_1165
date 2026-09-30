@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "moredyes:block/acaciaplank/d9a6ec"
+  }
+}

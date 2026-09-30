@@ -1,3 +1,6 @@
 {
-  "parent": "moredyes:block/tulip_9946c5"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "moredyes:block/tulip/9946c5"
+  }
 }

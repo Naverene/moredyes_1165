@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "moredyes:block/hardenedclay/b8a65f"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "moredyes:block/acacia_log",
+    "end": "moredyes:block/acacialog/404c7f"
+  }
+}
