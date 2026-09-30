@@ -12,7 +12,6 @@ public class BlockFence extends FenceBlock
                 .hardnessAndResistance(info.hardness, info.resistance)
                 .harvestLevel(info.harvestLevel)
                 .harvestTool(info.harvestTool)
-                .setRequiresTool()
                 .sound(info.sound)
                 .setLightLevel(value -> info.lightlevel));
         WoodType.register(info.woodType);

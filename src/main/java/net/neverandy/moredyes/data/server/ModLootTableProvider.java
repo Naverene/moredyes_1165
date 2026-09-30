@@ -61,6 +61,8 @@ public class ModLootTableProvider extends LootTableProvider
                 registerLootTable(MDBlock.stoneArray[i], stone -> droppingWithSilkTouch(stone, cobble));
                 registerLootTable(MDBlock.glassArray[i], BlockLootTables::onlyWithSilkTouch);
                 registerLootTable(MDBlock.glassFoggyArray[i], BlockLootTables::onlyWithSilkTouch);
+                registerLootTable(MDBlock.glassPaneArray[i], BlockLootTables::onlyWithSilkTouch);
+                registerLootTable(MDBlock.glassFoggyPaneArray[i], BlockLootTables::onlyWithSilkTouch);
                 for (String wood : DyeTrees.WOODS)
                 {
                     Block sapling = DyeTrees.saplings(wood)[i];

@@ -250,6 +250,11 @@ public class ModRecipeProvider extends RecipeProvider
             ShapelessRecipeBuilder.shapelessRecipe(chest).addIngredient(Items.CHEST).addIngredient(MDItem.dye[i])
                     .addCriterion("has_dye", hasItem(MDItem.dye[i])).build(out, id("dyeing/" + name(chest)));
             washable(chest, "chest");
+
+            // Six glass make sixteen panes, like vanilla; clear panes can also be dyed and washed.
+            panes(MDBlock.glassArray[i], MDBlock.glassPaneArray[i]);
+            panes(MDBlock.glassFoggyArray[i], MDBlock.glassFoggyPaneArray[i]);
+            dyeable(i, MDBlock.glassPaneArray[i], "glass_pane");
         }
     }
 
@@ -274,6 +279,12 @@ public class ModRecipeProvider extends RecipeProvider
     }
 
     /** Eight vanilla blocks around a dye make eight dyed blocks, and water washes the color out again. */
+    private void panes(Block glass, Block pane)
+    {
+        ShapedRecipeBuilder.shapedRecipe(pane, 16).key('G', glass).patternLine("GGG").patternLine("GGG")
+                .addCriterion("has_glass", hasItem(glass)).build(out, id(name(pane)));
+    }
+
     private void dyeable(int i, Block dyed, String vanilla)
     {
         ShapedRecipeBuilder.shapedRecipe(dyed, 8).key('S', mc(vanilla)).key('D', MDItem.dye[i])

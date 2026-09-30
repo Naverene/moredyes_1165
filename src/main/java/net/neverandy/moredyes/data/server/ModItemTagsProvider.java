@@ -28,5 +28,6 @@ public class ModItemTagsProvider extends ItemTagsProvider
         copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
         copy(BlockTags.WOOL, ItemTags.WOOL);
         copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
+        copy(Tags.Blocks.GLASS_PANES, Tags.Items.GLASS_PANES);
     }
 }

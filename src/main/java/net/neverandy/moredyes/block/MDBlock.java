@@ -158,6 +158,8 @@ public class MDBlock
     public static BasicBlock[] hardenedClayArray = new BasicBlock[totalColorCount];
     public static BlockItem[] hardenedClayItemBlockArray = new BlockItem[totalColorCount];
 
+    public static BlockGlassPane[] glassPaneArray = new BlockGlassPane[totalColorCount];
+    public static BlockGlassPane[] glassFoggyPaneArray = new BlockGlassPane[totalColorCount];
     public static BlockChest[] chestArray = new BlockChest[totalColorCount];
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
@@ -200,6 +202,7 @@ public class MDBlock
         registerQuartz();
         registerWorkbench();
         registerChest();
+        registerGlassPanes();
         registerTulip();
         registerRedstone();
         registerOakLog();
@@ -826,6 +829,24 @@ public class MDBlock
             BLOCKS.register(workbench_name, () -> workbench);
             ITEMS.register(workbench_name, () -> workbenchItem);
         }
+    }
+
+    private static void registerGlassPanes()
+    {
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            glassPaneArray[i] = registerPane("glasspane_" + ColorStrings.ALL[i]);
+            glassFoggyPaneArray[i] = registerPane("glassfoggypane_" + ColorStrings.ALL[i]);
+        }
+    }
+
+    private static BlockGlassPane registerPane(String name)
+    {
+        final BlockGlassPane pane = new BlockGlassPane(Reference.BLOCK_INFO_GLASS_PANE);
+        final BlockItem paneItem = new BlockItem(pane, new Item.Properties().group(MoreDyes.tabBlocks));
+        BLOCKS.register(name, () -> pane);
+        ITEMS.register(name, () -> paneItem);
+        return pane;
     }
 
     private static void registerChest()

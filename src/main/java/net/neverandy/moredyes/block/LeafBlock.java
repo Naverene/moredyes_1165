@@ -12,7 +12,6 @@ public class LeafBlock extends LeavesBlock
                 .hardnessAndResistance(info.hardness,info.resistance)
                 .harvestLevel(info.harvestLevel)
                 .harvestTool(info.harvestTool)
-                .setRequiresTool()
                 .sound(info.sound)
                 .tickRandomly()
                 .notSolid()

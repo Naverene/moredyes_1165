@@ -12,7 +12,6 @@ public class BlockSapling extends SaplingBlock
                 .hardnessAndResistance(info.hardness,info.resistance)
                 .harvestLevel(info.harvestLevel)
                 .harvestTool(info.harvestTool)
-                .setRequiresTool()
                 .sound(info.sound)
                 .doesNotBlockMovement()
                 .tickRandomly()

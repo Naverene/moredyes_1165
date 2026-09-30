@@ -109,6 +109,16 @@ public class MoreDyes
         {
             for (int i = 0; i < ColorStrings.ALL.length; i++)
             {
+                RenderTypeLookup.setRenderLayer(MDBlock.glassPaneArray[i], RenderType.getCutoutMipped());
+                // Foggy glass is half see-through, so it needs the translucent layer.
+                RenderTypeLookup.setRenderLayer(MDBlock.glassFoggyArray[i], RenderType.getTranslucent());
+                RenderTypeLookup.setRenderLayer(MDBlock.glassFoggyPaneArray[i], RenderType.getTranslucent());
+            }
+        });
+        event.enqueueWork(() ->
+        {
+            for (int i = 0; i < ColorStrings.ALL.length; i++)
+            {
                 RenderTypeLookup.setRenderLayer(MDBlock.tulipArray[i], RenderType.getCutout());
                 RenderTypeLookup.setRenderLayer(MDBlock.oakSaplingArray[i], RenderType.getCutout());
                 RenderTypeLookup.setRenderLayer(MDBlock.birchSaplingArray[i], RenderType.getCutout());

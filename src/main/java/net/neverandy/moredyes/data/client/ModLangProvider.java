@@ -55,6 +55,8 @@ public class ModLangProvider extends LanguageProvider
             add(MDBlock.concretePowderArray[i], c + "Concrete Powder");
             add(MDBlock.workbenchArray[i], c + "Crafting Table");
             add(MDBlock.chestArray[i], c + "Chest");
+            add(MDBlock.glassPaneArray[i], c + "Glass Pane");
+            add(MDBlock.glassFoggyPaneArray[i], c + "Foggy Glass Pane");
             add(MDBlock.tulipArray[i], c + "Tulip");
 
             wood(c + "Oak", MDBlock.oakLogArray[i], MDBlock.oakPlankArray[i], MDBlock.oakLeafArray[i], MDBlock.oakSaplingArray[i], MDBlock.oakFenceArray[i]);

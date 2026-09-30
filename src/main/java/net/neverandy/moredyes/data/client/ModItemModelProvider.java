@@ -9,6 +9,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.neverandy.moredyes.MoreDyes;
 import net.neverandy.moredyes.block.BlockChest;
 import net.neverandy.moredyes.block.BlockFence;
+import net.neverandy.moredyes.block.BlockGlassPane;
 import net.neverandy.moredyes.block.BlockSapling;
 import net.neverandy.moredyes.block.FlowerBlock;
 import net.neverandy.moredyes.block.MDBlock;
@@ -48,6 +49,12 @@ public class ModItemModelProvider extends ItemModelProvider
             {
                 // The vanilla chest item model draws the item with its item renderer (client/ChestItemRenderer).
                 withExistingParent(name, mcLoc("item/chest"));
+            }
+            else if (block instanceof BlockGlassPane)
+            {
+                // Like vanilla, a pane item is its glass texture drawn flat.
+                String glass = name.startsWith("glassfoggy") ? "glass_foggy" : "glass";
+                withExistingParent(name, mcLoc("item/generated")).texture("layer0", modLoc("block/tinted/" + glass));
             }
             else if (block instanceof FlowerBlock)
             {

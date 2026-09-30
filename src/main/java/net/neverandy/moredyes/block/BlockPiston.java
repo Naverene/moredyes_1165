@@ -45,7 +45,6 @@ public class BlockPiston extends DirectionalBlock {
                 .hardnessAndResistance(info.hardness, info.resistance)
                 .harvestLevel(info.harvestLevel)
                 .harvestTool(info.harvestTool)
-                .setRequiresTool()
                 .sound(info.sound)
                 .setLightLevel(value -> info.lightlevel));
         this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(EXTENDED, false));

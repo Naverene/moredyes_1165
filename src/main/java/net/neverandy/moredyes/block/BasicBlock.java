@@ -10,13 +10,12 @@ public class BasicBlock extends Block
 
     public BasicBlock(BlockInfo info)
     {
-        super(Properties.create(info.blockMaterial)
+        super(info.requireToolIfStone(Properties.create(info.blockMaterial)
                 .hardnessAndResistance(info.hardness, info.resistance)
                 .harvestLevel(info.harvestLevel)
                 .harvestTool(info.harvestTool)
-                .setRequiresTool()
                 .sound(info.sound)
-                .setLightLevel(value -> info.lightlevel));
+                .setLightLevel(value -> info.lightlevel)));
         this.blockName = info.blockName;
     }
 }

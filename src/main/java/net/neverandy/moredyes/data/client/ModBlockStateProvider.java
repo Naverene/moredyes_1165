@@ -3,6 +3,7 @@ package net.neverandy.moredyes.data.client;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.FenceBlock;
+import net.minecraft.block.PaneBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
@@ -71,6 +72,9 @@ public class ModBlockStateProvider extends BlockStateProvider
             // The chest itself is drawn by client/ChestRenderer; its block model only gives the breaking particles.
             simpleBlock(MDBlock.chestArray[i], models().getExistingFile(modLoc("block/tinted/chest")));
 
+            pane(MDBlock.glassPaneArray[i], "glass");
+            pane(MDBlock.glassFoggyPaneArray[i], "glass_foggy");
+
             Block tulip = MDBlock.tulipArray[i];
             simpleBlock(tulip, tinted(tulip, "cross_layered")
                     .texture("cross", tex("tulip_petals"))
@@ -103,6 +107,20 @@ public class ModBlockStateProvider extends BlockStateProvider
         ModelFile side = models().withExistingParent(fence + "_side", modLoc("block/tinted/fence_side")).texture("texture", plankTexture);
         fourWayBlock((FenceBlock) fences[i], post, side);
         models().withExistingParent(fence + "_inventory", modLoc("block/tinted/fence_inventory")).texture("texture", plankTexture);
+    }
+
+    private void pane(PaneBlock pane, String texture)
+    {
+        String name = name(pane);
+        ModelFile[] parts = new ModelFile[5];
+        String[] suffixes = {"post", "side", "side_alt", "noside", "noside_alt"};
+        for (int p = 0; p < parts.length; p++)
+        {
+            parts[p] = models().withExistingParent(name + "_" + suffixes[p], modLoc("block/tinted/glass_pane_" + suffixes[p]))
+                    .texture("pane", tex(texture))
+                    .texture("edge", tex("glass_pane_top"));
+        }
+        paneBlock(pane, parts[0], parts[1], parts[2], parts[3], parts[4]);
     }
 
     private void cubeAll(Block block, String texture)

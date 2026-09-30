@@ -9,6 +9,7 @@ import net.neverandy.moredyes.data.client.ModBlockStateProvider;
 import net.neverandy.moredyes.data.client.ModItemModelProvider;
 import net.neverandy.moredyes.data.client.ModLangProvider;
 import net.neverandy.moredyes.data.server.ModBlockTagsProvider;
+import net.neverandy.moredyes.data.server.ModChiselProvider;
 import net.neverandy.moredyes.data.server.ModItemTagsProvider;
 import net.neverandy.moredyes.data.server.ModLootTableProvider;
 import net.neverandy.moredyes.data.server.ModRecipeProvider;
@@ -33,5 +34,6 @@ public final class DataGen
         gen.addProvider(new ModRecipeProvider(gen));
         gen.addProvider(new ModLangProvider(gen, Reference.MOD_ID, "en_us"));
         gen.addProvider(new ModLootTableProvider(gen));
+        gen.addProvider(new ModChiselProvider(gen));
     }
 }

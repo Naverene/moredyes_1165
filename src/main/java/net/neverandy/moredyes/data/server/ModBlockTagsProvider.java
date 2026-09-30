@@ -38,6 +38,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider
         getOrCreateBuilder(BlockTags.SMALL_FLOWERS).add(MDBlock.tulipArray);
         getOrCreateBuilder(BlockTags.WOOL).add(MDBlock.woolArray);
         getOrCreateBuilder(Tags.Blocks.CHESTS_WOODEN).add(MDBlock.chestArray);
+        getOrCreateBuilder(Tags.Blocks.GLASS_PANES).add(concat(MDBlock.glassPaneArray, MDBlock.glassFoggyPaneArray));
     }
 
     private static Block[] concat(Block[]... arrays)
