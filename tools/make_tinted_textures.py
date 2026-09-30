@@ -88,6 +88,12 @@ for w in WOODS:
     SOURCES[w + '_sapling_trunk'] = ('block/%s_sapling' % w, KEEP_IF_NOT_GREEN)
 
 
+# Chest textures go on the chest atlas (textures/entity/chest), not the block atlas. The latch keeps its natural
+# color: its pixels sit in the top-left corner of the texture, (width, height) given here.
+CHEST_OUT = os.path.join(ROOT, 'src/main/resources/assets/moredyes/textures/entity/chest')
+CHESTS = {'normal': (6, 5), 'normal_left': (4, 5), 'normal_right': (4, 5)}
+
+
 def client_jar():
     jars = glob.glob(os.path.expanduser('~/.gradle/caches/forge_gradle/minecraft_repo/versions/1.16.5/client.jar'))
     if not jars:
@@ -110,6 +116,17 @@ def main():
         image.putdata([transform(p) for p in image.getdata()])
         image.save(os.path.join(OUT, name + '.png'))
     print('wrote %d textures to %s' % (len(SOURCES), os.path.relpath(OUT, ROOT)))
+
+    os.makedirs(CHEST_OUT, exist_ok=True)
+    for name, (latch_w, latch_h) in sorted(CHESTS.items()):
+        image = Image.open(io.BytesIO(jar.read('assets/minecraft/textures/entity/chest/%s.png' % name))).convert('RGBA')
+        pixels = image.load()
+        for y in range(image.height):
+            for x in range(image.width):
+                if not (x < latch_w and y < latch_h):
+                    pixels[x, y] = grey(pixels[x, y])
+        image.save(os.path.join(CHEST_OUT, name + '.png'))
+    print('wrote %d chest textures to %s' % (len(CHESTS), os.path.relpath(CHEST_OUT, ROOT)))
 
 
 if __name__ == '__main__':

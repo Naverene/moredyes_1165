@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.reference.Reference;
@@ -36,6 +37,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider
                 MDBlock.jungleFenceArray, MDBlock.acaciaFenceArray, MDBlock.darkOakFenceArray));
         getOrCreateBuilder(BlockTags.SMALL_FLOWERS).add(MDBlock.tulipArray);
         getOrCreateBuilder(BlockTags.WOOL).add(MDBlock.woolArray);
+        getOrCreateBuilder(Tags.Blocks.CHESTS_WOODEN).add(MDBlock.chestArray);
     }
 
     private static Block[] concat(Block[]... arrays)

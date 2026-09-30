@@ -7,6 +7,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 import net.neverandy.moredyes.MoreDyes;
+import net.neverandy.moredyes.block.BlockChest;
 import net.neverandy.moredyes.block.BlockFence;
 import net.neverandy.moredyes.block.BlockSapling;
 import net.neverandy.moredyes.block.FlowerBlock;
@@ -42,6 +43,11 @@ public class ModItemModelProvider extends ItemModelProvider
                 // "saplingdarkoak" -> "dark_oak"
                 String wood = type.substring("sapling".length()).replace("darkoak", "dark_oak");
                 layered(name, wood + "_sapling_leaves", wood + "_sapling_trunk");
+            }
+            else if (block instanceof BlockChest)
+            {
+                // The vanilla chest item model draws the item with its item renderer (client/ChestItemRenderer).
+                withExistingParent(name, mcLoc("item/chest"));
             }
             else if (block instanceof FlowerBlock)
             {

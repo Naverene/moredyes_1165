@@ -243,6 +243,13 @@ public class ModRecipeProvider extends RecipeProvider
             ShapelessRecipeBuilder.shapelessRecipe(workbench).addIngredient(Items.CRAFTING_TABLE).addIngredient(MDItem.dye[i])
                     .addCriterion("has_dye", hasItem(MDItem.dye[i])).build(out, id("dyeing/" + name(workbench)));
             washable(workbench, "crafting_table");
+
+            Block chest = MDBlock.chestArray[i];
+            ShapedRecipeBuilder.shapedRecipe(chest).key('P', Ingredient.fromItems(allPlanks)).patternLine("PPP").patternLine("P P").patternLine("PPP")
+                    .addCriterion("has_planks", hasItem(allPlanks[0])).build(out, id(name(chest)));
+            ShapelessRecipeBuilder.shapelessRecipe(chest).addIngredient(Items.CHEST).addIngredient(MDItem.dye[i])
+                    .addCriterion("has_dye", hasItem(MDItem.dye[i])).build(out, id("dyeing/" + name(chest)));
+            washable(chest, "chest");
         }
     }
 

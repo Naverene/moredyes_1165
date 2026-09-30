@@ -68,6 +68,9 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .texture("front", tex("workbench_front"))
                     .texture("bottom", tex("oak_planks")));
 
+            // The chest itself is drawn by client/ChestRenderer; its block model only gives the breaking particles.
+            simpleBlock(MDBlock.chestArray[i], models().getExistingFile(modLoc("block/tinted/chest")));
+
             Block tulip = MDBlock.tulipArray[i];
             simpleBlock(tulip, tinted(tulip, "cross_layered")
                     .texture("cross", tex("tulip_petals"))

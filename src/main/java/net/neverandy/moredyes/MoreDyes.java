@@ -1,5 +1,8 @@
 package net.neverandy.moredyes;
 
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.neverandy.moredyes.client.ChestRenderer;
+import net.neverandy.moredyes.tileentity.ModTileEntities;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
@@ -84,6 +87,7 @@ public class MoreDyes
         MDBlock.initialize();
         MDItem.initialize();
         ModWorldGen.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModTileEntities.register(FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.addListener(ModWorldGen::onBiomeLoading);
     }
 
@@ -94,6 +98,7 @@ public class MoreDyes
 
     private void doClientStuff(final FMLClientSetupEvent event)
     {
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.CHEST.get(), ChestRenderer::new);
         // do something that can only be done on the client
         //LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         for (BlockGlass block: MDBlock.glassArray)

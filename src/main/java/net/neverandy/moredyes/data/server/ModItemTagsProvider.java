@@ -4,6 +4,7 @@ import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.Tags;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.neverandy.moredyes.reference.Reference;
@@ -26,5 +27,6 @@ public class ModItemTagsProvider extends ItemTagsProvider
         copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
         copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
         copy(BlockTags.WOOL, ItemTags.WOOL);
+        copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
     }
 }

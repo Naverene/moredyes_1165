@@ -8,6 +8,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.registries.DeferredRegister;
 import net.neverandy.moredyes.world.DyeTrees;
+import net.neverandy.moredyes.client.ChestItemRenderer;
+import net.neverandy.moredyes.item.ChestItem;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neverandy.moredyes.ConfigHandler;
 import net.neverandy.moredyes.MoreDyes;
@@ -156,6 +158,7 @@ public class MDBlock
     public static BasicBlock[] hardenedClayArray = new BasicBlock[totalColorCount];
     public static BlockItem[] hardenedClayItemBlockArray = new BlockItem[totalColorCount];
 
+    public static BlockChest[] chestArray = new BlockChest[totalColorCount];
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 
@@ -196,6 +199,7 @@ public class MDBlock
         registerGlassFoggy();
         registerQuartz();
         registerWorkbench();
+        registerChest();
         registerTulip();
         registerRedstone();
         registerOakLog();
@@ -821,6 +825,20 @@ public class MDBlock
             workbenchItemBlockArray[i] = workbenchItem;
             BLOCKS.register(workbench_name, () -> workbench);
             ITEMS.register(workbench_name, () -> workbenchItem);
+        }
+    }
+
+    private static void registerChest()
+    {
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            String name = "chest_" + ColorStrings.ALL[i];
+            final BlockChest chest = new BlockChest(Reference.BLOCK_INFO_CHEST);
+            final ChestItem chestItem = new ChestItem(chest, new Item.Properties().group(MoreDyes.tabBlocks)
+                    .setISTER(() -> ChestItemRenderer::new));
+            chestArray[i] = chest;
+            BLOCKS.register(name, () -> chest);
+            ITEMS.register(name, () -> chestItem);
         }
     }
 
