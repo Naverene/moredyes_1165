@@ -1,6 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/template_wall_side_tall",
-  "textures": {
-    "wall": "moredyes:block/tinted/coal"
-  }
-}

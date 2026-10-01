@@ -12,7 +12,10 @@ import net.neverandy.moredyes.MoreDyes;
 import net.neverandy.moredyes.reference.ColorStrings;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * The slabs, stairs and walls of one dyed block type, in every color. Each shape copies the properties of the dyed
@@ -29,6 +32,13 @@ public final class DyedShapes
 
     public static final List<DyedShapes> ALL = new ArrayList<>();
 
+    /**
+     * The types that get walls: the ones vanilla has walls for. A wall has 324 block states, so walls for every type in
+     * all 118 colors would need about 1.76 million states, more memory than a game client can load.
+     */
+    private static final Set<String> WALL_TYPES = new HashSet<>(Arrays.asList(
+            "cobble", "mossycobble", "brick", "stonebrick", "mossystonebrick", "granite", "andesite", "diorite", "sandstone", "endstone"));
+
     /** The registry prefix, such as "stone" for "stoneslab_334c59", and the English name, such as "Stone". */
     public final String type;
     public final String displayName;
@@ -43,7 +53,7 @@ public final class DyedShapes
 
     public final SlabBlock[] slabs = new SlabBlock[ColorStrings.ALL.length];
     public final StairsBlock[] stairs = new StairsBlock[ColorStrings.ALL.length];
-    /** Empty when walls are turned off in the config. */
+    /** Empty for types without walls, and when walls are turned off in the config. */
     public final WallBlock[] walls;
 
     private DyedShapes(String type, String displayName, Block[] full, String side, String top, String bottom, Layer layer, String vanilla)
@@ -56,7 +66,7 @@ public final class DyedShapes
         this.bottom = bottom;
         this.layer = layer;
         this.vanilla = vanilla;
-        this.walls = new WallBlock[ConfigHandler.wallBlocks.get() ? ColorStrings.ALL.length : 0];
+        this.walls = new WallBlock[ConfigHandler.wallBlocks.get() && WALL_TYPES.contains(type) ? ColorStrings.ALL.length : 0];
     }
 
     /** A type with one texture on every face. */

@@ -8,6 +8,7 @@ import net.minecraft.block.PistonBlock;
 import net.minecraft.block.PistonHeadBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.TallFlowerBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.state.properties.PistonType;
 import net.minecraft.util.Direction;
@@ -153,18 +154,22 @@ public class ModBlockStateProvider extends BlockStateProvider
         ModelFile stairs = shape(base + "_stairs", "stairs", shapes);
         ModelFile inner = shape(base + "_stairs_inner", "inner_stairs", shapes);
         ModelFile outer = shape(base + "_stairs_outer", "outer_stairs", shapes);
-        ModelFile post = models().withExistingParent(base + "_wall_post", modLoc("block/tinted/template_wall_post")).texture("wall", tex(shapes.side));
-        ModelFile side = models().withExistingParent(base + "_wall_side", modLoc("block/tinted/template_wall_side")).texture("wall", tex(shapes.side));
-        ModelFile tall = models().withExistingParent(base + "_wall_side_tall", modLoc("block/tinted/template_wall_side_tall")).texture("wall", tex(shapes.side));
-        models().withExistingParent(base + "_wall_inventory", modLoc("block/tinted/wall_inventory")).texture("wall", tex(shapes.side));
         for (int i = 0; i < ColorStrings.ALL.length; i++)
         {
             slabBlock(shapes.slabs[i], slab, slabTop, full);
             stairsBlock(shapes.stairs[i], stairs, inner, outer);
         }
-        for (int i = 0; i < shapes.walls.length; i++)
+        if (shapes.walls.length == 0)
         {
-            wallBlock(shapes.walls[i], post, side, tall);
+            return;
+        }
+        ModelFile post = models().withExistingParent(base + "_wall_post", modLoc("block/tinted/template_wall_post")).texture("wall", tex(shapes.side));
+        ModelFile side = models().withExistingParent(base + "_wall_side", modLoc("block/tinted/template_wall_side")).texture("wall", tex(shapes.side));
+        ModelFile tall = models().withExistingParent(base + "_wall_side_tall", modLoc("block/tinted/template_wall_side_tall")).texture("wall", tex(shapes.side));
+        models().withExistingParent(base + "_wall_inventory", modLoc("block/tinted/wall_inventory")).texture("wall", tex(shapes.side));
+        for (WallBlock wall : shapes.walls)
+        {
+            wallBlock(wall, post, side, tall);
         }
     }
 

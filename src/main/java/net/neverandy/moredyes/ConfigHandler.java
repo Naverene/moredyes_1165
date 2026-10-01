@@ -28,7 +28,7 @@ public class ConfigHandler
 
         worldGen(SERVER_BUILDER, CLIENT_BUILDER);
         // Read when blocks are registered, so it is in the file loaded at startup (moredyes-client.toml) on both sides.
-        wallBlocks = CLIENT_BUILDER.comment("Add dyed walls. They take a lot of memory; turn this off to save it.",
+        wallBlocks = CLIENT_BUILDER.comment("Add dyed walls (for the block types vanilla has walls for). They take about 1 GB of memory; turn this off to save it.",
                 "A server and its players must use the same setting, and worlds built with walls lose them when it is off.")
                 .define("wall_blocks", true);
 

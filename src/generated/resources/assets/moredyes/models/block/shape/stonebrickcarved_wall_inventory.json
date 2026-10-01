@@ -1,6 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/wall_inventory",
-  "textures": {
-    "wall": "moredyes:block/tinted/stonebrick_carved"
-  }
-}
