@@ -152,9 +152,8 @@ public class MDBlock
     public static BlockLadder[] ladderArray = new BlockLadder[totalColorCount];
     public static BlockItem[] ladderBlockItemBlockArray = new BlockItem[totalColorCount];
     public static BlockPiston[] pistonArray = new BlockPiston[totalColorCount];
-    public static BlockItem[] pistonItemBlockArray = new BlockItem[totalColorCount];
+    public static BlockPiston[] stickyPistonArray = new BlockPiston[totalColorCount];
     public static BlockPistonHead[] pistonHeadArray = new BlockPistonHead[totalColorCount];
-    public static BlockItem[] pistonHeadItemBlockArray = new BlockItem[totalColorCount];
     public static BasicBlock[] hardenedClayArray = new BasicBlock[totalColorCount];
     public static BlockItem[] hardenedClayItemBlockArray = new BlockItem[totalColorCount];
 
@@ -248,7 +247,7 @@ public class MDBlock
 
 
         //registerLadder();
-        //registerPiston();
+        registerPistons();
     }
 
     private static void registerHardenedClay()
@@ -266,25 +265,26 @@ public class MDBlock
         }
     }
 
-    private static void registerPiston()
+    /** A piston and a sticky piston for each color, sharing one head block that has both kinds like vanilla. */
+    private static void registerPistons()
     {
         for (int i = 0; i < ColorStrings.ALL.length; i++)
         {
             String color = ColorStrings.ALL[i];
-            String piston_name = "piston_" + color;
-            String piston_head_name = "pistonhead_" + color;
-            final BlockPiston piston = new BlockPiston(false, Reference.BLOCK_INFO_PISTON);
-            final BlockPistonHead pistonHead = new BlockPistonHead(AbstractBlock.Properties.from(piston));
-            final BlockItem pistonItem = new BlockItem(piston, new Item.Properties().group(MoreDyes.tabBlocks));
-            final BlockItem pistonHeadItem = new BlockItem(pistonHead, new Item.Properties().group(MoreDyes.tabBlocks));
+            final BlockPistonHead head = new BlockPistonHead();
+            final BlockPiston piston = new BlockPiston(false);
+            final BlockPiston stickyPiston = new BlockPiston(true);
+            piston.setHead(head);
+            stickyPiston.setHead(head);
+            head.setBases(piston, stickyPiston);
             pistonArray[i] = piston;
-            pistonHeadArray[i] = pistonHead;
-            pistonItemBlockArray[i] = pistonItem;
-            pistonHeadItemBlockArray[i] = pistonHeadItem;
-            BLOCKS.register(piston_name, () -> piston);
-            BLOCKS.register(piston_head_name, () -> pistonHead);
-            ITEMS.register(piston_name, () -> pistonItem);
-            ITEMS.register(piston_head_name, () -> pistonHeadItem);
+            stickyPistonArray[i] = stickyPiston;
+            pistonHeadArray[i] = head;
+            BLOCKS.register("piston_" + color, () -> piston);
+            BLOCKS.register("stickypiston_" + color, () -> stickyPiston);
+            BLOCKS.register("pistonhead_" + color, () -> head);
+            ITEMS.register("piston_" + color, () -> new BlockItem(piston, new Item.Properties().group(MoreDyes.tabBlocks)));
+            ITEMS.register("stickypiston_" + color, () -> new BlockItem(stickyPiston, new Item.Properties().group(MoreDyes.tabBlocks)));
         }
     }
 

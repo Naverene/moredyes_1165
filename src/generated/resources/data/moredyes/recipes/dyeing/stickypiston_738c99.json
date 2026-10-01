@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:sticky_piston"
+    },
+    "D": {
+      "item": "moredyes:738c99_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:stickypiston_738c99",
+    "count": 8
+  }
+}

@@ -10,6 +10,8 @@ import net.neverandy.moredyes.MoreDyes;
 import net.neverandy.moredyes.block.BlockChest;
 import net.neverandy.moredyes.block.BlockFence;
 import net.neverandy.moredyes.block.BlockGlassPane;
+import net.neverandy.moredyes.block.BlockPiston;
+import net.neverandy.moredyes.block.BlockPistonHead;
 import net.neverandy.moredyes.block.BlockSapling;
 import net.neverandy.moredyes.block.FlowerBlock;
 import net.neverandy.moredyes.block.MDBlock;
@@ -31,6 +33,11 @@ public class ModItemModelProvider extends ItemModelProvider
         for (RegistryObject<Block> entry : MDBlock.BLOCKS.getEntries())
         {
             Block block = entry.get();
+            if (block instanceof BlockPistonHead)
+            {
+                // Piston heads have no item.
+                continue;
+            }
             String name = entry.getId().getPath();
             // Registry names look like "<type>_<color>", e.g. "oakfence_334c59" or "saplingoak_334c59".
             String type = name.substring(0, name.lastIndexOf('_'));
@@ -55,6 +62,11 @@ public class ModItemModelProvider extends ItemModelProvider
                 // Like vanilla, a pane item is its glass texture drawn flat.
                 String glass = name.startsWith("glassfoggy") ? "glass_foggy" : "glass";
                 withExistingParent(name, mcLoc("item/generated")).texture("layer0", modLoc("block/tinted/" + glass));
+            }
+            else if (block instanceof BlockPiston)
+            {
+                String model = ((BlockPiston) block).isSticky() ? "sticky_piston" : "piston";
+                withExistingParent(name, modLoc("block/tinted/" + model));
             }
             else if (block instanceof FlowerBlock)
             {

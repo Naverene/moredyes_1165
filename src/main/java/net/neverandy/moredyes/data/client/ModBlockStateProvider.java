@@ -4,10 +4,15 @@ package net.neverandy.moredyes.data.client;
 import net.minecraft.block.Block;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.PaneBlock;
+import net.minecraft.block.PistonBlock;
+import net.minecraft.block.PistonHeadBlock;
+import net.minecraft.state.properties.PistonType;
+import net.minecraft.util.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.neverandy.moredyes.MoreDyes;
@@ -77,6 +82,10 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .texture("side", tex("bookshelf"))
                     .texture("end", tex("oak_planks")));
 
+            piston(MDBlock.pistonArray[i], "piston");
+            piston(MDBlock.stickyPistonArray[i], "sticky_piston");
+            pistonHead(MDBlock.pistonHeadArray[i]);
+
             pane(MDBlock.glassPaneArray[i], "glass");
             pane(MDBlock.glassFoggyPaneArray[i], "glass_foggy");
 
@@ -112,6 +121,32 @@ public class ModBlockStateProvider extends BlockStateProvider
         ModelFile side = models().withExistingParent(fence + "_side", modLoc("block/tinted/fence_side")).texture("texture", plankTexture);
         fourWayBlock((FenceBlock) fences[i], post, side);
         models().withExistingParent(fence + "_inventory", modLoc("block/tinted/fence_inventory")).texture("texture", plankTexture);
+    }
+
+    /** Every color shares the tinted piston models; the facing turns them like the vanilla piston's blockstate. */
+    private void piston(Block piston, String model)
+    {
+        ModelFile retracted = models().getExistingFile(modLoc("block/tinted/" + model));
+        ModelFile extended = models().getExistingFile(modLoc("block/tinted/piston_base"));
+        getVariantBuilder(piston).forAllStates(state -> facing(state.get(PistonBlock.EXTENDED) ? extended : retracted,
+                state.get(PistonBlock.FACING)));
+    }
+
+    private void pistonHead(Block head)
+    {
+        getVariantBuilder(head).forAllStates(state ->
+        {
+            String model = "block/tinted/piston_head" + (state.get(PistonHeadBlock.SHORT) ? "_short" : "")
+                    + (state.get(PistonHeadBlock.TYPE) == PistonType.STICKY ? "_sticky" : "");
+            return facing(models().getExistingFile(modLoc(model)), state.get(PistonHeadBlock.FACING));
+        });
+    }
+
+    private static ConfiguredModel[] facing(ModelFile model, Direction facing)
+    {
+        int x = facing == Direction.DOWN ? 90 : facing == Direction.UP ? 270 : 0;
+        int y = facing.getAxis().isVertical() ? 0 : ((int) facing.getHorizontalAngle() + 180) % 360;
+        return ConfiguredModel.builder().modelFile(model).rotationX(x).rotationY(y).build();
     }
 
     private void pane(PaneBlock pane, String texture)

@@ -87,8 +87,6 @@ public class Reference
     public static final BlockInfo BLOCK_INFO_CUT_SANDSTONE = new BlockInfo ("cut_sandstone",Material.ROCK,2.0F, STONE,ToolType.PICKAXE,1,6.0f,MoreDyes.tabBlocks, 0);
     public static final BlockInfo BLOCK_INFO_NOTE_BLOCK = new BlockInfo ("note_block",Material.WOOD,0.8F, WOOD,ToolType.AXE,0,1.0f, MoreDyes.tabTrees, 0);
     public static final BlockInfo BLOCK_INFO_BED = new BlockInfo ("bed",Material.WOOD, 1.0f, WOOD,ToolType.AXE,0,1.0f, MoreDyes.tabTrees, 0);
-    public static final BlockInfo BLOCK_INFO_PISTON = new BlockInfo ("piston",Material.ROCK,1.5f, STONE,ToolType.PICKAXE,1,10.0f,MoreDyes.tabBlocks, 0);
-    public static final BlockInfo BLOCK_INFO_PISTON_HEAD = new BlockInfo ("piston_head",Material.PISTON,1.5f, STONE,ToolType.PICKAXE,1,10.0f,MoreDyes.tabBlocks, 0);
     public static final BlockInfo BLOCK_INFO_OXEYE_DAISY = new BlockInfo ("oxeye_daisy",Material.PLANTS,0, PLANT,null,0,1.0f, MoreDyes.tabTrees, 0); //Effects.REGENERATION, ,
     public static final BlockInfo BLOCK_INFO_CORNFLOWER = new BlockInfo ("cornflower",Material.PLANTS,0, PLANT,null,0,1.0f, MoreDyes.tabTrees, 0);  //,
     public static final BlockInfo BLOCK_INFO_BOOKSHELF = new BlockInfo ("bookshelf",Material.WOOD,1.5F, WOOD,ToolType.AXE,0,1.0f, MoreDyes.tabTrees, 0);

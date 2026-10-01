@@ -15,6 +15,7 @@ import net.minecraft.loot.LootTableManager;
 import net.minecraft.loot.ValidationTracker;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
+import net.neverandy.moredyes.block.BlockPistonHead;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.reference.ColorStrings;
 import net.neverandy.moredyes.world.DyeTrees;
@@ -77,7 +78,9 @@ public class ModLootTableProvider extends LootTableProvider
         @Override
         protected Iterable<Block> getKnownBlocks()
         {
-            return MDBlock.BLOCKS.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+            // Piston heads drop nothing, like the vanilla head, so they have no loot table.
+            return MDBlock.BLOCKS.getEntries().stream().map(RegistryObject::get)
+                    .filter(block -> !(block instanceof BlockPistonHead)).collect(Collectors.toList());
         }
     }
 }
