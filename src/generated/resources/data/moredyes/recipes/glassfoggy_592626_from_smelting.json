@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "moredyes:glass_592626"
+  },
+  "result": "moredyes:glassfoggy_592626",
+  "experience": 0.1,
+  "cookingtime": 200
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moredyes:birchlog_deb233"
+    }
+  ],
+  "result": {
+    "item": "moredyes:birchplanks_deb233",
+    "count": 4
+  }
+}

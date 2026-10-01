@@ -18,6 +18,7 @@ public class ConfigHandler
 
     public static ForgeConfigSpec.BooleanValue worldGenTree;
     public static ForgeConfigSpec.BooleanValue worldGenFlower;
+    public static ForgeConfigSpec.DoubleValue sheepSpawnChance;
 
     static
     {
@@ -52,5 +53,7 @@ public class ConfigHandler
     private static void worldGen(ForgeConfigSpec.Builder server, ForgeConfigSpec.Builder client){
         worldGenFlower = client.comment("Allow MoreDyes flowers during world generation").define("generate_flowers", true);
         worldGenTree = client.comment("Allow MoreDyes trees during world generation").define("generate_trees", true);
+        sheepSpawnChance = server.comment("Chance (0 to 1) that a sheep spawning in the world has a random MoreDyes color")
+                .defineInRange("sheep_spawn_chance", 0.05D, 0.0D, 1.0D);
     }
 }

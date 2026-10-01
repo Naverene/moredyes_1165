@@ -1,5 +1,6 @@
 package net.neverandy.moredyes.utility;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.WoodType;
 import net.minecraft.block.material.Material;
@@ -48,6 +49,15 @@ public class BlockInfo
     public BlockInfo()
     {
         this("",Material.ROCK,1.0f,SoundType.STONE, ToolType.HOE,1);
+    }
+
+    /**
+     * Like vanilla, only stone and metal blocks need the right tool to drop anything. Every other block drops by hand
+     * too; its harvest tool only makes breaking faster.
+     */
+    public AbstractBlock.Properties requireToolIfStone(AbstractBlock.Properties properties)
+    {
+        return blockMaterial == Material.ROCK || blockMaterial == Material.IRON ? properties.setRequiresTool() : properties;
     }
 
     public BlockInfo(String glazed_terracotta, Material rock, DyeColor white, float v) {

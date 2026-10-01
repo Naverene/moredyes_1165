@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:birch_fence"
+    },
+    "D": {
+      "item": "moredyes:f9bfd2_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:birchfence_f9bfd2",
+    "count": 8
+  }
+}

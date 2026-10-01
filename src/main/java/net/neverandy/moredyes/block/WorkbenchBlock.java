@@ -26,7 +26,6 @@ public class WorkbenchBlock extends CraftingTableBlock
                 .hardnessAndResistance(info.hardness, info.resistance)
                 .harvestLevel(info.harvestLevel)
                 .harvestTool(info.harvestTool)
-                .setRequiresTool()
                 .sound(info.sound)
                 .setLightLevel(value -> info.lightlevel));
     }

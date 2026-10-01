@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "side": "moredyes:block/workbench/side/92663f",
-    "front": "moredyes:block/workbench/front/92663f",
-    "bottom": "moredyes:block/plank/92663f",
-    "top": "moredyes:block/workbench/top/92663f"
-  }
-}

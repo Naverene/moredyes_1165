@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "moredyes:sand_7f65b9"
-  },
-  "result": "moredyes:glass_7f65b9",
-  "experience": 2.0,
-  "cookingtime": 20
-}

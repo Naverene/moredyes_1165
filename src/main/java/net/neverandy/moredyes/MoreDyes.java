@@ -1,5 +1,12 @@
 package net.neverandy.moredyes;
 
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraft.entity.EntityType;
+import net.neverandy.moredyes.client.DyedSheepRenderer;
+import net.neverandy.moredyes.network.ModNetwork;
+import net.neverandy.moredyes.client.ChestRenderer;
+import net.neverandy.moredyes.tileentity.ModTileEntities;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
@@ -19,6 +26,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neverandy.moredyes.block.BlockGlass;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.item.MDItem;
+import net.neverandy.moredyes.reference.ColorStrings;
+import net.neverandy.moredyes.world.ModWorldGen;
 import net.neverandy.moredyes.reference.Reference;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -81,21 +90,56 @@ public class MoreDyes
         //RegistryHandler.init();
         MDBlock.initialize();
         MDItem.initialize();
+        ModWorldGen.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModTileEntities.register(FMLJavaModLoadingContext.get().getModEventBus());
+        MinecraftForge.EVENT_BUS.addListener(ModWorldGen::onBiomeLoading);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+        ModNetwork.register();
+        event.enqueueWork(ModWorldGen::setup);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
     {
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.CHEST.get(), ChestRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityType.SHEEP, DyedSheepRenderer::new);
         // do something that can only be done on the client
         //LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         for (BlockGlass block: MDBlock.glassArray)
         {
             event.enqueueWork(() -> RenderTypeLookup.setRenderLayer(block, RenderType.getCutout()));
         }
+        event.enqueueWork(() ->
+        {
+            for (int i = 0; i < ColorStrings.ALL.length; i++)
+            {
+                RenderTypeLookup.setRenderLayer(MDBlock.glassPaneArray[i], RenderType.getCutoutMipped());
+                // Foggy glass is half see-through, so it needs the translucent layer.
+                RenderTypeLookup.setRenderLayer(MDBlock.glassFoggyArray[i], RenderType.getTranslucent());
+                RenderTypeLookup.setRenderLayer(MDBlock.glassFoggyPaneArray[i], RenderType.getTranslucent());
+            }
+        });
+        event.enqueueWork(() ->
+        {
+            for (int i = 0; i < ColorStrings.ALL.length; i++)
+            {
+                RenderTypeLookup.setRenderLayer(MDBlock.tulipArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.oakSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.birchSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.acaciaSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.darkOakSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.jungleSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.spruceSaplingArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.oakLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.birchLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.acaciaLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.darkOakLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.jungleLeafArray[i], RenderType.getCutoutMipped());
+                RenderTypeLookup.setRenderLayer(MDBlock.spruceLafArray[i], RenderType.getCutoutMipped());
+            }
+        });
 
     }
 

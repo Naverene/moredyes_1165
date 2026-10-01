@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:crafting_table"
+    },
+    {
+      "item": "moredyes:404c7f_dye"
+    }
+  ],
+  "result": {
+    "item": "moredyes:workbench_404c7f"
+  }
+}

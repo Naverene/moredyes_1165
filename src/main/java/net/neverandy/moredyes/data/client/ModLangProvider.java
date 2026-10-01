@@ -1,5 +1,6 @@
 package net.neverandy.moredyes.data.client;
 
+import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.neverandy.moredyes.block.MDBlock;
@@ -16,42 +17,64 @@ public class ModLangProvider extends LanguageProvider
     @Override
     protected void addTranslations()
     {
+        add("itemGroup.trees", "MoreDyes Trees");
+        add("itemGroup.plants", "MoreDyes Plants");
+        add("itemGroup.dyes", "MoreDyes Dyes");
+        add("itemGroup.blocks", "MoreDyes Blocks");
+
         for (int i = 0; i < ColorStrings.ALL.length; i++)
         {
-            add(MDBlock.stoneArray[i], ColorStrings.ALL[i].toUpperCase() + " Stone");
-            add(MDBlock.stonebrickArray[i], ColorStrings.ALL[i].toUpperCase() + " Stonebrick");
-            add(MDBlock.brickArray[i], ColorStrings.ALL[i].toUpperCase() + " Bricks");
-            add(MDBlock.coalArray[i], ColorStrings.ALL[i].toUpperCase() + " Block of Coal");
-            add(MDBlock.clayArray[i], ColorStrings.ALL[i].toUpperCase() + " Clay");
-            add(MDBlock.oakLogArray[i], ColorStrings.ALL[i].toUpperCase() + " Oak Log");
-            add(MDBlock.stonebrickCarvedArray[i], ColorStrings.ALL[i].toUpperCase() + " Stonebrick Carved");
-            add(MDBlock.stonebrickCrackedArray[i], ColorStrings.ALL[i].toUpperCase() + " Stonebrick Cracked");
-            add(MDBlock.lapisArray[i], ColorStrings.ALL[i].toUpperCase() + " Lapis Lazuli Block");
-            add(MDBlock.obsidianArray[i], ColorStrings.ALL[i].toUpperCase() + " Obsdidian");
-            add(MDBlock.glowstoneArray[i], ColorStrings.ALL[i].toUpperCase() + " Glowstone");
-            add(MDBlock.cobbleArray[i], ColorStrings.ALL[i].toUpperCase() + " Cobble");
-            add(MDBlock.glassArray[i], ColorStrings.ALL[i].toUpperCase() + " Glass");
-            add(MDBlock.glassFoggyArray[i], ColorStrings.ALL[i].toUpperCase() + " Stained Glass");
-            add(MDBlock.workbenchArray[i], ColorStrings.ALL[i].toUpperCase() + " Crafting Table");
-            add(MDBlock.sandArray[i], ColorStrings.ALL[i].toUpperCase() + " Sand");
-            add(MDBlock.woolArray[i], ColorStrings.ALL[i].toUpperCase() + " Wool");
-            add(MDBlock.redstoneArray[i], ColorStrings.ALL[i].toUpperCase() + " Block of Redstone");
-            add(MDBlock.tulipArray[i], ColorStrings.ALL[i].toUpperCase() + " Tulip");
-            add(MDBlock.quartzArray[i], ColorStrings.ALL[i].toUpperCase() + " Block of Quartz");
-            add(MDBlock.oakPlankArray[i], ColorStrings.ALL[i].toUpperCase() + " Oak Plank");
-            add(MDBlock.soulsandArray[i], ColorStrings.ALL[i].toUpperCase() + " Soulsand");
-            add(MDBlock.sandstoneArray[i], ColorStrings.ALL[i].toUpperCase() + " Sandstone");
-            //add(MDBlock.sandstoneCarvedArray[i], ColorStrings.ALL[i].toUpperCase() + " Carved Sandstone");
-            //add(MDBlock.sandstoneSmoothArray[i], ColorStrings.ALL[i].toUpperCase() + " Smooth Sandstone");
-            add(MDBlock.andesiteArray[i], ColorStrings.ALL[i].toUpperCase() + " Andesite");
-            add(MDBlock.dioriteArray[i], ColorStrings.ALL[i].toUpperCase() + " Diorite");
-            add(MDItem.dye[i],ColorStrings.ALL[i].toUpperCase() + " Dye");
-            add(MDBlock.concretePowderArray[i],ColorStrings.ALL[i].toUpperCase() + " Concrete Powder");
-            add(MDBlock.hardenedClayArray[i], ColorStrings.ALL[i].toUpperCase() + " Hardened Clay");
+            String c = ColorStrings.ALL[i].toUpperCase() + " ";
+            add(MDItem.dye[i], c + "Dye");
 
-            //add(MDBlock.ladderBlockArray[i], ColorStrings.ALL[i].toUpperCase() + " Ladder");
+            add(MDBlock.stoneArray[i], c + "Stone");
+            add(MDBlock.cobbleArray[i], c + "Cobblestone");
+            add(MDBlock.stonebrickArray[i], c + "Stone Bricks");
+            add(MDBlock.stonebrickCarvedArray[i], c + "Chiseled Stone Bricks");
+            add(MDBlock.stonebrickCrackedArray[i], c + "Cracked Stone Bricks");
+            add(MDBlock.brickArray[i], c + "Bricks");
+            add(MDBlock.clayArray[i], c + "Clay");
+            add(MDBlock.hardenedClayArray[i], c + "Terracotta");
+            add(MDBlock.coalArray[i], c + "Block of Coal");
+            add(MDBlock.lapisArray[i], c + "Block of Lapis Lazuli");
+            add(MDBlock.redstoneArray[i], c + "Block of Redstone");
+            add(MDBlock.quartzArray[i], c + "Block of Quartz");
+            add(MDBlock.obsidianArray[i], c + "Obsidian");
+            add(MDBlock.glowstoneArray[i], c + "Glowstone");
+            add(MDBlock.glassArray[i], c + "Glass");
+            add(MDBlock.glassFoggyArray[i], c + "Foggy Glass");
+            add(MDBlock.sandArray[i], c + "Sand");
+            add(MDBlock.sandstoneArray[i], c + "Sandstone");
+            add(MDBlock.sandstoneCarvedArray[i], c + "Chiseled Sandstone");
+            add(MDBlock.sandstoneSmoothArray[i], c + "Cut Sandstone");
+            add(MDBlock.soulsandArray[i], c + "Soul Sand");
+            add(MDBlock.woolArray[i], c + "Wool");
+            add(MDBlock.andesiteArray[i], c + "Andesite");
+            add(MDBlock.dioriteArray[i], c + "Diorite");
+            add(MDBlock.concreteArray[i], c + "Concrete");
+            add(MDBlock.concretePowderArray[i], c + "Concrete Powder");
+            add(MDBlock.workbenchArray[i], c + "Crafting Table");
+            add(MDBlock.chestArray[i], c + "Chest");
+            add(MDBlock.bookshelfArray[i], c + "Bookshelf");
+            add(MDBlock.glassPaneArray[i], c + "Glass Pane");
+            add(MDBlock.glassFoggyPaneArray[i], c + "Foggy Glass Pane");
+            add(MDBlock.tulipArray[i], c + "Tulip");
 
+            wood(c + "Oak", MDBlock.oakLogArray[i], MDBlock.oakPlankArray[i], MDBlock.oakLeafArray[i], MDBlock.oakSaplingArray[i], MDBlock.oakFenceArray[i]);
+            wood(c + "Birch", MDBlock.birchLogArray[i], MDBlock.birchPlankArray[i], MDBlock.birchLeafArray[i], MDBlock.birchSaplingArray[i], MDBlock.birchFenceArray[i]);
+            wood(c + "Spruce", MDBlock.spruceLogArray[i], MDBlock.sprucePlankArray[i], MDBlock.spruceLafArray[i], MDBlock.spruceSaplingArray[i], MDBlock.spruceFenceArray[i]);
+            wood(c + "Jungle", MDBlock.jungleLogArray[i], MDBlock.junglePlankArray[i], MDBlock.jungleLeafArray[i], MDBlock.jungleSaplingArray[i], MDBlock.jungleFenceArray[i]);
+            wood(c + "Acacia", MDBlock.acaciaLogArray[i], MDBlock.acaciaPlankArray[i], MDBlock.acaciaLeafArray[i], MDBlock.acaciaSaplingArray[i], MDBlock.acaciaFenceArray[i]);
+            wood(c + "Dark Oak", MDBlock.darkOakLogArray[i], MDBlock.darkOakPlankArray[i], MDBlock.darkOakLeafArray[i], MDBlock.darkOakSaplingArray[i], MDBlock.darkOakFenceArray[i]);
         }
+    }
 
+    private void wood(String prefix, Block log, Block planks, Block leaves, Block sapling, Block fence)
+    {
+        add(log, prefix + " Log");
+        add(planks, prefix + " Planks");
+        add(leaves, prefix + " Leaves");
+        add(sapling, prefix + " Sapling");
+        add(fence, prefix + " Fence");
     }
 }

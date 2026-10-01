@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:coal_block"
+    },
+    "D": {
+      "item": "moredyes:a69933_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:coal_a69933",
+    "count": 8
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "moredyes:block/tinted/cross_layered",
+  "textures": {
+    "cross": "moredyes:block/tinted/birch_sapling_leaves",
+    "overlay": "moredyes:block/tinted/birch_sapling_trunk"
+  }
+}

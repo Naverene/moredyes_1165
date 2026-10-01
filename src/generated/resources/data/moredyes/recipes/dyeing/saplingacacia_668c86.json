@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:acacia_sapling"
+    },
+    {
+      "item": "moredyes:668c86_dye"
+    }
+  ],
+  "result": {
+    "item": "moredyes:saplingacacia_668c86"
+  }
+}

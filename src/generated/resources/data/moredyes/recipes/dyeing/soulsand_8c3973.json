@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:soul_sand"
+    },
+    "D": {
+      "item": "moredyes:8c3973_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:soulsand_8c3973",
+    "count": 8
+  }
+}

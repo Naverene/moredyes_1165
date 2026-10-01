@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "side": "moredyes:block/sandstone/side/4d73c5",
-    "bottom": "moredyes:block/sandstone/bottom/4d73c5",
-    "top": "moredyes:block/sandstone/top/4d73c5"
-  }
-}

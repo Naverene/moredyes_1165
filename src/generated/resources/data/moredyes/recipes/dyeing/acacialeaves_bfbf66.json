@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:acacia_leaves"
+    },
+    "D": {
+      "item": "moredyes:bfbf66_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:acacialeaves_bfbf66",
+    "count": 8
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:birch_leaves"
+    },
+    "D": {
+      "item": "moredyes:c56685_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:birchleaves_c56685",
+    "count": 8
+  }
+}

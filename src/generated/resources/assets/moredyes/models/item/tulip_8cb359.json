@@ -1,3 +1,7 @@
 {
-  "parent": "moredyes:block/tulip_8cb359"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "moredyes:block/tinted/tulip_petals",
+    "layer1": "moredyes:block/tinted/tulip_stem"
+  }
 }

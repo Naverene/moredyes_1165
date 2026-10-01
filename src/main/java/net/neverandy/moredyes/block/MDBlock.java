@@ -2,13 +2,14 @@ package net.neverandy.moredyes.block;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.registries.DeferredRegister;
+import net.neverandy.moredyes.world.DyeTrees;
+import net.neverandy.moredyes.client.ChestItemRenderer;
+import net.neverandy.moredyes.item.ChestItem;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neverandy.moredyes.ConfigHandler;
 import net.neverandy.moredyes.MoreDyes;
@@ -157,6 +158,10 @@ public class MDBlock
     public static BasicBlock[] hardenedClayArray = new BasicBlock[totalColorCount];
     public static BlockItem[] hardenedClayItemBlockArray = new BlockItem[totalColorCount];
 
+    public static BlockGlassPane[] glassPaneArray = new BlockGlassPane[totalColorCount];
+    public static BlockGlassPane[] glassFoggyPaneArray = new BlockGlassPane[totalColorCount];
+    public static BlockBookshelf[] bookshelfArray = new BlockBookshelf[totalColorCount];
+    public static BlockChest[] chestArray = new BlockChest[totalColorCount];
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 
@@ -197,6 +202,9 @@ public class MDBlock
         registerGlassFoggy();
         registerQuartz();
         registerWorkbench();
+        registerChest();
+        registerGlassPanes();
+        registerBookshelves();
         registerTulip();
         registerRedstone();
         registerOakLog();
@@ -408,7 +416,6 @@ public class MDBlock
             String glass_name = "glass_" + color;
             final BlockGlass glass = new BlockGlass(Reference.BLOCK_INFO_GLASS);
             final BlockItem glassItem = new BlockItem(glass, new Item.Properties().group(MoreDyes.tabBlocks));
-            RenderTypeLookup.setRenderLayer(glass, RenderType.getCutout());
             glassArray[i] = glass;
             glassItemBlockArray[i] = glassItem;
             BLOCKS.register(glass_name, () -> glass);
@@ -714,7 +721,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingoak_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_OAK_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_OAK_SAPLING, DyeTrees.sapling("oak", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             oakSaplingArray[i] = sapling;
             oakSaplingItemBlockArray[i] = saplingItem;
@@ -729,7 +736,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingbirch_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_BIRCH_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_BIRCH_SAPLING, DyeTrees.sapling("birch", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             birchSaplingArray[i] = sapling;
             birchSaplingItemBlockArray[i] = saplingItem;
@@ -744,7 +751,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingdarkoak_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_DARK_OAK_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_DARK_OAK_SAPLING, DyeTrees.sapling("dark_oak", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             darkOakSaplingArray[i] = sapling;
             darkOakSaplingItemBlockArray[i] = saplingItem;
@@ -758,7 +765,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingacacia_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_ACACIA_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_ACACIA_SAPLING, DyeTrees.sapling("acacia", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             acaciaSaplingArray[i] = sapling;
             acaciaSaplingItemBlockArray[i] = saplingItem;
@@ -773,7 +780,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingspruce_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_SPRUCE_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_SPRUCE_SAPLING, DyeTrees.sapling("spruce", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             spruceSaplingArray[i] = sapling;
             spruceSaplingItemBlockArray[i] = saplingItem;
@@ -787,7 +794,7 @@ public class MDBlock
         {
             String color = ColorStrings.ALL[i];
             String sapling_name = "saplingjungle_" + color;
-            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_JUNGLE_SAPLING);
+            final BlockSapling sapling = new BlockSapling(Reference.BLOCK_INFO_JUNGLE_SAPLING, DyeTrees.sapling("jungle", i));
             final BlockItem saplingItem = new BlockItem(sapling, new Item.Properties().group(MoreDyes.tabTrees));
             jungleSaplingArray[i] = sapling;
             jungleSaplingItemBlockArray[i] = saplingItem;
@@ -823,6 +830,51 @@ public class MDBlock
             workbenchItemBlockArray[i] = workbenchItem;
             BLOCKS.register(workbench_name, () -> workbench);
             ITEMS.register(workbench_name, () -> workbenchItem);
+        }
+    }
+
+    private static void registerBookshelves()
+    {
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            String name = "bookshelf_" + ColorStrings.ALL[i];
+            final BlockBookshelf shelf = new BlockBookshelf(Reference.BLOCK_INFO_BOOKSHELF);
+            final BlockItem shelfItem = new BlockItem(shelf, new Item.Properties().group(MoreDyes.tabBlocks));
+            bookshelfArray[i] = shelf;
+            BLOCKS.register(name, () -> shelf);
+            ITEMS.register(name, () -> shelfItem);
+        }
+    }
+
+    private static void registerGlassPanes()
+    {
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            glassPaneArray[i] = registerPane("glasspane_" + ColorStrings.ALL[i]);
+            glassFoggyPaneArray[i] = registerPane("glassfoggypane_" + ColorStrings.ALL[i]);
+        }
+    }
+
+    private static BlockGlassPane registerPane(String name)
+    {
+        final BlockGlassPane pane = new BlockGlassPane(Reference.BLOCK_INFO_GLASS_PANE);
+        final BlockItem paneItem = new BlockItem(pane, new Item.Properties().group(MoreDyes.tabBlocks));
+        BLOCKS.register(name, () -> pane);
+        ITEMS.register(name, () -> paneItem);
+        return pane;
+    }
+
+    private static void registerChest()
+    {
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            String name = "chest_" + ColorStrings.ALL[i];
+            final BlockChest chest = new BlockChest(Reference.BLOCK_INFO_CHEST);
+            final ChestItem chestItem = new ChestItem(chest, new Item.Properties().group(MoreDyes.tabBlocks)
+                    .setISTER(() -> ChestItemRenderer::new));
+            chestArray[i] = chest;
+            BLOCKS.register(name, () -> chest);
+            ITEMS.register(name, () -> chestItem);
         }
     }
 

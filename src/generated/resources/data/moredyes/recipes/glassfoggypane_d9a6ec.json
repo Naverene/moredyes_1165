@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "moredyes:glassfoggy_d9a6ec"
+    }
+  },
+  "result": {
+    "item": "moredyes:glassfoggypane_d9a6ec",
+    "count": 16
+  }
+}
