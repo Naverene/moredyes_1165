@@ -27,7 +27,9 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neverandy.moredyes.block.BlockGlass;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.neverandy.moredyes.block.DyedShapes;
+import net.neverandy.moredyes.data.condition.WallsEnabledCondition;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.item.MDItem;
 import net.neverandy.moredyes.reference.ColorStrings;
@@ -85,6 +87,7 @@ public class MoreDyes
     {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ConfigHandler.CLIENT_CONFIG);
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ConfigHandler.SERVER_CONFIG);
+        CraftingHelper.register(WallsEnabledCondition.SERIALIZER);
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

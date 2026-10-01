@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:boneblock_663379"
+    }
+  },
+  "result": {
+    "item": "moredyes:boneblockslab_663379",
+    "count": 6
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:plank_4c6573"
+          }
+        },
+        "result": {
+          "item": "moredyes:oakwall_4c6573",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "moredyes:block/lilac_8c72d8_top"
+    },
+    "half=lower": {
+      "model": "moredyes:block/lilac_8c72d8_bottom"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "moredyes:polisheddiorite_bfe68c"
+        },
+        "result": "moredyes:polisheddioritewall_bfe68c",
+        "count": 1
+      }
+    }
+  ]
+}

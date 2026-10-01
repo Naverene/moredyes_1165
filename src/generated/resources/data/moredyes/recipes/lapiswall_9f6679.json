@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:lapis_9f6679"
+          }
+        },
+        "result": {
+          "item": "moredyes:lapiswall_9f6679",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

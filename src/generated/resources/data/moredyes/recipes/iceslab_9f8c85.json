@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:ice_9f8c85"
+    }
+  },
+  "result": {
+    "item": "moredyes:iceslab_9f8c85",
+    "count": 6
+  }
+}

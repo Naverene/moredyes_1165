@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:concretepowder_66a659"
+          }
+        },
+        "result": {
+          "item": "moredyes:concretepowderwall_66a659",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

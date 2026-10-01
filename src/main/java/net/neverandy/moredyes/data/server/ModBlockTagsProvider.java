@@ -46,7 +46,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider
             boolean wood = shapes.full[0].getDefaultState().getMaterial() == net.minecraft.block.material.Material.WOOD;
             getOrCreateBuilder(wood ? BlockTags.WOODEN_SLABS : BlockTags.SLABS).add(shapes.slabs);
             getOrCreateBuilder(wood ? BlockTags.WOODEN_STAIRS : BlockTags.STAIRS).add(shapes.stairs);
-            getOrCreateBuilder(BlockTags.WALLS).add(shapes.walls);
+            // Optional, so the tag still loads when walls are turned off and these blocks don't exist.
+            for (Block wall : shapes.walls)
+            {
+                getOrCreateBuilder(BlockTags.WALLS).addOptional(wall.getRegistryName());
+            }
         }
         getOrCreateBuilder(BlockTags.WOOL).add(MDBlock.woolArray);
         getOrCreateBuilder(Tags.Blocks.CHESTS_WOODEN).add(MDBlock.chestArray);

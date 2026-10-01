@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:jungleplanks_65467f"
+          }
+        },
+        "result": {
+          "item": "moredyes:junglewall_65467f",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

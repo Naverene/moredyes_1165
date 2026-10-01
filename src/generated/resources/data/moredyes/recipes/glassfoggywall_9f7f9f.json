@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:glassfoggy_9f7f9f"
+          }
+        },
+        "result": {
+          "item": "moredyes:glassfoggywall_9f7f9f",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

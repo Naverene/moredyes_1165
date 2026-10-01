@@ -17,7 +17,9 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.neverandy.moredyes.block.DyedShapes;
+import net.neverandy.moredyes.data.condition.WallsEnabledCondition;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.item.MDItem;
 import net.neverandy.moredyes.reference.ColorStrings;
@@ -343,12 +345,18 @@ public class ModRecipeProvider extends RecipeProvider
         }
         if (shapes.walls.length > 0)
         {
+            // Only loaded while walls are turned on, since the wall items don't exist otherwise.
             Block wall = shapes.walls[i];
-            ShapedRecipeBuilder.shapedRecipe(wall, 6).key('#', full).patternLine("###").patternLine("###")
-                    .addCriterion("has_block", hasItem(full)).build(out, id(name(wall)));
+            ConditionalRecipe.builder().addCondition(WallsEnabledCondition.INSTANCE)
+                    .addRecipe(ShapedRecipeBuilder.shapedRecipe(wall, 6).key('#', full).patternLine("###").patternLine("###")
+                            .addCriterion("has_block", hasItem(full))::build)
+                    .build(out, id(name(wall)));
             if (stone)
             {
-                stonecutting(full, wall, 1);
+                ConditionalRecipe.builder().addCondition(WallsEnabledCondition.INSTANCE)
+                        .addRecipe(c -> SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(full), wall, 1)
+                                .addCriterion("has_block", hasItem(full)).build(c, id("stonecutting/" + name(wall))))
+                        .build(out, id("stonecutting/" + name(wall)));
             }
         }
         if (shapes.type.equals("quartz"))

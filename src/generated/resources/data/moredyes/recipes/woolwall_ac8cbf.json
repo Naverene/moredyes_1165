@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:wool_ac8cbf"
+          }
+        },
+        "result": {
+          "item": "moredyes:woolwall_ac8cbf",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

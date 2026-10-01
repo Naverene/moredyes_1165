@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:polisheddiorite_deb233"
+          }
+        },
+        "result": {
+          "item": "moredyes:polisheddioritewall_deb233",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

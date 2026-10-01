@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:redstone_592626"
+          }
+        },
+        "result": {
+          "item": "moredyes:redstonewall_592626",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

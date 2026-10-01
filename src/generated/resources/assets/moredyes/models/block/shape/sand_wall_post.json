@@ -1,0 +1,6 @@
+{
+  "parent": "moredyes:block/tinted/template_wall_post",
+  "textures": {
+    "wall": "moredyes:block/tinted/sand"
+  }
+}

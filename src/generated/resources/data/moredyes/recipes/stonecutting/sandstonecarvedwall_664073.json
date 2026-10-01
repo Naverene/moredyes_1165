@@ -1,0 +1,20 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "moredyes:sandstonecarved_664073"
+        },
+        "result": "moredyes:sandstonecarvedwall_664073",
+        "count": 1
+      }
+    }
+  ]
+}

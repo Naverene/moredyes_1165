@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "moredyes:block/shape/glowstone_slab_top"
+    },
+    "type=bottom": {
+      "model": "moredyes:block/shape/glowstone_slab"
+    },
+    "type=double": {
+      "model": "moredyes:block/shape/glowstone_double"
+    }
+  }
+}

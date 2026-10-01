@@ -1,0 +1,20 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "moredyes:polishedgranite_9f6679"
+        },
+        "result": "moredyes:polishedgranitewall_9f6679",
+        "count": 1
+      }
+    }
+  ]
+}

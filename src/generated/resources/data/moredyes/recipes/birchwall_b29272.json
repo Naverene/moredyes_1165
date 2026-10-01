@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:birchplanks_b29272"
+          }
+        },
+        "result": {
+          "item": "moredyes:birchwall_b29272",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

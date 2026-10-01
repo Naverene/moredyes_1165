@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "moredyes:ice_996666"
+    }
+  },
+  "result": {
+    "item": "moredyes:packedice_996666"
+  }
+}

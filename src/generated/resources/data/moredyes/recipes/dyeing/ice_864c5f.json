@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:ice"
+    },
+    "D": {
+      "item": "moredyes:864c5f_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:ice_864c5f",
+    "count": 8
+  }
+}

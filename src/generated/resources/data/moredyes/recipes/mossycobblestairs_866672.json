@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:mossycobble_866672"
+    }
+  },
+  "result": {
+    "item": "moredyes:mossycobblestairs_866672",
+    "count": 4
+  }
+}

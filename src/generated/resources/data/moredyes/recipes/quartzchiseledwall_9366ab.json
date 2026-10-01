@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:quartzchiseled_9366ab"
+          }
+        },
+        "result": {
+          "item": "moredyes:quartzchiseledwall_9366ab",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

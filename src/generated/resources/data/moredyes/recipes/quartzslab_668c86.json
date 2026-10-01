@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:quartz_668c86"
+    }
+  },
+  "result": {
+    "item": "moredyes:quartzslab_668c86",
+    "count": 6
+  }
+}

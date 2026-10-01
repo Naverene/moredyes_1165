@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:glowstone_b3ccec"
+    }
+  },
+  "result": {
+    "item": "moredyes:glowstonestairs_b3ccec",
+    "count": 4
+  }
+}

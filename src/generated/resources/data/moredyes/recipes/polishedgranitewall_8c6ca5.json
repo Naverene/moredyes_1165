@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:polishedgranite_8c6ca5"
+          }
+        },
+        "result": {
+          "item": "moredyes:polishedgranitewall_8c6ca5",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

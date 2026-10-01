@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:darkoakplanks_4c7319"
+          }
+        },
+        "result": {
+          "item": "moredyes:darkoakwall_4c7319",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

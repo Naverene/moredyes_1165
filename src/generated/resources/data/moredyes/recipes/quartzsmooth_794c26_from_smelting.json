@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "moredyes:quartz_794c26"
+  },
+  "result": "moredyes:quartzsmooth_794c26",
+  "experience": 0.1,
+  "cookingtime": 200
+}

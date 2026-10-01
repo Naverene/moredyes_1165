@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:plank_597392"
+    }
+  },
+  "result": {
+    "item": "moredyes:oakstairs_597392",
+    "count": 4
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moredyes:endstone_aca526"
+  },
+  "result": "moredyes:endstoneslab_aca526",
+  "count": 2
+}

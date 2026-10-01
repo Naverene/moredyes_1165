@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moredyes:granite_9f7f9f"
+  },
+  "result": "moredyes:granitestairs_9f7f9f",
+  "count": 1
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "moredyes:block/tinted/template_wall_side",
+  "textures": {
+    "wall": "moredyes:block/tinted/oak_planks"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "moredyes:quartzsmooth_8c8026"
+        },
+        "result": "moredyes:quartzsmoothwall_8c8026",
+        "count": 1
+      }
+    }
+  ]
+}

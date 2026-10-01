@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "moredyes:diorite_333333"
+    }
+  },
+  "result": {
+    "item": "moredyes:polisheddiorite_333333",
+    "count": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:concrete_666533"
+    }
+  },
+  "result": {
+    "item": "moredyes:concretestairs_666533",
+    "count": 4
+  }
+}

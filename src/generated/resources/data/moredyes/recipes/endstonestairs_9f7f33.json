@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:endstone_9f7f33"
+    }
+  },
+  "result": {
+    "item": "moredyes:endstonestairs_9f7f33",
+    "count": 4
+  }
+}

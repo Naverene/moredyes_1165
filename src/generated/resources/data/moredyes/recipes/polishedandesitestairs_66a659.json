@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:polishedandesite_66a659"
+    }
+  },
+  "result": {
+    "item": "moredyes:polishedandesitestairs_66a659",
+    "count": 4
+  }
+}

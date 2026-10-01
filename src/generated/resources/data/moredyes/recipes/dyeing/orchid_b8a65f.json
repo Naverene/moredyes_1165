@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:blue_orchid"
+    },
+    "D": {
+      "item": "moredyes:b8a65f_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:orchid_b8a65f",
+    "count": 8
+  }
+}
