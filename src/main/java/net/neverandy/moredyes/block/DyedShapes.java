@@ -84,7 +84,9 @@ public final class DyedShapes
             stairs[i] = add(type + "stairs_" + color, new StairsBlock(block::getDefaultState, properties));
             if (walls.length > 0)
             {
-                walls[i] = add(type + "wall_" + color, new WallBlock(properties));
+                // Not solid, so the game skips caching six face-occlusion shapes for each of a wall's 324 states.
+                // That cache is most of what walls cost in memory, and walls rarely hide a neighbor's face anyway.
+                walls[i] = add(type + "wall_" + color, new DyedWallBlock(AbstractBlock.Properties.from(block).notSolid()));
             }
         }
     }

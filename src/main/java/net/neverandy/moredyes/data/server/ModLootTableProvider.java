@@ -20,6 +20,7 @@ import net.minecraft.block.TallFlowerBlock;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.neverandy.moredyes.block.BlockPistonHead;
 import net.neverandy.moredyes.block.DyedShapes;
+import net.neverandy.moredyes.block.DyedWallBlock;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.reference.ColorStrings;
 import net.neverandy.moredyes.world.DyeTrees;
@@ -92,9 +93,9 @@ public class ModLootTableProvider extends LootTableProvider
         @Override
         protected Iterable<Block> getKnownBlocks()
         {
-            // Piston heads drop nothing, like the vanilla head, so they have no loot table.
+            // Piston heads drop nothing, like the vanilla head, and walls drop themselves in code (DyedWallBlock).
             return MDBlock.BLOCKS.getEntries().stream().map(RegistryObject::get)
-                    .filter(block -> !(block instanceof BlockPistonHead)).collect(Collectors.toList());
+                    .filter(block -> !(block instanceof BlockPistonHead) && !(block instanceof DyedWallBlock)).collect(Collectors.toList());
         }
     }
 }
