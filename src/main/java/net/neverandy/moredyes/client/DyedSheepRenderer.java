@@ -48,7 +48,7 @@ public class DyedSheepRenderer extends SheepRenderer
             {
                 return;
             }
-            int rgb = Integer.parseInt(ColorStrings.ALL[color], 16);
+            int rgb = ColorHandlers.vivid(Integer.parseInt(ColorStrings.ALL[color], 16));
             renderCopyCutoutModel(getEntityModel(), woolModel, TEXTURE, matrix, buffer, light, sheep, limbSwing, limbSwingAmount,
                     ageInTicks, netHeadYaw, headPitch, partialTicks,
                     (rgb >> 16 & 255) / 255.0F, (rgb >> 8 & 255) / 255.0F, (rgb & 255) / 255.0F);
