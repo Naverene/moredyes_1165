@@ -1,0 +1,16 @@
+{
+  "Group": "Naverene",
+  "Name": "MoreDyes",
+  "Version": "0.1.0",
+  "Description": "118 extra dye colors. Prototype: tinted stone.",
+  "Authors": [
+    {
+      "Name": "Naverene"
+    }
+  ],
+  "Website": "https://github.com/Naverene/moredyes_hytale",
+  "ServerVersion": "*",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "DisabledByDefault": false
+}

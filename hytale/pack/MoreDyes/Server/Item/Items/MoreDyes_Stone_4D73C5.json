@@ -1,0 +1,41 @@
+{
+  "TranslationProperties": {
+    "Name": "server.MoreDyes_Stone_4D73C5.name"
+  },
+  "MaxStack": 100,
+  "Icon": "Icons/ItemsGenerated/MoreDyes_Stone_4D73C5.png",
+  "Categories": [
+    "Blocks.Rocks"
+  ],
+  "PlayerAnimationsId": "Block",
+  "Set": "Rock_Stone",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Group": "Stone",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Rocks",
+        "ItemId": "MoreDyes_Stone_4D73C5"
+      }
+    },
+    "BlockParticleSetId": "Stone",
+    "Textures": [
+      {
+        "All": "BlockTextures/MoreDyes_Stone.png"
+      }
+    ],
+    "Tint": [
+      "#4d73c5"
+    ],
+    "ParticleColor": "#4d73c5",
+    "BlockSoundSetId": "Stone",
+    "BlockBreakingDecalId": "Breaking_Decals_Rock"
+  },
+  "ResourceTypes": [
+    {
+      "Id": "Rock"
+    }
+  ]
+}
