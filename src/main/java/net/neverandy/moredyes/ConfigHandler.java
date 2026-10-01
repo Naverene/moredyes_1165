@@ -19,6 +19,7 @@ public class ConfigHandler
     public static ForgeConfigSpec.BooleanValue worldGenTree;
     public static ForgeConfigSpec.BooleanValue worldGenFlower;
     public static ForgeConfigSpec.DoubleValue sheepSpawnChance;
+    public static ForgeConfigSpec.BooleanValue wallBlocks;
 
     static
     {
@@ -26,6 +27,10 @@ public class ConfigHandler
         ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
 
         worldGen(SERVER_BUILDER, CLIENT_BUILDER);
+        // Read when blocks are registered, so it is in the file loaded at startup (moredyes-client.toml) on both sides.
+        wallBlocks = CLIENT_BUILDER.comment("Add dyed walls. They take a lot of memory; turn this off to save it.",
+                "A server and its players must use the same setting, and worlds built with walls lose them when it is off.")
+                .define("wall_blocks", true);
 
         SERVER_CONFIG = SERVER_BUILDER.build();
         CLIENT_CONFIG = CLIENT_BUILDER.build();

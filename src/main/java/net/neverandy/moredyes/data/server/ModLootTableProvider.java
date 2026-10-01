@@ -15,7 +15,11 @@ import net.minecraft.loot.LootTableManager;
 import net.minecraft.loot.ValidationTracker;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.TallFlowerBlock;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.neverandy.moredyes.block.BlockPistonHead;
+import net.neverandy.moredyes.block.DyedShapes;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.reference.ColorStrings;
 import net.neverandy.moredyes.world.DyeTrees;
@@ -67,6 +71,16 @@ public class ModLootTableProvider extends LootTableProvider
                 registerLootTable(MDBlock.glassPaneArray[i], BlockLootTables::onlyWithSilkTouch);
                 registerLootTable(MDBlock.bookshelfArray[i], shelf -> droppingWithSilkTouchOrRandomly(shelf, Items.BOOK, ConstantRange.of(3)));
                 registerLootTable(MDBlock.glassFoggyPaneArray[i], BlockLootTables::onlyWithSilkTouch);
+                registerLootTable(MDBlock.iceArray[i], BlockLootTables::onlyWithSilkTouch);
+                registerLootTable(MDBlock.packedIceArray[i], BlockLootTables::onlyWithSilkTouch);
+                for (TallFlowerBlock[] flowers : MDBlock.tallFlowerArrays)
+                {
+                    registerLootTable(flowers[i], flower -> droppingWhen(flower, TallFlowerBlock.HALF, DoubleBlockHalf.LOWER));
+                }
+                for (DyedShapes shapes : DyedShapes.ALL)
+                {
+                    registerLootTable(shapes.slabs[i], BlockLootTables::droppingSlab);
+                }
                 for (String wood : DyeTrees.WOODS)
                 {
                     Block sapling = DyeTrees.saplings(wood)[i];

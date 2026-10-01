@@ -2,6 +2,12 @@ package net.neverandy.moredyes.block;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FallingBlock;
+import net.minecraft.block.IceBlock;
+import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.TallFlowerBlock;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -161,6 +167,34 @@ public class MDBlock
     public static BlockGlassPane[] glassFoggyPaneArray = new BlockGlassPane[totalColorCount];
     public static BlockBookshelf[] bookshelfArray = new BlockBookshelf[totalColorCount];
     public static BlockChest[] chestArray = new BlockChest[totalColorCount];
+
+    // Full blocks from the sheet's second batch; each copies its vanilla block's properties.
+    public static Block[] graniteArray = new Block[totalColorCount];
+    public static Block[] polishedAndesiteArray = new Block[totalColorCount];
+    public static Block[] polishedDioriteArray = new Block[totalColorCount];
+    public static Block[] polishedGraniteArray = new Block[totalColorCount];
+    public static Block[] endstoneArray = new Block[totalColorCount];
+    public static Block[] mossyCobbleArray = new Block[totalColorCount];
+    public static Block[] mossyStonebrickArray = new Block[totalColorCount];
+    public static Block[] quartzBricksArray = new Block[totalColorCount];
+    public static Block[] quartzChiseledArray = new Block[totalColorCount];
+    public static RotatedPillarBlock[] quartzPillarArray = new RotatedPillarBlock[totalColorCount];
+    public static Block[] quartzSmoothArray = new Block[totalColorCount];
+    public static RotatedPillarBlock[] boneBlockArray = new RotatedPillarBlock[totalColorCount];
+    public static Block[] gravelArray = new Block[totalColorCount];
+    public static Block[] iceArray = new Block[totalColorCount];
+    public static Block[] packedIceArray = new Block[totalColorCount];
+    public static Block[] snowArray = new Block[totalColorCount];
+
+    /** Small flowers, as {registry type, vanilla flower}; each array in smallFlowerArrays matches one row. */
+    public static final String[][] SMALL_FLOWERS = {
+        {"allium", "allium"}, {"azurebluet", "azure_bluet"}, {"cornflower", "cornflower"}, {"dandelion", "dandelion"},
+        {"lilyofthevalley", "lily_of_the_valley"}, {"orchid", "blue_orchid"}, {"oxeyedaisy", "oxeye_daisy"}, {"poppy", "poppy"}};
+    public static final FlowerBlock[][] smallFlowerArrays = new FlowerBlock[SMALL_FLOWERS.length][totalColorCount];
+    /** Two-block-tall flowers, as {registry type, vanilla flower}. */
+    public static final String[][] TALL_FLOWERS = {{"lilac", "lilac"}, {"peony", "peony"}, {"rosebush", "rose_bush"}};
+    public static final TallFlowerBlock[][] tallFlowerArrays = new TallFlowerBlock[TALL_FLOWERS.length][totalColorCount];
+
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 
@@ -248,6 +282,122 @@ public class MDBlock
 
         //registerLadder();
         registerPistons();
+
+        registerMoreBlocks();
+        registerFlowers();
+        registerShapes();
+    }
+
+    private static void registerMoreBlocks()
+    {
+        registerColors("granite", graniteArray, () -> new Block(AbstractBlock.Properties.from(Blocks.GRANITE)));
+        registerColors("polishedandesite", polishedAndesiteArray, () -> new Block(AbstractBlock.Properties.from(Blocks.POLISHED_ANDESITE)));
+        registerColors("polisheddiorite", polishedDioriteArray, () -> new Block(AbstractBlock.Properties.from(Blocks.POLISHED_DIORITE)));
+        registerColors("polishedgranite", polishedGraniteArray, () -> new Block(AbstractBlock.Properties.from(Blocks.POLISHED_GRANITE)));
+        registerColors("endstone", endstoneArray, () -> new Block(AbstractBlock.Properties.from(Blocks.END_STONE)));
+        registerColors("mossycobble", mossyCobbleArray, () -> new Block(AbstractBlock.Properties.from(Blocks.MOSSY_COBBLESTONE)));
+        registerColors("mossystonebrick", mossyStonebrickArray, () -> new Block(AbstractBlock.Properties.from(Blocks.MOSSY_STONE_BRICKS)));
+        registerColors("quartzbricks", quartzBricksArray, () -> new Block(AbstractBlock.Properties.from(Blocks.QUARTZ_BRICKS)));
+        registerColors("quartzchiseled", quartzChiseledArray, () -> new Block(AbstractBlock.Properties.from(Blocks.CHISELED_QUARTZ_BLOCK)));
+        registerColors("quartzpillar", quartzPillarArray, () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.QUARTZ_PILLAR)), MoreDyes.tabBlocks);
+        registerColors("quartzsmooth", quartzSmoothArray, () -> new Block(AbstractBlock.Properties.from(Blocks.SMOOTH_QUARTZ)));
+        registerColors("boneblock", boneBlockArray, () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.BONE_BLOCK)), MoreDyes.tabBlocks);
+        registerColors("gravel", gravelArray, () -> new FallingBlock(AbstractBlock.Properties.from(Blocks.GRAVEL)));
+        registerColors("ice", iceArray, () -> new IceBlock(AbstractBlock.Properties.from(Blocks.ICE)));
+        registerColors("packedice", packedIceArray, () -> new Block(AbstractBlock.Properties.from(Blocks.PACKED_ICE)));
+        registerColors("snow", snowArray, () -> new Block(AbstractBlock.Properties.from(Blocks.SNOW_BLOCK)));
+    }
+
+    private static void registerFlowers()
+    {
+        for (int f = 0; f < SMALL_FLOWERS.length; f++)
+        {
+            registerColors(SMALL_FLOWERS[f][0], smallFlowerArrays[f], () -> new FlowerBlock(Reference.BLOCK_INFO_TULIP), MoreDyes.tabPlants);
+        }
+        for (int f = 0; f < TALL_FLOWERS.length; f++)
+        {
+            registerColors(TALL_FLOWERS[f][0], tallFlowerArrays[f], () -> new TallFlowerBlock(AbstractBlock.Properties.from(Blocks.LILAC)), MoreDyes.tabPlants);
+        }
+    }
+
+    /** Dyed slabs, stairs and walls; the textures are the ones the full block's model uses. */
+    private static void registerShapes()
+    {
+        DyedShapes.of("stone", "Stone", stoneArray, "stone", "stone");
+        DyedShapes.of("cobble", "Cobblestone", cobbleArray, "cobble", "cobblestone");
+        DyedShapes.of("mossycobble", "Mossy Cobblestone", mossyCobbleArray, "mossy_cobble", "mossy_cobblestone");
+        DyedShapes.of("stonebrick", "Stone Brick", stonebrickArray, "stonebrick", "stone_bricks");
+        DyedShapes.of("stonebrickcracked", "Cracked Stone Brick", stonebrickCrackedArray, "stonebrick_cracked", "cracked_stone_bricks");
+        DyedShapes.of("stonebrickcarved", "Chiseled Stone Brick", stonebrickCarvedArray, "stonebrick_carved", "chiseled_stone_bricks");
+        DyedShapes.of("mossystonebrick", "Mossy Stone Brick", mossyStonebrickArray, "mossy_stonebrick", "mossy_stone_bricks");
+        DyedShapes.of("brick", "Brick", brickArray, "brick", "bricks");
+        DyedShapes.of("clay", "Clay", clayArray, "clay", "clay");
+        DyedShapes.of("coal", "Coal", coalArray, "coal", "coal_block");
+        DyedShapes.of("lapis", "Lapis Lazuli", lapisArray, "lapis", "lapis_block");
+        DyedShapes.of("redstone", "Redstone", redstoneArray, "redstone", "redstone_block");
+        DyedShapes.of("quartz", "Quartz", quartzArray, "quartz", "quartz_block");
+        DyedShapes.of("quartzbricks", "Quartz Brick", quartzBricksArray, "quartz_bricks", "quartz_bricks");
+        DyedShapes.of("quartzchiseled", "Chiseled Quartz", quartzChiseledArray, "quartz_chiseled", "quartz_chiseled_top", "quartz_chiseled_top",
+                DyedShapes.Layer.SOLID, "chiseled_quartz_block");
+        DyedShapes.of("quartzpillar", "Quartz Pillar", quartzPillarArray, "quartz_pillar", "quartz_pillar_top", "quartz_pillar_top",
+                DyedShapes.Layer.SOLID, "quartz_pillar");
+        DyedShapes.of("quartzsmooth", "Smooth Quartz", quartzSmoothArray, "quartz_smooth", "smooth_quartz");
+        DyedShapes.of("obsidian", "Obsidian", obsidianArray, "obsidian", "obsidian");
+        DyedShapes.of("glowstone", "Glowstone", glowstoneArray, "glowstone", "glowstone");
+        DyedShapes.of("soulsand", "Soul Sand", soulsandArray, "soulsand", "soul_sand");
+        DyedShapes.of("sand", "Sand", sandArray, "sand", "sand");
+        DyedShapes.of("sandstone", "Sandstone", sandstoneArray, "sandstone_side", "sandstone_top", "sandstone_bottom",
+                DyedShapes.Layer.SOLID, "sandstone");
+        DyedShapes.of("sandstonecarved", "Chiseled Sandstone", sandstoneCarvedArray, "sandstone_carved", "sandstone_top", "sandstone_top",
+                DyedShapes.Layer.SOLID, "chiseled_sandstone");
+        DyedShapes.of("sandstonesmooth", "Cut Sandstone", sandstoneSmoothArray, "sandstone_smooth", "sandstone_top", "sandstone_top",
+                DyedShapes.Layer.SOLID, "cut_sandstone");
+        DyedShapes.of("andesite", "Andesite", andesiteArray, "andesite", "andesite");
+        DyedShapes.of("diorite", "Diorite", dioriteArray, "diorite", "diorite");
+        DyedShapes.of("granite", "Granite", graniteArray, "granite", "granite");
+        DyedShapes.of("polishedandesite", "Polished Andesite", polishedAndesiteArray, "polished_andesite", "polished_andesite");
+        DyedShapes.of("polisheddiorite", "Polished Diorite", polishedDioriteArray, "polished_diorite", "polished_diorite");
+        DyedShapes.of("polishedgranite", "Polished Granite", polishedGraniteArray, "polished_granite", "polished_granite");
+        DyedShapes.of("endstone", "End Stone", endstoneArray, "endstone", "end_stone");
+        DyedShapes.of("ice", "Ice", iceArray, "ice", "ice", "ice", DyedShapes.Layer.TRANSLUCENT, "ice");
+        DyedShapes.of("packedice", "Packed Ice", packedIceArray, "packed_ice", "packed_ice");
+        DyedShapes.of("snow", "Snow", snowArray, "snow", "snow_block");
+        DyedShapes.of("boneblock", "Bone Block", boneBlockArray, "bone_block_side", "bone_block_top", "bone_block_top",
+                DyedShapes.Layer.SOLID, "bone_block");
+        DyedShapes.of("glass", "Glass", glassArray, "glass", "glass", "glass", DyedShapes.Layer.CUTOUT, "glass");
+        DyedShapes.of("glassfoggy", "Foggy Glass", glassFoggyArray, "glass_foggy", "glass_foggy", "glass_foggy",
+                DyedShapes.Layer.TRANSLUCENT, "glass");
+        DyedShapes.of("wool", "Wool", woolArray, "wool", "white_wool");
+        DyedShapes.of("concrete", "Concrete", concreteArray, "concrete", "white_concrete");
+        DyedShapes.of("concretepowder", "Concrete Powder", concretePowderArray, "concrete_powder", "white_concrete_powder");
+        DyedShapes.of("oak", "Oak", oakPlankArray, "oak_planks", "oak_planks");
+        DyedShapes.of("birch", "Birch", birchPlankArray, "birch_planks", "birch_planks");
+        DyedShapes.of("spruce", "Spruce", sprucePlankArray, "spruce_planks", "spruce_planks");
+        DyedShapes.of("jungle", "Jungle", junglePlankArray, "jungle_planks", "jungle_planks");
+        DyedShapes.of("acacia", "Acacia", acaciaPlankArray, "acacia_planks", "acacia_planks");
+        DyedShapes.of("darkoak", "Dark Oak", darkOakPlankArray, "dark_oak_planks", "dark_oak_planks");
+        for (DyedShapes shapes : DyedShapes.ALL)
+        {
+            shapes.register();
+        }
+    }
+
+    private static void registerColors(String type, Block[] array, Supplier<Block> factory)
+    {
+        registerColors(type, array, factory, MoreDyes.tabBlocks);
+    }
+
+    /** Makes one block of a type per color, named "<type>_<color>", with an item in the given tab. */
+    private static <B extends Block> void registerColors(String type, B[] array, Supplier<B> factory, ItemGroup tab)
+    {
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            final B block = factory.get();
+            array[i] = block;
+            String name = type + "_" + ColorStrings.ALL[i];
+            BLOCKS.register(name, () -> block);
+            ITEMS.register(name, () -> new BlockItem(block, new Item.Properties().group(tab)));
+        }
     }
 
     private static void registerHardenedClay()
