@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:soulsand_4c6573"
+    }
+  },
+  "result": {
+    "item": "moredyes:soulsandslab_4c6573",
+    "count": 6
+  }
+}

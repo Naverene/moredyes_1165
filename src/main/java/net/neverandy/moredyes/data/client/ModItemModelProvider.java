@@ -1,6 +1,10 @@
 package net.neverandy.moredyes.data.client;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.block.TallFlowerBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -13,6 +17,7 @@ import net.neverandy.moredyes.block.BlockGlassPane;
 import net.neverandy.moredyes.block.BlockPiston;
 import net.neverandy.moredyes.block.BlockPistonHead;
 import net.neverandy.moredyes.block.BlockSapling;
+import net.neverandy.moredyes.block.DyedShapes;
 import net.neverandy.moredyes.block.FlowerBlock;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.item.MDItem;
@@ -33,9 +38,9 @@ public class ModItemModelProvider extends ItemModelProvider
         for (RegistryObject<Block> entry : MDBlock.BLOCKS.getEntries())
         {
             Block block = entry.get();
-            if (block instanceof BlockPistonHead)
+            if (block instanceof BlockPistonHead || block instanceof SlabBlock || block instanceof StairsBlock || block instanceof WallBlock)
             {
-                // Piston heads have no item.
+                // Piston heads have no item; slabs, stairs and walls are below.
                 continue;
             }
             String name = entry.getId().getPath();
@@ -70,11 +75,31 @@ public class ModItemModelProvider extends ItemModelProvider
             }
             else if (block instanceof FlowerBlock)
             {
-                layered(name, "tulip_petals", "tulip_stem");
+                // "tulip", "allium", "lilyofthevalley"...
+                layered(name, type + "_petals", type + "_stem");
+            }
+            else if (block instanceof TallFlowerBlock)
+            {
+                // Like vanilla, the item is the top half.
+                layered(name, type + "_top_petals", type + "_top_stem");
             }
             else
             {
                 getBuilder(name).parent(new ModelFile.UncheckedModelFile(modLoc("block/" + name)));
+            }
+        }
+
+        for (DyedShapes shapes : DyedShapes.ALL)
+        {
+            String base = "block/shape/" + shapes.type;
+            for (int i = 0; i < shapes.slabs.length; i++)
+            {
+                withExistingParent(shapes.slabs[i].getRegistryName().getPath(), modLoc(base + "_slab"));
+                withExistingParent(shapes.stairs[i].getRegistryName().getPath(), modLoc(base + "_stairs"));
+            }
+            for (WallBlock wall : shapes.walls)
+            {
+                withExistingParent(wall.getRegistryName().getPath(), modLoc(base + "_wall_inventory"));
             }
         }
 

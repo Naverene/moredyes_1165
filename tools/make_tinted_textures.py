@@ -116,7 +116,37 @@ SOURCES = {
     'piston_side': ('block/piston_side', GREY),
     'piston_bottom': ('block/piston_bottom', GREY),
     'piston_inner': ('block/piston_inner', GREY),
+    'granite': ('block/granite', GREY),
+    'polished_andesite': ('block/polished_andesite', GREY),
+    'polished_diorite': ('block/polished_diorite', GREY),
+    'polished_granite': ('block/polished_granite', GREY),
+    'endstone': ('block/end_stone', GREY),
+    'mossy_cobble': ('block/mossy_cobblestone', GREY),
+    'mossy_stonebrick': ('block/mossy_stone_bricks', GREY),
+    'quartz_bricks': ('block/quartz_bricks', GREY),
+    'quartz_chiseled': ('block/chiseled_quartz_block', GREY),
+    'quartz_chiseled_top': ('block/chiseled_quartz_block_top', GREY),
+    'quartz_pillar': ('block/quartz_pillar', GREY),
+    'quartz_pillar_top': ('block/quartz_pillar_top', GREY),
+    'quartz_smooth': ('block/quartz_block_bottom', GREY),
+    'bone_block_side': ('block/bone_block_side', GREY),
+    'bone_block_top': ('block/bone_block_top', GREY),
+    'gravel': ('block/gravel', GREY),
+    'ice': ('block/ice', GREY),
+    'packed_ice': ('block/packed_ice', GREY),
+    'snow': ('block/snow', GREY),
 }
+# Dyed flowers: the petals take the dye color and the green stem and leaves keep theirs, like the tulip.
+FLOWERS = {'allium': 'allium', 'azurebluet': 'azure_bluet', 'cornflower': 'cornflower', 'dandelion': 'dandelion',
+           'lilyofthevalley': 'lily_of_the_valley', 'orchid': 'blue_orchid', 'oxeyedaisy': 'oxeye_daisy', 'poppy': 'poppy'}
+TALL_FLOWERS = {'lilac': 'lilac', 'peony': 'peony', 'rosebush': 'rose_bush'}
+for name, vanilla in FLOWERS.items():
+    SOURCES[name + '_petals'] = ('block/' + vanilla, GREY_IF_NOT_GREEN)
+    SOURCES[name + '_stem'] = ('block/' + vanilla, KEEP_IF_GREEN)
+for name, vanilla in TALL_FLOWERS.items():
+    for half in ('bottom', 'top'):
+        SOURCES['%s_%s_petals' % (name, half)] = ('block/%s_%s' % (vanilla, half), GREY_IF_NOT_GREEN)
+        SOURCES['%s_%s_stem' % (name, half)] = ('block/%s_%s' % (vanilla, half), KEEP_IF_GREEN)
 for w in WOODS:
     SOURCES[w + '_planks'] = ('block/%s_planks' % w, GREY)
     SOURCES[w + '_log_top'] = ('block/%s_log_top' % w, GREY)

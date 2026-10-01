@@ -1,0 +1,8 @@
+{
+  "parent": "moredyes:block/tinted/slab",
+  "textures": {
+    "side": "moredyes:block/tinted/quartz_chiseled",
+    "top": "moredyes:block/tinted/quartz_chiseled_top",
+    "bottom": "moredyes:block/tinted/quartz_chiseled_top"
+  }
+}

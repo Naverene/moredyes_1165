@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:poppy"
+    },
+    "D": {
+      "item": "moredyes:735f73_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:poppy_735f73",
+    "count": 8
+  }
+}

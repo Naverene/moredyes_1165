@@ -1,0 +1,8 @@
+{
+  "parent": "moredyes:block/tinted/stairs",
+  "textures": {
+    "side": "moredyes:block/tinted/stonebrick",
+    "top": "moredyes:block/tinted/stonebrick",
+    "bottom": "moredyes:block/tinted/stonebrick"
+  }
+}

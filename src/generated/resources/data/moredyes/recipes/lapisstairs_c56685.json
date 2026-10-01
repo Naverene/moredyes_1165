@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:lapis_c56685"
+    }
+  },
+  "result": {
+    "item": "moredyes:lapisstairs_c56685",
+    "count": 4
+  }
+}

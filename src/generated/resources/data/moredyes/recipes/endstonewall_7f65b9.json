@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:endstone_7f65b9"
+          }
+        },
+        "result": {
+          "item": "moredyes:endstonewall_7f65b9",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

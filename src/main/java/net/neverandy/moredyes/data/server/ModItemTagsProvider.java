@@ -27,6 +27,12 @@ public class ModItemTagsProvider extends ItemTagsProvider
         copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
         copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
         copy(BlockTags.WOOL, ItemTags.WOOL);
+        copy(BlockTags.TALL_FLOWERS, ItemTags.TALL_FLOWERS);
+        copy(BlockTags.SLABS, ItemTags.SLABS);
+        copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
+        copy(BlockTags.STAIRS, ItemTags.STAIRS);
+        copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
+        copy(BlockTags.WALLS, ItemTags.WALLS);
         copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
         copy(Tags.Blocks.GLASS_PANES, Tags.Items.GLASS_PANES);
     }

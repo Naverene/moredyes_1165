@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:acaciaplanks_bf9fd9"
+    }
+  },
+  "result": {
+    "item": "moredyes:acaciastairs_bf9fd9",
+    "count": 4
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "moredyes:block/boneblock_99a6d9_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "moredyes:block/boneblock_99a6d9"
+    },
+    "axis=z": {
+      "model": "moredyes:block/boneblock_99a6d9_horizontal",
+      "x": 90
+    }
+  }
+}

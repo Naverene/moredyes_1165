@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:sandstone_b29272"
+    }
+  },
+  "result": {
+    "item": "moredyes:sandstonestairs_b29272",
+    "count": 4
+  }
+}

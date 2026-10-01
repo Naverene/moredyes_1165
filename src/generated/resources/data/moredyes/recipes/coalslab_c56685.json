@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:coal_c56685"
+    }
+  },
+  "result": {
+    "item": "moredyes:coalslab_c56685",
+    "count": 6
+  }
+}

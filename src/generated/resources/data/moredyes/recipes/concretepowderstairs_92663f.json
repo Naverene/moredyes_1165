@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:concretepowder_92663f"
+    }
+  },
+  "result": {
+    "item": "moredyes:concretepowderstairs_92663f",
+    "count": 4
+  }
+}

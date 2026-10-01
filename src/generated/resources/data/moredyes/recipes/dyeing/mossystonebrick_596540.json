@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:mossy_stone_bricks"
+    },
+    "D": {
+      "item": "moredyes:596540_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:mossystonebrick_596540",
+    "count": 8
+  }
+}
