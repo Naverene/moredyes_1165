@@ -6,6 +6,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neverandy.moredyes.block.DyedShapes;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.reference.Reference;
 import net.neverandy.moredyes.world.DyeTrees;
@@ -36,6 +37,21 @@ public class ModBlockTagsProvider extends BlockTagsProvider
         getOrCreateBuilder(BlockTags.WOODEN_FENCES).add(concat(MDBlock.oakFenceArray, MDBlock.birchFenceArray, MDBlock.spruceFenceArray,
                 MDBlock.jungleFenceArray, MDBlock.acaciaFenceArray, MDBlock.darkOakFenceArray));
         getOrCreateBuilder(BlockTags.SMALL_FLOWERS).add(MDBlock.tulipArray);
+        getOrCreateBuilder(BlockTags.SMALL_FLOWERS).add(concat(MDBlock.smallFlowerArrays));
+        getOrCreateBuilder(BlockTags.TALL_FLOWERS).add(concat(MDBlock.tallFlowerArrays));
+        getOrCreateBuilder(BlockTags.ICE).add(concat(MDBlock.iceArray, MDBlock.packedIceArray));
+        for (DyedShapes shapes : DyedShapes.ALL)
+        {
+            // Wooden slabs and stairs are in the wooden tags, which are part of the plain ones.
+            boolean wood = shapes.full[0].getDefaultState().getMaterial() == net.minecraft.block.material.Material.WOOD;
+            getOrCreateBuilder(wood ? BlockTags.WOODEN_SLABS : BlockTags.SLABS).add(shapes.slabs);
+            getOrCreateBuilder(wood ? BlockTags.WOODEN_STAIRS : BlockTags.STAIRS).add(shapes.stairs);
+            // Optional, so the tag still loads when walls are turned off and these blocks don't exist.
+            for (Block wall : shapes.walls)
+            {
+                getOrCreateBuilder(BlockTags.WALLS).addOptional(wall.getRegistryName());
+            }
+        }
         getOrCreateBuilder(BlockTags.WOOL).add(MDBlock.woolArray);
         getOrCreateBuilder(Tags.Blocks.CHESTS_WOODEN).add(MDBlock.chestArray);
         getOrCreateBuilder(Tags.Blocks.GLASS_PANES).add(concat(MDBlock.glassPaneArray, MDBlock.glassFoggyPaneArray));

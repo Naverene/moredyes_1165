@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:jungleplanks_deb233"
+    }
+  },
+  "result": {
+    "item": "moredyes:junglestairs_deb233",
+    "count": 4
+  }
+}

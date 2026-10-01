@@ -1,0 +1,7 @@
+{
+  "parent": "moredyes:block/tinted/cube_column_horizontal",
+  "textures": {
+    "side": "moredyes:block/tinted/bone_block_side",
+    "end": "moredyes:block/tinted/bone_block_top"
+  }
+}

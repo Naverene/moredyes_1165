@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "moredyes:andesite_c56685"
+    }
+  },
+  "result": {
+    "item": "moredyes:polishedandesite_c56685",
+    "count": 4
+  }
+}

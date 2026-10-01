@@ -6,6 +6,10 @@ import net.minecraft.block.FenceBlock;
 import net.minecraft.block.PaneBlock;
 import net.minecraft.block.PistonBlock;
 import net.minecraft.block.PistonHeadBlock;
+import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.TallFlowerBlock;
+import net.minecraft.block.WallBlock;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.state.properties.PistonType;
 import net.minecraft.util.Direction;
 import net.minecraft.data.DataGenerator;
@@ -16,6 +20,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.neverandy.moredyes.MoreDyes;
+import net.neverandy.moredyes.block.DyedShapes;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.reference.ColorStrings;
 import net.neverandy.moredyes.reference.Reference;
@@ -63,6 +68,38 @@ public class ModBlockStateProvider extends BlockStateProvider
             cubeAll(MDBlock.concreteArray[i], "concrete");
             cubeAll(MDBlock.concretePowderArray[i], "concrete_powder");
 
+            cubeAll(MDBlock.graniteArray[i], "granite");
+            cubeAll(MDBlock.polishedAndesiteArray[i], "polished_andesite");
+            cubeAll(MDBlock.polishedDioriteArray[i], "polished_diorite");
+            cubeAll(MDBlock.polishedGraniteArray[i], "polished_granite");
+            cubeAll(MDBlock.endstoneArray[i], "endstone");
+            cubeAll(MDBlock.mossyCobbleArray[i], "mossy_cobble");
+            cubeAll(MDBlock.mossyStonebrickArray[i], "mossy_stonebrick");
+            cubeAll(MDBlock.quartzBricksArray[i], "quartz_bricks");
+            cubeAll(MDBlock.quartzSmoothArray[i], "quartz_smooth");
+            cubeAll(MDBlock.gravelArray[i], "gravel");
+            cubeAll(MDBlock.iceArray[i], "ice");
+            cubeAll(MDBlock.packedIceArray[i], "packed_ice");
+            cubeAll(MDBlock.snowArray[i], "snow");
+            Block chiseledQuartz = MDBlock.quartzChiseledArray[i];
+            simpleBlock(chiseledQuartz, tinted(chiseledQuartz, "cube_column")
+                    .texture("side", tex("quartz_chiseled"))
+                    .texture("end", tex("quartz_chiseled_top")));
+            pillar(MDBlock.quartzPillarArray[i], "quartz_pillar", "quartz_pillar_top");
+            pillar(MDBlock.boneBlockArray[i], "bone_block_side", "bone_block_top");
+            for (int f = 0; f < MDBlock.SMALL_FLOWERS.length; f++)
+            {
+                Block flower = MDBlock.smallFlowerArrays[f][i];
+                String type = MDBlock.SMALL_FLOWERS[f][0];
+                simpleBlock(flower, tinted(flower, "cross_layered")
+                        .texture("cross", tex(type + "_petals"))
+                        .texture("overlay", tex(type + "_stem")));
+            }
+            for (int f = 0; f < MDBlock.TALL_FLOWERS.length; f++)
+            {
+                tallFlower(MDBlock.tallFlowerArrays[f][i], MDBlock.TALL_FLOWERS[f][0]);
+            }
+
             sandstone(MDBlock.sandstoneArray[i], "sandstone_side");
             sandstone(MDBlock.sandstoneCarvedArray[i], "sandstone_carved");
             sandstone(MDBlock.sandstoneSmoothArray[i], "sandstone_smooth");
@@ -101,6 +138,67 @@ public class ModBlockStateProvider extends BlockStateProvider
             wood(i, "acacia", MDBlock.acaciaPlankArray, MDBlock.acaciaLogArray, MDBlock.acaciaLeafArray, MDBlock.acaciaSaplingArray, MDBlock.acaciaFenceArray);
             wood(i, "dark_oak", MDBlock.darkOakPlankArray, MDBlock.darkOakLogArray, MDBlock.darkOakLeafArray, MDBlock.darkOakSaplingArray, MDBlock.darkOakFenceArray);
         }
+        for (DyedShapes shapes : DyedShapes.ALL)
+        {
+            shapes(shapes);
+        }
+    }
+
+    /** One set of models per type, shared by every color of its slabs, stairs and walls. */
+    private void shapes(DyedShapes shapes)
+    {
+        String base = "block/shape/" + shapes.type;
+        ModelFile slab = shape(base + "_slab", "slab", shapes);
+        ModelFile slabTop = shape(base + "_slab_top", "slab_top", shapes);
+        ModelFile full = shape(base + "_double", "cube_bottom_top", shapes);
+        ModelFile stairs = shape(base + "_stairs", "stairs", shapes);
+        ModelFile inner = shape(base + "_stairs_inner", "inner_stairs", shapes);
+        ModelFile outer = shape(base + "_stairs_outer", "outer_stairs", shapes);
+        for (int i = 0; i < ColorStrings.ALL.length; i++)
+        {
+            slabBlock(shapes.slabs[i], slab, slabTop, full);
+            stairsBlock(shapes.stairs[i], stairs, inner, outer);
+        }
+        if (shapes.walls.length == 0)
+        {
+            return;
+        }
+        ModelFile post = models().withExistingParent(base + "_wall_post", modLoc("block/tinted/template_wall_post")).texture("wall", tex(shapes.side));
+        ModelFile side = models().withExistingParent(base + "_wall_side", modLoc("block/tinted/template_wall_side")).texture("wall", tex(shapes.side));
+        ModelFile tall = models().withExistingParent(base + "_wall_side_tall", modLoc("block/tinted/template_wall_side_tall")).texture("wall", tex(shapes.side));
+        models().withExistingParent(base + "_wall_inventory", modLoc("block/tinted/wall_inventory")).texture("wall", tex(shapes.side));
+        for (WallBlock wall : shapes.walls)
+        {
+            wallBlock(wall, post, side, tall);
+        }
+    }
+
+    private ModelFile shape(String name, String parent, DyedShapes shapes)
+    {
+        return models().withExistingParent(name, modLoc("block/tinted/" + parent))
+                .texture("side", tex(shapes.side))
+                .texture("top", tex(shapes.top))
+                .texture("bottom", tex(shapes.bottom));
+    }
+
+    private void pillar(RotatedPillarBlock block, String side, String end)
+    {
+        ModelFile vertical = tinted(block, "cube_column").texture("side", tex(side)).texture("end", tex(end));
+        ModelFile horizontal = models().withExistingParent(name(block) + "_horizontal", modLoc("block/tinted/cube_column_horizontal"))
+                .texture("side", tex(side)).texture("end", tex(end));
+        axisBlock(block, vertical, horizontal);
+    }
+
+    /** Like the vanilla tall flowers: each half is a cross of tinted petals over a stem in its own color. */
+    private void tallFlower(TallFlowerBlock flower, String type)
+    {
+        String name = name(flower);
+        ModelFile bottom = models().withExistingParent(name + "_bottom", modLoc("block/tinted/cross_layered"))
+                .texture("cross", tex(type + "_bottom_petals")).texture("overlay", tex(type + "_bottom_stem"));
+        ModelFile top = models().withExistingParent(name + "_top", modLoc("block/tinted/cross_layered"))
+                .texture("cross", tex(type + "_top_petals")).texture("overlay", tex(type + "_top_stem"));
+        getVariantBuilder(flower).forAllStates(state -> ConfiguredModel.builder()
+                .modelFile(state.get(TallFlowerBlock.HALF) == DoubleBlockHalf.LOWER ? bottom : top).build());
     }
 
     private void wood(int i, String wood, Block[] planks, Block[] logs, Block[] leaves, Block[] saplings, Block[] fences)

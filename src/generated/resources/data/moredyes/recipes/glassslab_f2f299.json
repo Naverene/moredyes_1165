@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:glass_f2f299"
+    }
+  },
+  "result": {
+    "item": "moredyes:glassslab_f2f299",
+    "count": 6
+  }
+}

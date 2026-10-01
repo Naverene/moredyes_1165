@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "moredyes:cobble_598cb9"
+          }
+        },
+        "result": {
+          "item": "moredyes:cobblewall_598cb9",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

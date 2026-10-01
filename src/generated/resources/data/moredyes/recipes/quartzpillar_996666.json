@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Q",
+    "Q"
+  ],
+  "key": {
+    "Q": {
+      "item": "moredyes:quartz_996666"
+    }
+  },
+  "result": {
+    "item": "moredyes:quartzpillar_996666",
+    "count": 2
+  }
+}

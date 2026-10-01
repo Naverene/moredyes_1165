@@ -9,12 +9,17 @@ import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.ShapelessRecipeBuilder;
+import net.minecraft.data.SingleItemRecipeBuilder;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.neverandy.moredyes.block.DyedShapes;
+import net.neverandy.moredyes.data.condition.WallsEnabledCondition;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.item.MDItem;
 import net.neverandy.moredyes.reference.ColorStrings;
@@ -274,7 +279,106 @@ public class ModRecipeProvider extends RecipeProvider
             panes(MDBlock.glassArray[i], MDBlock.glassPaneArray[i]);
             panes(MDBlock.glassFoggyArray[i], MDBlock.glassFoggyPaneArray[i]);
             dyeable(i, MDBlock.glassPaneArray[i], "glass_pane");
+
+            dyeable(i, MDBlock.graniteArray[i], "granite");
+            dyeable(i, MDBlock.polishedAndesiteArray[i], "polished_andesite");
+            dyeable(i, MDBlock.polishedDioriteArray[i], "polished_diorite");
+            dyeable(i, MDBlock.polishedGraniteArray[i], "polished_granite");
+            dyeable(i, MDBlock.endstoneArray[i], "end_stone");
+            dyeable(i, MDBlock.mossyCobbleArray[i], "mossy_cobblestone");
+            dyeable(i, MDBlock.mossyStonebrickArray[i], "mossy_stone_bricks");
+            dyeable(i, MDBlock.quartzBricksArray[i], "quartz_bricks");
+            dyeable(i, MDBlock.quartzChiseledArray[i], "chiseled_quartz_block");
+            dyeable(i, MDBlock.quartzPillarArray[i], "quartz_pillar");
+            dyeable(i, MDBlock.quartzSmoothArray[i], "smooth_quartz");
+            dyeable(i, MDBlock.boneBlockArray[i], "bone_block");
+            dyeable(i, MDBlock.gravelArray[i], "gravel");
+            dyeable(i, MDBlock.iceArray[i], "ice");
+            dyeable(i, MDBlock.packedIceArray[i], "packed_ice");
+            dyeable(i, MDBlock.snowArray[i], "snow_block");
+            square(MDBlock.andesiteArray[i], MDBlock.polishedAndesiteArray[i]);
+            square(MDBlock.dioriteArray[i], MDBlock.polishedDioriteArray[i]);
+            square(MDBlock.graniteArray[i], MDBlock.polishedGraniteArray[i]);
+            square(MDBlock.quartzArray[i], MDBlock.quartzBricksArray[i]);
+            smelt(MDBlock.quartzArray[i], MDBlock.quartzSmoothArray[i], 0.1F);
+            mossy(MDBlock.cobbleArray[i], MDBlock.mossyCobbleArray[i]);
+            mossy(MDBlock.stonebrickArray[i], MDBlock.mossyStonebrickArray[i]);
+            ShapedRecipeBuilder.shapedRecipe(MDBlock.quartzPillarArray[i], 2).key('Q', MDBlock.quartzArray[i]).patternLine("Q").patternLine("Q")
+                    .addCriterion("has_block", hasItem(MDBlock.quartzArray[i])).build(out, id(name(MDBlock.quartzPillarArray[i])));
+            ShapedRecipeBuilder.shapedRecipe(MDBlock.packedIceArray[i]).key('I', MDBlock.iceArray[i])
+                    .patternLine("III").patternLine("III").patternLine("III")
+                    .addCriterion("has_block", hasItem(MDBlock.iceArray[i])).build(out, id(name(MDBlock.packedIceArray[i])));
+            unpack(MDBlock.boneBlockArray[i], Items.BONE_MEAL);
+
+            // Dyed flowers are for decoration; they don't make dye, or eight flowers and a dye would make eight dyes.
+            for (int f = 0; f < MDBlock.SMALL_FLOWERS.length; f++)
+            {
+                dyeable(i, MDBlock.smallFlowerArrays[f][i], MDBlock.SMALL_FLOWERS[f][1]);
+            }
+            for (int f = 0; f < MDBlock.TALL_FLOWERS.length; f++)
+            {
+                dyeable(i, MDBlock.tallFlowerArrays[f][i], MDBlock.TALL_FLOWERS[f][1]);
+            }
+
+            for (DyedShapes shapes : DyedShapes.ALL)
+            {
+                shapes(i, shapes);
+            }
         }
+    }
+
+    /** The vanilla slab, stairs and wall recipes from the dyed full block, and the stonecutter for stone kinds. */
+    private void shapes(int i, DyedShapes shapes)
+    {
+        Block full = shapes.full[i];
+        Block slab = shapes.slabs[i];
+        Block stairs = shapes.stairs[i];
+        ShapedRecipeBuilder.shapedRecipe(slab, 6).key('#', full).patternLine("###")
+                .addCriterion("has_block", hasItem(full)).build(out, id(name(slab)));
+        ShapedRecipeBuilder.shapedRecipe(stairs, 4).key('#', full).patternLine("#  ").patternLine("## ").patternLine("###")
+                .addCriterion("has_block", hasItem(full)).build(out, id(name(stairs)));
+        boolean stone = full.getDefaultState().getMaterial() == Material.ROCK;
+        if (stone)
+        {
+            stonecutting(full, slab, 2);
+            stonecutting(full, stairs, 1);
+        }
+        if (shapes.walls.length > 0)
+        {
+            // Only loaded while walls are turned on, since the wall items don't exist otherwise.
+            Block wall = shapes.walls[i];
+            ConditionalRecipe.builder().addCondition(WallsEnabledCondition.INSTANCE)
+                    .addRecipe(ShapedRecipeBuilder.shapedRecipe(wall, 6).key('#', full).patternLine("###").patternLine("###")
+                            .addCriterion("has_block", hasItem(full))::build)
+                    .build(out, id(name(wall)));
+            if (stone)
+            {
+                ConditionalRecipe.builder().addCondition(WallsEnabledCondition.INSTANCE)
+                        .addRecipe(c -> SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(full), wall, 1)
+                                .addCriterion("has_block", hasItem(full)).build(c, id("stonecutting/" + name(wall))))
+                        .build(out, id("stonecutting/" + name(wall)));
+            }
+        }
+        if (shapes.type.equals("quartz"))
+        {
+            // Two quartz slabs make chiseled quartz, like vanilla.
+            Block chiseled = MDBlock.quartzChiseledArray[i];
+            ShapedRecipeBuilder.shapedRecipe(chiseled).key('#', slab).patternLine("#").patternLine("#")
+                    .addCriterion("has_slab", hasItem(slab)).build(out, id(name(chiseled)));
+        }
+    }
+
+    private void stonecutting(Block input, Block result, int count)
+    {
+        SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(input), result, count)
+                .addCriterion("has_block", hasItem(input)).build(out, id("stonecutting/" + name(result)));
+    }
+
+    /** A dyed block and a vine make its mossy kind, like vanilla. */
+    private void mossy(Block block, Block result)
+    {
+        ShapelessRecipeBuilder.shapelessRecipe(result).addIngredient(block).addIngredient(Items.VINE)
+                .addCriterion("has_block", hasItem(block)).build(out, id(name(result)));
     }
 
     private void wood(int i, String wood)

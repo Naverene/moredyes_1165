@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:packedice_333333"
+    }
+  },
+  "result": {
+    "item": "moredyes:packedicestairs_333333",
+    "count": 4
+  }
+}

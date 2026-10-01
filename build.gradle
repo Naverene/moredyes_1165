@@ -168,6 +168,8 @@ buildscript {
 
 // Example for how to get properties into the manifest for reading by the runtime..
     jar {
+        // The generated blockstates, models, recipes and loot tables are more than the 65535 files a plain zip holds.
+        zip64 = true
         manifest {
             attributes([
                     "Specification-Title"     : "moredyes",

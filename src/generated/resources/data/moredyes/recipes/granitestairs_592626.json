@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:granite_592626"
+    }
+  },
+  "result": {
+    "item": "moredyes:granitestairs_592626",
+    "count": 4
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:mossy_cobblestone"
+    },
+    "D": {
+      "item": "moredyes:99993f_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:mossycobble_99993f",
+    "count": 8
+  }
+}

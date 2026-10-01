@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:stone_668c32"
+    }
+  },
+  "result": {
+    "item": "moredyes:stoneslab_668c32",
+    "count": 6
+  }
+}

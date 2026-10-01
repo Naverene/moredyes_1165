@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:cornflower"
+    },
+    "D": {
+      "item": "moredyes:4c2c66_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:cornflower_4c2c66",
+    "count": 8
+  }
+}

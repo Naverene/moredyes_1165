@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:end_stone"
+    },
+    "D": {
+      "item": "moredyes:a5bf86_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:endstone_a5bf86",
+    "count": 8
+  }
+}

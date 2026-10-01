@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:spruceplanks_668c86"
+    }
+  },
+  "result": {
+    "item": "moredyes:spruceslab_668c86",
+    "count": 6
+  }
+}

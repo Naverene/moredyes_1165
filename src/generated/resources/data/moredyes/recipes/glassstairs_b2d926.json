@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:glass_b2d926"
+    }
+  },
+  "result": {
+    "item": "moredyes:glassstairs_b2d926",
+    "count": 4
+  }
+}

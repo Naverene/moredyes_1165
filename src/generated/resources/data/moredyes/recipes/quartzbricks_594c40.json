@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "moredyes:quartz_594c40"
+    }
+  },
+  "result": {
+    "item": "moredyes:quartzbricks_594c40",
+    "count": 4
+  }
+}

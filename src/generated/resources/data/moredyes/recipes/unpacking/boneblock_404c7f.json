@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moredyes:boneblock_404c7f"
+    }
+  ],
+  "result": {
+    "item": "minecraft:bone_meal",
+    "count": 9
+  }
+}

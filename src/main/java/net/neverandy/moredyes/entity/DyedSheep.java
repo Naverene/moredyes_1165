@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.entity.SpawnReason;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
@@ -138,6 +139,12 @@ public final class DyedSheep
             return;
         }
         double x = item.getPosX(), y = item.getPosY() - 1.0D, z = item.getPosZ();
+        // Items also join the world when their chunk loads from disk. Asking that chunk for its sheep then would wait
+        // for the chunk to finish loading, which never happens, and the world hangs at "Preparing spawn area".
+        if (event.getWorld().getChunkProvider().getChunkNow(MathHelper.floor(x) >> 4, MathHelper.floor(z) >> 4) == null)
+        {
+            return;
+        }
         List<SheepEntity> sheep = event.getWorld().getEntitiesWithinAABB(SheepEntity.class,
                 new AxisAlignedBB(x - 0.01D, y - 0.01D, z - 0.01D, x + 0.01D, y + 0.01D, z + 0.01D),
                 s -> s.getSheared() && getColor(s) >= 0);

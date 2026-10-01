@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:allium"
+    },
+    "D": {
+      "item": "moredyes:9f8c85_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:allium_9f8c85",
+    "count": 8
+  }
+}

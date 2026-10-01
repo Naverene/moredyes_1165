@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:azure_bluet"
+    },
+    "D": {
+      "item": "moredyes:595959_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:azurebluet_595959",
+    "count": 8
+  }
+}

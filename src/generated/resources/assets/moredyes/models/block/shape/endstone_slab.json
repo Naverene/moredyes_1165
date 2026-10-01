@@ -1,0 +1,8 @@
+{
+  "parent": "moredyes:block/tinted/slab",
+  "textures": {
+    "side": "moredyes:block/tinted/endstone",
+    "top": "moredyes:block/tinted/endstone",
+    "bottom": "moredyes:block/tinted/endstone"
+  }
+}

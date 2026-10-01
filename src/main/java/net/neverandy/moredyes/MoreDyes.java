@@ -8,6 +8,7 @@ import net.neverandy.moredyes.client.DyedSheepRenderer;
 import net.neverandy.moredyes.network.ModNetwork;
 import net.neverandy.moredyes.client.ChestRenderer;
 import net.neverandy.moredyes.tileentity.ModTileEntities;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
@@ -26,6 +27,9 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neverandy.moredyes.block.BlockGlass;
+import net.minecraftforge.common.crafting.CraftingHelper;
+import net.neverandy.moredyes.block.DyedShapes;
+import net.neverandy.moredyes.data.condition.WallsEnabledCondition;
 import net.neverandy.moredyes.block.MDBlock;
 import net.neverandy.moredyes.item.MDItem;
 import net.neverandy.moredyes.reference.ColorStrings;
@@ -71,11 +75,19 @@ public class MoreDyes
             return new ItemStack(MDBlock.brickArray[100]);
         }
     };
+    public static final ItemGroup tabShapes = new ItemGroup("shapes")
+    {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(DyedShapes.ALL.get(0).stairs[100]);
+        }
+    };
 
     public MoreDyes()
     {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ConfigHandler.CLIENT_CONFIG);
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ConfigHandler.SERVER_CONFIG);
+        CraftingHelper.register(WallsEnabledCondition.SERIALIZER);
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -145,6 +157,30 @@ public class MoreDyes
                 // The slime on a sticky piston is a separate, untinted layer with see-through gaps.
                 RenderTypeLookup.setRenderLayer(MDBlock.stickyPistonArray[i], RenderType.getCutout());
                 RenderTypeLookup.setRenderLayer(MDBlock.pistonHeadArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.iceArray[i], RenderType.getTranslucent());
+                for (Block[] flowers : MDBlock.smallFlowerArrays)
+                {
+                    RenderTypeLookup.setRenderLayer(flowers[i], RenderType.getCutout());
+                }
+                for (Block[] flowers : MDBlock.tallFlowerArrays)
+                {
+                    RenderTypeLookup.setRenderLayer(flowers[i], RenderType.getCutout());
+                }
+            }
+            for (DyedShapes shapes : DyedShapes.ALL)
+            {
+                if (shapes.layer == DyedShapes.Layer.SOLID)
+                {
+                    continue;
+                }
+                RenderType layer = shapes.layer == DyedShapes.Layer.CUTOUT ? RenderType.getCutout() : RenderType.getTranslucent();
+                for (Block[] blocks : new Block[][]{shapes.slabs, shapes.stairs, shapes.walls})
+                {
+                    for (Block block : blocks)
+                    {
+                        RenderTypeLookup.setRenderLayer(block, layer);
+                    }
+                }
             }
         });
 

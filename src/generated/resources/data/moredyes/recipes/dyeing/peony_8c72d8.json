@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:peony"
+    },
+    "D": {
+      "item": "moredyes:8c72d8_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:peony_8c72d8",
+    "count": 8
+  }
+}

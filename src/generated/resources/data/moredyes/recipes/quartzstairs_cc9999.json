@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:quartz_cc9999"
+    }
+  },
+  "result": {
+    "item": "moredyes:quartzstairs_cc9999",
+    "count": 4
+  }
+}
