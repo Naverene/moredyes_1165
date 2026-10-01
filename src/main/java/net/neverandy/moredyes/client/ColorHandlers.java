@@ -3,6 +3,7 @@ package net.neverandy.moredyes.client;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -29,11 +30,45 @@ public final class ColorHandlers
 
     private ColorHandlers() {}
 
-    /** The dye color in a registry name, or white if it has none. */
+    /** The color a dyed block is drawn in: the dye color in its registry name, or white if it has none. */
     public static int colorOf(ResourceLocation name)
     {
         Matcher matcher = HEX.matcher(name.getPath());
-        return matcher.find() ? Integer.parseInt(matcher.group(1), 16) : WHITE;
+        return matcher.find() ? vivid(Integer.parseInt(matcher.group(1), 16)) : WHITE;
+    }
+
+    /**
+     * The palette comes from the muted 1.7 colors, so it is drawn more saturated and brighter, closer to the 1.16 dyes.
+     * The registry names keep the original hex, so worlds are unaffected.
+     */
+    public static int vivid(int rgb)
+    {
+        float r = (rgb >> 16 & 255) / 255.0F, g = (rgb >> 8 & 255) / 255.0F, b = (rgb & 255) / 255.0F;
+        float max = Math.max(r, Math.max(g, b)), min = Math.min(r, Math.min(g, b));
+        if (max == 0.0F)
+        {
+            return rgb;
+        }
+        float hue;
+        if (max == min)
+        {
+            hue = 0.0F;
+        }
+        else if (max == r)
+        {
+            hue = ((g - b) / (max - min) + 6.0F) % 6.0F / 6.0F;
+        }
+        else if (max == g)
+        {
+            hue = ((b - r) / (max - min) + 2.0F) / 6.0F;
+        }
+        else
+        {
+            hue = ((r - g) / (max - min) + 4.0F) / 6.0F;
+        }
+        float saturation = Math.min(1.0F, (max - min) / max * 1.25F);
+        float value = Math.min(1.0F, max / 0.8F);
+        return MathHelper.hsvToRGB(hue, saturation, value);
     }
 
     @SubscribeEvent

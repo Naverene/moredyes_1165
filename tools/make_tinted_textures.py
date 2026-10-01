@@ -38,6 +38,36 @@ def is_green(p):
     return s > 0.15 and 65 <= h * 360 <= 170
 
 
+# A dye color only shows as bright as the grey it multiplies, so a mid-grey texture like stone would draw every color at
+# half brightness. Each grey texture is shifted up until its average is this bright, keeping its pattern.
+BRIGHTNESS = 200
+# Materials that are meant to stay dark whatever their dye.
+STAY_DARK = {'obsidian', 'coal'}
+
+
+def brighten(pixels, stats=None):
+    """Shifts grey pixels so their average is BRIGHTNESS. Highlights are compressed rather than clipped to white.
+    stats is the (mean, max) to shift by, so a texture can match another one; by default it is the pixels' own."""
+    if stats is None:
+        lums = [p[0] for p in pixels if p[3] > 0]
+        stats = (sum(lums) / len(lums), max(lums)) if lums else (BRIGHTNESS, BRIGHTNESS)
+    mean, top = stats
+    if mean >= BRIGHTNESS:
+        return pixels
+    squeeze = min(1.0, (250 - BRIGHTNESS) / max(1.0, top - mean))
+    out = []
+    for r, g, b, a in pixels:
+        d = r - mean
+        lum = max(0, min(255, round(BRIGHTNESS + (d * squeeze if d > 0 else d))))
+        out.append((lum, lum, lum, a))
+    return out
+
+
+def stats_of(pixels):
+    lums = [p[0] for p in pixels if p[3] > 0]
+    return sum(lums) / len(lums), max(lums)
+
+
 GREY = grey
 GREY_IF_GREEN = lambda p: grey(p) if is_green(p) else (0, 0, 0, 0)
 GREY_IF_NOT_GREEN = lambda p: (0, 0, 0, 0) if is_green(p) else grey(p)
@@ -119,7 +149,10 @@ def main():
         # Animated textures are a vertical strip of frames; keep the first frame.
         size = image.width
         image = image.crop((0, 0, size, min(size, image.height)))
-        image.putdata([transform(p) for p in image.getdata()])
+        pixels = [transform(p) for p in image.getdata()]
+        if transform not in (KEEP_IF_GREEN, KEEP_IF_NOT_GREEN) and name not in STAY_DARK:
+            pixels = brighten(pixels)
+        image.putdata(pixels)
         image.save(os.path.join(OUT, name + '.png'))
     print('wrote %d textures to %s' % (len(SOURCES), os.path.relpath(OUT, ROOT)))
 
@@ -129,7 +162,9 @@ def main():
     sticky = Image.open(io.BytesIO(jar.read('assets/minecraft/textures/block/piston_top_sticky.png'))).convert('RGBA')
     pairs = list(zip(plain.getdata(), sticky.getdata()))
     rim = Image.new('RGBA', sticky.size)
-    rim.putdata([grey(s) if s == p else (0, 0, 0, 0) for p, s in pairs])
+    # Brightened by the same amount as the plain face, so the rim matches it.
+    plain_stats = stats_of([grey(p) for p in plain.getdata()])
+    rim.putdata(brighten([grey(s) if s == p else (0, 0, 0, 0) for p, s in pairs], plain_stats))
     rim.save(os.path.join(OUT, 'piston_top_sticky.png'))
     slime = Image.new('RGBA', sticky.size)
     slime.putdata([(0, 0, 0, 0) if s == p else s for p, s in pairs])
@@ -139,10 +174,10 @@ def main():
     for name, (latch_w, latch_h) in sorted(CHESTS.items()):
         image = Image.open(io.BytesIO(jar.read('assets/minecraft/textures/entity/chest/%s.png' % name))).convert('RGBA')
         pixels = image.load()
-        for y in range(image.height):
-            for x in range(image.width):
-                if not (x < latch_w and y < latch_h):
-                    pixels[x, y] = grey(pixels[x, y])
+        body = [(x, y) for y in range(image.height) for x in range(image.width) if not (x < latch_w and y < latch_h)]
+        lifted = brighten([grey(pixels[x, y]) for x, y in body])
+        for (x, y), p in zip(body, lifted):
+            pixels[x, y] = p
         image.save(os.path.join(CHEST_OUT, name + '.png'))
     print('wrote %d chest textures to %s' % (len(CHESTS), os.path.relpath(CHEST_OUT, ROOT)))
 
