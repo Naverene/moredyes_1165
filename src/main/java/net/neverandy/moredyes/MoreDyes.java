@@ -3,6 +3,7 @@ package net.neverandy.moredyes;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraft.entity.EntityType;
+import net.neverandy.moredyes.client.DyedPistonRenderer;
 import net.neverandy.moredyes.client.DyedSheepRenderer;
 import net.neverandy.moredyes.network.ModNetwork;
 import net.neverandy.moredyes.client.ChestRenderer;
@@ -10,6 +11,7 @@ import net.neverandy.moredyes.tileentity.ModTileEntities;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -105,6 +107,8 @@ public class MoreDyes
     {
         ClientRegistry.bindTileEntityRenderer(ModTileEntities.CHEST.get(), ChestRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityType.SHEEP, DyedSheepRenderer::new);
+        // Replaces the vanilla renderer for blocks being moved by pistons, so dyed pistons move their own heads.
+        ClientRegistry.bindTileEntityRenderer(TileEntityType.PISTON, DyedPistonRenderer::new);
         // do something that can only be done on the client
         //LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         for (BlockGlass block: MDBlock.glassArray)
@@ -138,6 +142,9 @@ public class MoreDyes
                 RenderTypeLookup.setRenderLayer(MDBlock.darkOakLeafArray[i], RenderType.getCutoutMipped());
                 RenderTypeLookup.setRenderLayer(MDBlock.jungleLeafArray[i], RenderType.getCutoutMipped());
                 RenderTypeLookup.setRenderLayer(MDBlock.spruceLafArray[i], RenderType.getCutoutMipped());
+                // The slime on a sticky piston is a separate, untinted layer with see-through gaps.
+                RenderTypeLookup.setRenderLayer(MDBlock.stickyPistonArray[i], RenderType.getCutout());
+                RenderTypeLookup.setRenderLayer(MDBlock.pistonHeadArray[i], RenderType.getCutout());
             }
         });
 

@@ -82,6 +82,10 @@ SOURCES = {
     'dye': ('item/white_dye', GREY),
     'glass_pane_top': ('block/glass_pane_top', GREY),
     'bookshelf': ('block/bookshelf', GREY),
+    'piston_top': ('block/piston_top', GREY),
+    'piston_side': ('block/piston_side', GREY),
+    'piston_bottom': ('block/piston_bottom', GREY),
+    'piston_inner': ('block/piston_inner', GREY),
 }
 for w in WOODS:
     SOURCES[w + '_planks'] = ('block/%s_planks' % w, GREY)
@@ -118,6 +122,18 @@ def main():
         image.putdata([transform(p) for p in image.getdata()])
         image.save(os.path.join(OUT, name + '.png'))
     print('wrote %d textures to %s' % (len(SOURCES), os.path.relpath(OUT, ROOT)))
+
+    # The sticky piston face is drawn twice: the tinted wooden rim, then the slime in its own green. The slime is
+    # every pixel that differs from the plain piston face.
+    plain = Image.open(io.BytesIO(jar.read('assets/minecraft/textures/block/piston_top.png'))).convert('RGBA')
+    sticky = Image.open(io.BytesIO(jar.read('assets/minecraft/textures/block/piston_top_sticky.png'))).convert('RGBA')
+    pairs = list(zip(plain.getdata(), sticky.getdata()))
+    rim = Image.new('RGBA', sticky.size)
+    rim.putdata([grey(s) if s == p else (0, 0, 0, 0) for p, s in pairs])
+    rim.save(os.path.join(OUT, 'piston_top_sticky.png'))
+    slime = Image.new('RGBA', sticky.size)
+    slime.putdata([(0, 0, 0, 0) if s == p else s for p, s in pairs])
+    slime.save(os.path.join(OUT, 'piston_slime.png'))
 
     os.makedirs(CHEST_OUT, exist_ok=True)
     for name, (latch_w, latch_h) in sorted(CHESTS.items()):

@@ -56,6 +56,9 @@ public class ModLangProvider extends LanguageProvider
             add(MDBlock.workbenchArray[i], c + "Crafting Table");
             add(MDBlock.chestArray[i], c + "Chest");
             add(MDBlock.bookshelfArray[i], c + "Bookshelf");
+            add(MDBlock.pistonArray[i], c + "Piston");
+            add(MDBlock.stickyPistonArray[i], c + "Sticky Piston");
+            add(MDBlock.pistonHeadArray[i], c + "Piston Head");
             add(MDBlock.glassPaneArray[i], c + "Glass Pane");
             add(MDBlock.glassFoggyPaneArray[i], c + "Foggy Glass Pane");
             add(MDBlock.tulipArray[i], c + "Tulip");

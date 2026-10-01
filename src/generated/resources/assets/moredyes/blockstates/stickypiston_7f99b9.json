@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "extended=false,facing=down": {
+      "model": "moredyes:block/tinted/sticky_piston",
+      "x": 90
+    },
+    "extended=true,facing=down": {
+      "model": "moredyes:block/tinted/piston_base",
+      "x": 90
+    },
+    "extended=false,facing=up": {
+      "model": "moredyes:block/tinted/sticky_piston",
+      "x": 270
+    },
+    "extended=true,facing=up": {
+      "model": "moredyes:block/tinted/piston_base",
+      "x": 270
+    },
+    "extended=false,facing=north": {
+      "model": "moredyes:block/tinted/sticky_piston"
+    },
+    "extended=true,facing=north": {
+      "model": "moredyes:block/tinted/piston_base"
+    },
+    "extended=false,facing=south": {
+      "model": "moredyes:block/tinted/sticky_piston",
+      "y": 180
+    },
+    "extended=true,facing=south": {
+      "model": "moredyes:block/tinted/piston_base",
+      "y": 180
+    },
+    "extended=false,facing=west": {
+      "model": "moredyes:block/tinted/sticky_piston",
+      "y": 270
+    },
+    "extended=true,facing=west": {
+      "model": "moredyes:block/tinted/piston_base",
+      "y": 270
+    },
+    "extended=false,facing=east": {
+      "model": "moredyes:block/tinted/sticky_piston",
+      "y": 90
+    },
+    "extended=true,facing=east": {
+      "model": "moredyes:block/tinted/piston_base",
+      "y": 90
+    }
+  }
+}

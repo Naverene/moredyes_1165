@@ -257,6 +257,19 @@ public class ModRecipeProvider extends RecipeProvider
                     .addCriterion("has_planks", hasItem(allPlanks[0])).build(out, id(name(shelf)));
             dyeable(i, shelf, "bookshelf");
 
+            // The vanilla piston recipe in dyed planks and dyed cobblestone of one color, and slime makes it sticky.
+            Block piston = MDBlock.pistonArray[i];
+            Block stickyPiston = MDBlock.stickyPistonArray[i];
+            ShapedRecipeBuilder.shapedRecipe(piston).key('P', Ingredient.fromItems(allPlanks)).key('C', MDBlock.cobbleArray[i])
+                    .key('I', Items.IRON_INGOT).key('R', Items.REDSTONE)
+                    .patternLine("PPP").patternLine("CIC").patternLine("CRC")
+                    .addCriterion("has_planks", hasItem(allPlanks[0])).build(out, id(name(piston)));
+            ShapedRecipeBuilder.shapedRecipe(stickyPiston).key('S', Items.SLIME_BALL).key('P', piston)
+                    .patternLine("S").patternLine("P")
+                    .addCriterion("has_piston", hasItem(piston)).build(out, id(name(stickyPiston)));
+            dyeable(i, piston, "piston");
+            dyeable(i, stickyPiston, "sticky_piston");
+
             // Six glass make sixteen panes, like vanilla; clear panes can also be dyed and washed.
             panes(MDBlock.glassArray[i], MDBlock.glassPaneArray[i]);
             panes(MDBlock.glassFoggyArray[i], MDBlock.glassFoggyPaneArray[i]);
