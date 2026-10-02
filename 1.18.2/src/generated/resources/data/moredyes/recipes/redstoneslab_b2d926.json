@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:redstone_b2d926"
+    }
+  },
+  "result": {
+    "item": "moredyes:redstoneslab_b2d926",
+    "count": 6
+  }
+}

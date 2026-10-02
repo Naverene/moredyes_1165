@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:glowstone_403326"
+    }
+  },
+  "result": {
+    "item": "moredyes:glowstoneslab_403326",
+    "count": 6
+  }
+}

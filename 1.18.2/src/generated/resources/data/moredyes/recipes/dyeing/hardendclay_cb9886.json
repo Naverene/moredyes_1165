@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:terracotta"
+    },
+    "D": {
+      "item": "moredyes:cb9886_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:hardendclay_cb9886",
+    "count": 8
+  }
+}

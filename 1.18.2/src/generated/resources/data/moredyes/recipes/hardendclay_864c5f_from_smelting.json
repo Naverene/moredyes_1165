@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "moredyes:clay_864c5f"
+  },
+  "result": "moredyes:hardendclay_864c5f",
+  "experience": 0.35,
+  "cookingtime": 200
+}

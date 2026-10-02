@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moredyes:tulip_735f73"
+    }
+  ],
+  "result": {
+    "item": "moredyes:735f73_dye"
+  }
+}

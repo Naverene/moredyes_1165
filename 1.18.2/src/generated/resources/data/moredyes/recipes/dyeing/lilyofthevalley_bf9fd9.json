@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:lily_of_the_valley"
+    },
+    "D": {
+      "item": "moredyes:bf9fd9_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:lilyofthevalley_bf9fd9",
+    "count": 8
+  }
+}

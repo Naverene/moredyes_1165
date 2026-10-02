@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:boneblock_8c6586"
+    }
+  },
+  "result": {
+    "item": "moredyes:boneblockstairs_8c6586",
+    "count": 4
+  }
+}

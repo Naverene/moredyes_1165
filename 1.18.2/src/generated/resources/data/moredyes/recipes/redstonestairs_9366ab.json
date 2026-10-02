@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:redstone_9366ab"
+    }
+  },
+  "result": {
+    "item": "moredyes:redstonestairs_9366ab",
+    "count": 4
+  }
+}

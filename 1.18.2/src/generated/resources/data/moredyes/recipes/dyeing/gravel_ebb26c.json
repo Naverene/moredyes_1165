@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:gravel"
+    },
+    "D": {
+      "item": "moredyes:ebb26c_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:gravel_ebb26c",
+    "count": 8
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:diorite_a69933"
+    }
+  },
+  "result": {
+    "item": "moredyes:dioritestairs_a69933",
+    "count": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moredyes:acacialog_ecbf99"
+    }
+  ],
+  "result": {
+    "item": "moredyes:acaciaplanks_ecbf99",
+    "count": 4
+  }
+}

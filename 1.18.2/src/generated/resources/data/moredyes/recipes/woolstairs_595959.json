@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:wool_595959"
+    }
+  },
+  "result": {
+    "item": "moredyes:woolstairs_595959",
+    "count": 4
+  }
+}

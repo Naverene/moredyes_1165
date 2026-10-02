@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:glowstone"
+    },
+    "D": {
+      "item": "moredyes:4d73c5_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:glowstone_4d73c5",
+    "count": 8
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_post"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_side"
+      }
+    },
+    {
+      "when": {
+        "north": "false"
+      },
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_noside"
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_side_alt"
+      }
+    },
+    {
+      "when": {
+        "south": "false"
+      },
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_noside_alt",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_side_alt",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": "false"
+      },
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_noside",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": "false"
+      },
+      "apply": {
+        "model": "moredyes:block/glassfoggypane_cccccc_noside_alt"
+      }
+    }
+  ]
+}

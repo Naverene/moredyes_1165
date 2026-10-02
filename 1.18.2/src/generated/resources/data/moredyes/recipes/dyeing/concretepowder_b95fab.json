@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:white_concrete_powder"
+    },
+    "D": {
+      "item": "moredyes:b95fab_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:concretepowder_b95fab",
+    "count": 8
+  }
+}

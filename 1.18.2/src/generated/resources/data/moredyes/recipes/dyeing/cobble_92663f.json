@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:cobblestone"
+    },
+    "D": {
+      "item": "moredyes:92663f_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:cobble_92663f",
+    "count": 8
+  }
+}

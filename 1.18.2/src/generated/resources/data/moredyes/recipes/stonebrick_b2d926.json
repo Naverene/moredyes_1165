@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "moredyes:stone_b2d926"
+    }
+  },
+  "result": {
+    "item": "moredyes:stonebrick_b2d926",
+    "count": 4
+  }
+}

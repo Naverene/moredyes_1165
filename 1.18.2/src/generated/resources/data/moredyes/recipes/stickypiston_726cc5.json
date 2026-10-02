@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "P"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:slime_ball"
+    },
+    "P": {
+      "item": "moredyes:piston_726cc5"
+    }
+  },
+  "result": {
+    "item": "moredyes:stickypiston_726cc5"
+  }
+}

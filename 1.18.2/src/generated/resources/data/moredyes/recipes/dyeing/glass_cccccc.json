@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:glass"
+    },
+    "D": {
+      "item": "moredyes:cccccc_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:glass_cccccc",
+    "count": 8
+  }
+}

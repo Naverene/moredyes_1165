@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "CIC",
+    "CRC"
+  ],
+  "key": {
+    "P": [
+      {
+        "item": "moredyes:plank_65467f"
+      },
+      {
+        "item": "moredyes:birchplanks_65467f"
+      },
+      {
+        "item": "moredyes:spruceplanks_65467f"
+      },
+      {
+        "item": "moredyes:jungleplanks_65467f"
+      },
+      {
+        "item": "moredyes:acaciaplanks_65467f"
+      },
+      {
+        "item": "moredyes:darkoakplanks_65467f"
+      }
+    ],
+    "C": {
+      "item": "moredyes:cobble_65467f"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "moredyes:piston_65467f"
+  }
+}

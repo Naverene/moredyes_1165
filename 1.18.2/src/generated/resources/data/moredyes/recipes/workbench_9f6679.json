@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PP",
+    "PP"
+  ],
+  "key": {
+    "P": [
+      {
+        "item": "moredyes:plank_9f6679"
+      },
+      {
+        "item": "moredyes:birchplanks_9f6679"
+      },
+      {
+        "item": "moredyes:spruceplanks_9f6679"
+      },
+      {
+        "item": "moredyes:jungleplanks_9f6679"
+      },
+      {
+        "item": "moredyes:acaciaplanks_9f6679"
+      },
+      {
+        "item": "moredyes:darkoakplanks_9f6679"
+      }
+    ]
+  },
+  "result": {
+    "item": "moredyes:workbench_9f6679"
+  }
+}
