@@ -12,9 +12,10 @@ buildscript {
     apply plugin: 'eclipse'
     apply plugin: 'maven-publish'
 
-    version = '1.16.5-1.0.0'
+    // The jar is named moredyes-<mod version>-<Minecraft version>.jar.
+    version = "${mod_version}-${mc_version}"
     group = 'net.neverandy.moredyes' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-    archivesBaseName = 'MoreDyes'
+    archivesBaseName = 'moredyes'
 
     tasks.named("processResources") { duplicatesStrategy = 'include' }
 
