@@ -1,0 +1,18 @@
+[
+{
+  "modid": "moredyes",
+  "name": "More Dyes",
+  "description": "Unlock a much larger palette of colors for building with",
+  "version": "\${version}",
+  "minecraftVersion": "\${mcversion}",
+  "modId": "moredyes",
+  "modVersion": "\${version}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["kg6jay", "awweaver"],
+  "credits": "awweaver for causing me to come up with the idea",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,4 @@
+// The jars are named moredyes-<mod version>-<Minecraft version>.jar.
+tasks.withType(Jar).configureEach {
+    archiveVersion.set(project.provider { "${project.version}-${project.minecraftVersion}" })
+}
