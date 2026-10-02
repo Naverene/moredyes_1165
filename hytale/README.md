@@ -26,4 +26,4 @@ python3 tools/generate.py          # the three prototype colors
 python3 tools/generate.py --all    # all 118 colors
 ```
 
-`tools/colors.json` holds the 118 colors, taken from `ColorStrings.ALL` in [moredyes_1165](https://github.com/Naverene/moredyes_1165).
+`tools/colors.json` holds the 118 colors, taken from `ColorStrings.ALL` in the [1.16.5 version](../1.16.5).

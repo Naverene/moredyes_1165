@@ -1,0 +1,245 @@
+# Builds every Minecraft version of the mod, each from its own folder with its own Java, and publishes
+# the jars:
+# - pull requests build only the versions whose folders they change (all of them if this workflow changes)
+# - every push (including merges) to main builds all versions and updates the rolling "Development build"
+#   pre-release with every version's jar
+# - pushing a version tag such as v1.2.0 builds all versions as that mod version, publishes one release
+#   with every jar, and uploads each jar to CurseForge when the CURSEFORGE_TOKEN secret is set
+# Every build also starts a server with the mod to catch crashes and data errors while loading, and
+# keeps its jar as a downloadable artifact on the run's page.
+
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  plan:
+    name: Pick the versions to build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      versions: ${{ steps.plan.outputs.versions }}
+    env:
+      # One entry per version folder. `java` builds it; `cf_java` is the Java version players run it on,
+      # as listed on CurseForge. The folder name is the Minecraft version.
+      VERSIONS: |
+        [
+          { "dir": "1.7.10", "java": "21", "cf_java": "8",  "loader": "forge" },
+          { "dir": "1.12.2", "java": "8",  "cf_java": "8",  "loader": "forge" },
+          { "dir": "1.16.5", "java": "8",  "cf_java": "8",  "loader": "forge" },
+          { "dir": "1.18.2", "java": "17", "cf_java": "17", "loader": "forge" },
+          { "dir": "1.20.1", "java": "17", "cf_java": "17", "loader": "forge" },
+          { "dir": "26.3",   "java": "25", "cf_java": "25", "loader": "neoforge" }
+        ]
+    steps:
+    - uses: actions/checkout@v4
+      if: github.event_name == 'pull_request'
+      with:
+        # Only commit history is needed to list the changed files. A sparse checkout skips old file contents.
+        fetch-depth: 0
+        sparse-checkout: .github
+
+    - name: Pick the versions to build
+      id: plan
+      env:
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      run: |
+        if [[ "$GITHUB_EVENT_NAME" == pull_request ]]; then
+          changed=$(git diff --name-only "$BASE_SHA"...HEAD)
+          if grep -q '^\.github/' <<< "$changed"; then
+            versions=$(jq -c . <<< "$VERSIONS")
+          else
+            versions=$(jq -c --arg changed "$changed" \
+              '[.[] | . as $v | select($changed | split("\n") | any(startswith($v.dir + "/")))]' <<< "$VERSIONS")
+          fi
+        else
+          versions=$(jq -c . <<< "$VERSIONS")
+        fi
+        echo "Building: $(jq -r 'map(.dir) | join(", ")' <<< "$versions")"
+        echo "versions=$versions" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Minecraft ${{ matrix.dir }}
+    needs: plan
+    if: needs.plan.outputs.versions != '[]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      # One version failing must not cancel the others.
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.versions) }}
+    defaults:
+      run:
+        working-directory: ${{ matrix.dir }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        # Only this version's folder is checked out. The 1.7.10 build also gets the commit history, so it
+        # can name dev builds after the latest tag with git describe.
+        sparse-checkout: ${{ matrix.dir }}
+        fetch-depth: ${{ matrix.dir == '1.7.10' && '0' || '1' }}
+
+    - name: Set up JDK ${{ matrix.java }}
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ matrix.java }}
+        distribution: 'temurin'
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+      with:
+        # The server check ends runServer by stopping the server, which Gradle reports as a failed
+        # task. Show the Gradle summary only when the job fails, so green runs don't list a red X.
+        add-job-summary: on-failure
+
+    # A version tag such as v1.2.0 sets the mod version; other builds use the one in gradle.properties.
+    # The 1.7.10 build (GTNH buildscript) reads the VERSION variable instead, and names other builds
+    # after the latest tag.
+    - name: Work out the mod version
+      run: |
+        if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+          version="${GITHUB_REF_NAME#v}"
+          echo "MOD_VERSION=$version" >> "$GITHUB_ENV"
+        else
+          version=$(git describe --tags --match 'v*' 2>/dev/null | sed 's/^v//')
+        fi
+        echo "VERSION=${version:-dev}" >> "$GITHUB_ENV"
+
+    - name: Build with Gradle Wrapper
+      run: |
+        if [[ -n "${MOD_VERSION:-}" ]]; then
+          ./gradlew build -Pmod_version="$MOD_VERSION"
+        else
+          ./gradlew build
+        fi
+
+    # Starts a dedicated server with the mod and a fresh world, and fails on a crash, a mod loading
+    # error, or a recipe, tag or loot table that does not load.
+    - name: Check the mod loads on a server
+      run: ./scripts/check-server-starts.sh
+
+    - name: Upload the server log
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: server-log-${{ matrix.dir }}
+        path: ${{ matrix.dir }}/build/server-check.log
+        if-no-files-found: ignore
+
+    # Keep only the jar players install (not the -dev, -sources or -api jars).
+    - name: Collect the mod jar
+      run: |
+        mkdir -p dist
+        find build/libs -maxdepth 1 -name '*.jar' \
+          ! -name '*-dev.jar' ! -name '*-sources.jar' ! -name '*-api.jar' \
+          -exec cp {} dist/ \;
+        ls -l dist
+
+    - name: Upload the mod jar
+      uses: actions/upload-artifact@v4
+      with:
+        name: MoreDyes-${{ matrix.dir }}
+        path: ${{ matrix.dir }}/dist/*.jar
+        if-no-files-found: error
+
+  publish:
+    name: Publish the jars on GitHub
+    needs: build
+    # Pushes and merges to main, and version tags. Never pull requests.
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    runs-on: ubuntu-latest
+    # Two quick pushes to main must not replace the development build at the same time.
+    concurrency:
+      group: publish-${{ github.ref }}
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+
+    steps:
+    - name: Download the mod jars
+      uses: actions/download-artifact@v4
+      with:
+        pattern: MoreDyes-*
+        merge-multiple: true
+        path: dist
+
+    - name: Update the development build
+      if: github.ref == 'refs/heads/main'
+      run: |
+        ls -l dist
+        # Replace the previous development build, so the release always holds the newest jars.
+        gh release delete dev-build --yes --cleanup-tag || true
+        gh release create dev-build dist/*.jar \
+          --target "$GITHUB_SHA" \
+          --prerelease \
+          --title "Development build" \
+          --notes "Latest build of main for every Minecraft version, from commit $GITHUB_SHA. Untested; for testing only."
+
+    - name: Publish the release for this version
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: |
+        ls -l dist
+        if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+          # The release was already made on GitHub (for example with "Draft a new release"), so add the jars to it.
+          gh release upload "$GITHUB_REF_NAME" dist/*.jar --clobber
+        else
+          gh release create "$GITHUB_REF_NAME" dist/*.jar \
+            --title "More Dyes $GITHUB_REF_NAME" \
+            --generate-notes
+        fi
+
+  curseforge:
+    name: CurseForge ${{ matrix.dir }}
+    needs: [ plan, publish ]
+    # Version tags only. Development builds stay on GitHub.
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      # One upload failing must not stop the others.
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.versions) }}
+    env:
+      # An upload token from CurseForge (account settings > API Tokens), stored as a repository secret.
+      CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+
+    steps:
+    - name: Download the mod jar
+      uses: actions/download-artifact@v4
+      with:
+        name: MoreDyes-${{ matrix.dir }}
+        path: dist
+
+    # Uploads the jar to https://www.curseforge.com/minecraft/mc-mods/moredyes (project 252137).
+    - name: Upload the release to CurseForge
+      if: env.CURSEFORGE_TOKEN != ''
+      uses: Kir-Antipov/mc-publish@v3.3
+      with:
+        curseforge-id: 252137
+        curseforge-token: ${{ env.CURSEFORGE_TOKEN }}
+        files: dist/*.jar
+        name: More Dyes ${{ github.ref_name }} for Minecraft ${{ matrix.dir }}
+        version: ${{ github.ref_name }}-${{ matrix.dir }}
+        version-type: release
+        changelog: See https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}
+        loaders: ${{ matrix.loader }}
+        game-versions: ${{ matrix.dir }}
+        java: ${{ matrix.cf_java }}
+
+    - name: Note the skipped CurseForge upload
+      if: env.CURSEFORGE_TOKEN == ''
+      run: echo "::warning::CURSEFORGE_TOKEN is not set, so the ${{ matrix.dir }} jar was not uploaded to CurseForge."

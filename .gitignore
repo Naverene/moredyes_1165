@@ -1,0 +1,4 @@
+# IDE files when the repository root is opened instead of a version folder
+/.idea/
+*.iml
+.DS_Store
