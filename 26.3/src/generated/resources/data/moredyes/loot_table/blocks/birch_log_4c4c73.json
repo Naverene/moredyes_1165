@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:birch_log_4c4c73"}],"rolls":1}],"random_sequence":"moredyes:blocks/birch_log_4c4c73"}

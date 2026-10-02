@@ -1,0 +1,53 @@
+{
+  "parent": "minecraft:block/redstone_block",
+  "textures": {
+    "t0": "moredyes:block/redstone_block",
+    "particle": "moredyes:block/redstone_block"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#t0",
+          "cullface": "down",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#t0",
+          "cullface": "up",
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#t0",
+          "cullface": "north",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#t0",
+          "cullface": "south",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#t0",
+          "cullface": "west",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#t0",
+          "cullface": "east",
+          "tintindex": 0
+        }
+      }
+    }
+  ]
+}

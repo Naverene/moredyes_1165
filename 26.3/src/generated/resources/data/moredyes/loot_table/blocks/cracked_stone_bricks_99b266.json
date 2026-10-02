@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:cracked_stone_bricks_99b266"}],"rolls":1}],"random_sequence":"moredyes:blocks/cracked_stone_bricks_99b266"}

@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:concrete_ac8cbf"}],"rolls":1}],"random_sequence":"moredyes:blocks/concrete_ac8cbf"}

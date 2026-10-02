@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:andesite_7f65b9"}],"rolls":1}],"random_sequence":"moredyes:blocks/andesite_7f65b9"}

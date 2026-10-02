@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:block/cut_sandstone",
+  "textures": {
+    "t0": "moredyes:block/sandstone_top",
+    "t1": "moredyes:block/cut_sandstone",
+    "particle": "moredyes:block/cut_sandstone"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#t0",
+          "cullface": "down",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#t0",
+          "cullface": "up",
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#t1",
+          "cullface": "north",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#t1",
+          "cullface": "south",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#t1",
+          "cullface": "west",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#t1",
+          "cullface": "east",
+          "tintindex": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:coal_block_808c66"}],"rolls":1}],"random_sequence":"moredyes:blocks/coal_block_808c66"}

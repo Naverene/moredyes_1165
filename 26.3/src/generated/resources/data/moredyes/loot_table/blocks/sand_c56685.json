@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:sand_c56685"}],"rolls":1}],"random_sequence":"moredyes:blocks/sand_c56685"}

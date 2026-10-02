@@ -1,0 +1,84 @@
+{
+  "parent": "minecraft:block/glass_pane_side",
+  "textures": {
+    "t0": {
+      "force_translucent": true,
+      "sprite": "moredyes:block/glass_pane_top"
+    },
+    "t1": {
+      "force_translucent": true,
+      "sprite": "moredyes:block/glass"
+    },
+    "particle": {
+      "force_translucent": true,
+      "sprite": "moredyes:block/glass"
+    }
+  },
+  "elements": [
+    {
+      "from": [
+        7,
+        0,
+        0
+      ],
+      "to": [
+        9,
+        16,
+        7
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            7,
+            0,
+            9,
+            7
+          ],
+          "texture": "#t0",
+          "tintindex": 0
+        },
+        "up": {
+          "uv": [
+            7,
+            0,
+            9,
+            7
+          ],
+          "texture": "#t0",
+          "tintindex": 0
+        },
+        "north": {
+          "uv": [
+            7,
+            0,
+            9,
+            16
+          ],
+          "texture": "#t0",
+          "cullface": "north",
+          "tintindex": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            0,
+            9,
+            16
+          ],
+          "texture": "#t1",
+          "tintindex": 0
+        },
+        "east": {
+          "uv": [
+            9,
+            0,
+            16,
+            16
+          ],
+          "texture": "#t1",
+          "tintindex": 0
+        }
+      }
+    }
+  ]
+}

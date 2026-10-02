@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:piston_b98c66"}],"rolls":1}],"random_sequence":"moredyes:blocks/piston_b98c66"}

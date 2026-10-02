@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:cobblestone_a5bf86"}],"rolls":1}],"random_sequence":"moredyes:blocks/cobblestone_a5bf86"}

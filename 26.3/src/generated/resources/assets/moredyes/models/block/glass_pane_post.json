@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:block/glass_pane_post",
+  "textures": {
+    "t0": {
+      "force_translucent": true,
+      "sprite": "moredyes:block/glass_pane_top"
+    },
+    "particle": {
+      "force_translucent": true,
+      "sprite": "moredyes:block/glass"
+    }
+  },
+  "elements": [
+    {
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        9,
+        16,
+        9
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            7,
+            7,
+            9,
+            9
+          ],
+          "texture": "#t0",
+          "tintindex": 0
+        },
+        "up": {
+          "uv": [
+            7,
+            7,
+            9,
+            9
+          ],
+          "texture": "#t0",
+          "tintindex": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "moredyes:block/jungle_sapling",
+    "layer1": "moredyes:block/jungle_sapling_trunk"
+  }
+}

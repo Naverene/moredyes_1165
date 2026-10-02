@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "moredyes:block/acacia_sapling",
+    "layer1": "moredyes:block/acacia_sapling_trunk"
+  }
+}

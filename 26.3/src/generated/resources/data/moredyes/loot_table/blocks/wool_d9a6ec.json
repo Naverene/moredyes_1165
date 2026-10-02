@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:wool_d9a6ec"}],"rolls":1}],"random_sequence":"moredyes:blocks/wool_d9a6ec"}

@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"condition":{"type":"minecraft:survives_explosion"},"entries":[{"type":"minecraft:item","name":"moredyes:dark_oak_fence_334c59"}],"rolls":1}],"random_sequence":"moredyes:blocks/dark_oak_fence_334c59"}

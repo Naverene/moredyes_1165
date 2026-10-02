@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","category":"building","key":{"P":["moredyes:oak_planks_e57f6c","moredyes:birch_planks_e57f6c","moredyes:spruce_planks_e57f6c","moredyes:jungle_planks_e57f6c","moredyes:acacia_planks_e57f6c","moredyes:dark_oak_planks_e57f6c"],"B":"minecraft:book"},"pattern":["PPP","BBB","PPP"],"result":{"id":"moredyes:bookshelf_e57f6c"}}

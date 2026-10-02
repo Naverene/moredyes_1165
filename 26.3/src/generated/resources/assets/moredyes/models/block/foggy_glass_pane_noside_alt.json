@@ -1,0 +1,39 @@
+{
+  "parent": "minecraft:block/glass_pane_noside_alt",
+  "textures": {
+    "t0": {
+      "force_translucent": true,
+      "sprite": "moredyes:block/foggy_glass"
+    },
+    "particle": {
+      "force_translucent": true,
+      "sprite": "moredyes:block/foggy_glass"
+    }
+  },
+  "elements": [
+    {
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        9,
+        16,
+        9
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            7,
+            0,
+            9,
+            16
+          ],
+          "texture": "#t0",
+          "tintindex": 0
+        }
+      }
+    }
+  ]
+}

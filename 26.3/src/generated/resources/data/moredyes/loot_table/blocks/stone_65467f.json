@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"entries":[{"type":"minecraft:alternatives","children":[{"type":"minecraft:item","condition":"minecraft:tool/can_silk_touch","name":"moredyes:stone_65467f"},{"type":"minecraft:item","condition":{"type":"minecraft:survives_explosion"},"name":"moredyes:cobblestone_65467f"}]}],"rolls":1}],"random_sequence":"moredyes:blocks/stone_65467f"}
