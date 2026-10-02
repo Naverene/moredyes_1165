@@ -38,8 +38,14 @@ jobs:
         # task. Show the Gradle summary only when the job fails, so green runs don't list a red X.
         add-job-summary: on-failure
 
+    # A version tag such as v1.2.0 sets the mod version; other builds use the one in gradle.properties.
     - name: Build with Gradle Wrapper
-      run: ./gradlew build
+      run: |
+        if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+          ./gradlew build -Pmod_version="${GITHUB_REF_NAME#v}"
+        else
+          ./gradlew build
+        fi
 
     # Starts a dedicated server with the mod and a fresh world, and fails on a crash, a mod loading
     # error, or a recipe, tag or loot table that does not load.
