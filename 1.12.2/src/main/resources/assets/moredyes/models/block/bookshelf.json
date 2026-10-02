@@ -1,0 +1,12 @@
+{
+  "parent": "moredyes:block/tinted_cube",
+  "textures": {
+    "particle": "moredyes:blocks/tinted/bookshelf",
+    "down": "moredyes:blocks/tinted/plank",
+    "up": "moredyes:blocks/tinted/plank",
+    "north": "moredyes:blocks/tinted/bookshelf",
+    "south": "moredyes:blocks/tinted/bookshelf",
+    "west": "moredyes:blocks/tinted/bookshelf",
+    "east": "moredyes:blocks/tinted/bookshelf"
+  }
+}

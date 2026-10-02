@@ -1,0 +1,42 @@
+itemGroup.moredyes.dyes=More Dyes: Dyes
+itemGroup.moredyes.blocks=More Dyes: Blocks
+itemGroup.moredyes.plants=More Dyes: Plants
+itemGroup.moredyes.trees=More Dyes: Trees
+
+# Every color of an item is named from its color and the name of the item: "ECBF99 Wool".
+moredyes.colored_name=%s %s
+
+item.moredyes.dye.name=Dye
+
+tile.moredyes.wool.name=Wool
+tile.moredyes.rockwool.name=Rockwool
+tile.moredyes.stone.name=Stone
+tile.moredyes.cobble.name=Cobblestone
+tile.moredyes.stonebrick.name=Stone Bricks
+tile.moredyes.stonebrick_cracked.name=Cracked Stone Bricks
+tile.moredyes.stonebrick_carved.name=Chiseled Stone Bricks
+tile.moredyes.diorite.name=Diorite
+tile.moredyes.obsidian.name=Obsidian
+tile.moredyes.soulsand.name=Soul Sand
+tile.moredyes.quartz.name=Block of Quartz
+tile.moredyes.clay.name=Stained Terracotta
+tile.moredyes.hardened_clay.name=Terracotta
+tile.moredyes.coal.name=Block of Coal
+tile.moredyes.glowstone.name=Glowstone
+tile.moredyes.lapis.name=Lapis Lazuli Block
+tile.moredyes.redstone.name=Block of Redstone
+tile.moredyes.brick.name=Bricks
+tile.moredyes.sand.name=Sand
+tile.moredyes.sandstone.name=Sandstone
+tile.moredyes.glass.name=Glass
+tile.moredyes.glass_foggy.name=Foggy Glass
+tile.moredyes.glass_pane.name=Glass Pane
+tile.moredyes.glass_foggy_pane.name=Foggy Glass Pane
+tile.moredyes.bookshelf.name=Bookshelf
+tile.moredyes.workbench.name=Crafting Table
+tile.moredyes.chest.name=Chest
+tile.moredyes.plank.name=Wood Planks
+tile.moredyes.log.name=Wood
+tile.moredyes.leaf.name=Leaves
+tile.moredyes.sapling.name=Sapling
+tile.moredyes.tulip.name=Tulip

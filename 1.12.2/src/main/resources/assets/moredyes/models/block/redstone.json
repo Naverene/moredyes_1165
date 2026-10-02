@@ -1,0 +1,6 @@
+{
+  "parent": "moredyes:block/tinted_cube_all",
+  "textures": {
+    "all": "moredyes:blocks/tinted/redstone"
+  }
+}

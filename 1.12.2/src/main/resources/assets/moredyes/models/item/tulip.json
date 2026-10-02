@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moredyes:blocks/tinted/tulip_petals",
+    "layer1": "moredyes:blocks/tinted/tulip_stem"
+  }
+}

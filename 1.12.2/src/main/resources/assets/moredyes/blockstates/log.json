@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "moredyes:log"
+    },
+    "axis=z": {
+      "model": "moredyes:log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "moredyes:log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=none": {
+      "model": "moredyes:log_bark"
+    }
+  }
+}

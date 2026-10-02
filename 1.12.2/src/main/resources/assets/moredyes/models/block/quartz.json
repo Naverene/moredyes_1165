@@ -1,0 +1,12 @@
+{
+  "parent": "moredyes:block/tinted_cube",
+  "textures": {
+    "particle": "moredyes:blocks/tinted/quartz_side",
+    "down": "moredyes:blocks/tinted/quartz_bottom",
+    "up": "moredyes:blocks/tinted/quartz_top",
+    "north": "moredyes:blocks/tinted/quartz_side",
+    "south": "moredyes:blocks/tinted/quartz_side",
+    "west": "moredyes:blocks/tinted/quartz_side",
+    "east": "moredyes:blocks/tinted/quartz_side"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "moredyes:block/tinted_pane_side_alt",
+  "textures": {
+    "pane": "moredyes:blocks/tinted/glass_foggy",
+    "edge": "moredyes:blocks/tinted/glass_pane_top"
+  }
+}

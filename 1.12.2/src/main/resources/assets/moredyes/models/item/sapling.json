@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moredyes:blocks/tinted/sapling_leaves",
+    "layer1": "moredyes:blocks/tinted/sapling_trunk"
+  }
+}

@@ -1,0 +1,131 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+    }
+}
+apply plugin: 'net.minecraftforge.gradle'
+// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+
+// The jar is named moredyes-<mod version>-<Minecraft version>.jar.
+version = "${mod_version}-${mc_version}"
+group = 'net.neverandy.moredyes' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'moredyes'
+
+// Minecraft 1.12.2 runs on Java 8, so the mod targets Java 8.
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+minecraft {
+    // The mappings can be changed at any time, and must be in the following format.
+    // snapshot_YYYYMMDD   Snapshot are built nightly.
+    // stable_#            Stables are built at the discretion of the MCP team.
+    // Use non-default mappings at your own risk. they may not always work.
+    // Simply re-run your setup task after changing the mappings to update your workspace.
+    mappings channel: 'snapshot', version: '20171003-1.12'
+    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+
+    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    // Default run configurations.
+    // These can be tweaked, removed, or duplicated as needed.
+    runs {
+        client {
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+        }
+
+        server {
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+        }
+    }
+}
+
+dependencies {
+    // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
+    // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
+    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
+    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+}
+
+// Fills in the version fields of mcmod.info.
+processResources {
+    inputs.property 'version', mod_version
+    inputs.property 'mcversion', mc_version
+
+    filesMatching('mcmod.info') {
+        expand 'version': mod_version, 'mcversion': mc_version
+    }
+}
+
+// Replaces @VERSION@ in the sources (Reference.MOD_VERSION) before compiling.
+task filterSources(type: Sync) {
+    inputs.property 'version', mod_version
+    from sourceSets.main.java
+    into "$buildDir/filteredSrc"
+    filter { line -> line.replace('@VERSION@', mod_version) }
+}
+compileJava {
+    source = filterSources.outputs
+}
+
+// 1.12.2 only finds a mod's assets in the dev environment when they sit next to its classes.
+task copyResourcesToClasses(type: Copy) {
+    dependsOn classes
+    from processResources
+    into sourceSets.main.java.classesDirectory
+}
+afterEvaluate {
+    tasks.matching { it.name.startsWith('prepareRun') }.all { it.dependsOn copyResourcesToClasses }
+}
+
+// Example for how to get properties into the manifest for reading by the runtime..
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes([
+                "Specification-Title": "moredyes",
+                "Specification-Vendor": "neverandy",
+                "Specification-Version": "1", // We are version 1 of ourselves
+                "Implementation-Title": project.name,
+                "Implementation-Version": "${version}",
+                "Implementation-Vendor" :"neverandy",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+// Example configuration to allow publishing using the maven-publish task
+// This is the preferred method to reobfuscate your jar file
+jar.finalizedBy('reobfJar')
+// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
+//publish.dependsOn('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
