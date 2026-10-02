@@ -103,9 +103,14 @@ jobs:
     - name: Publish the release for this version
       if: startsWith(github.ref, 'refs/tags/v')
       run: |
-        gh release create "$GITHUB_REF_NAME" dist/*.jar \
-          --title "More Dyes $GITHUB_REF_NAME" \
-          --generate-notes
+        if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+          # The release was already made on GitHub (for example with "Draft a new release"), so add the jar to it.
+          gh release upload "$GITHUB_REF_NAME" dist/*.jar --clobber
+        else
+          gh release create "$GITHUB_REF_NAME" dist/*.jar \
+            --title "More Dyes $GITHUB_REF_NAME" \
+            --generate-notes
+        fi
 
     # Uploads the release jar to https://www.curseforge.com/minecraft/mc-mods/moredyes (project 252137).
     # Development builds stay on GitHub only.
