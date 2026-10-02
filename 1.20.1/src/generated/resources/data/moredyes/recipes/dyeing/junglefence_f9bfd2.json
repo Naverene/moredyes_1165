@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:f9bfd2_dye"
+    },
+    "S": {
+      "item": "minecraft:jungle_fence"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:junglefence_f9bfd2"
+  },
+  "show_notification": true
+}

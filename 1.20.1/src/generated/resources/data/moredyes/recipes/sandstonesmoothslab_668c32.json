@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "moredyes:sandstonesmooth_668c32"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "moredyes:sandstonesmoothslab_668c32"
+  },
+  "show_notification": true
+}

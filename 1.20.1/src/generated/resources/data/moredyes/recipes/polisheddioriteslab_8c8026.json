@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "moredyes:polisheddiorite_8c8026"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "moredyes:polisheddioriteslab_8c8026"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "moredyes:stonebrickcarved_596540"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "moredyes:stonebrickcarvedslab_596540"
+  },
+  "show_notification": true
+}

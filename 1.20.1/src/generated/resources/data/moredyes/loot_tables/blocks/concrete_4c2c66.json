@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "moredyes:concrete_4c2c66"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "moredyes:blocks/concrete_4c2c66"
+}

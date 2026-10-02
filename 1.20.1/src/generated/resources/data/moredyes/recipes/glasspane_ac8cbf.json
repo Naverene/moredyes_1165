@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "moredyes:glass_ac8cbf"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 16,
+    "item": "moredyes:glasspane_ac8cbf"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:d265bf_dye"
+    },
+    "S": {
+      "item": "minecraft:dark_oak_planks"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:darkoakplanks_d265bf"
+  },
+  "show_notification": true
+}

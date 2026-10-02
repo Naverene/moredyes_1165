@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "moredyes:quartzchiseled_b3ccec"
+  },
+  "result": "moredyes:quartzchiseledstairs_b3ccec"
+}

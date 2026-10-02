@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:5945b2_dye"
+    },
+    "S": {
+      "item": "minecraft:blue_orchid"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:orchid_5945b2"
+  },
+  "show_notification": true
+}

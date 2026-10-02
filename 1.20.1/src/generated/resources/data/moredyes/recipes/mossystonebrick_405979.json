@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "moredyes:stonebrick_405979"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "moredyes:mossystonebrick_405979"
+  }
+}

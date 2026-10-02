@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:9946c5_dye"
+    },
+    "S": {
+      "item": "minecraft:spruce_fence"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:sprucefence_9946c5"
+  },
+  "show_notification": true
+}

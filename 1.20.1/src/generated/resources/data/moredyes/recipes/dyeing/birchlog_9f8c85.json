@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:9f8c85_dye"
+    },
+    "S": {
+      "item": "minecraft:birch_log"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:birchlog_9f8c85"
+  },
+  "show_notification": true
+}

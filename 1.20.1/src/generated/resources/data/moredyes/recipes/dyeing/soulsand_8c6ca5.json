@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:8c6ca5_dye"
+    },
+    "S": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:soulsand_8c6ca5"
+  },
+  "show_notification": true
+}

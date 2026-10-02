@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "Q": {
+      "item": "moredyes:quartz_ac5f72"
+    }
+  },
+  "pattern": [
+    "Q",
+    "Q"
+  ],
+  "result": {
+    "count": 2,
+    "item": "moredyes:quartzpillar_ac5f72"
+  },
+  "show_notification": true
+}

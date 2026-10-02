@@ -1,0 +1,7 @@
+{
+  "parent": "moredyes:block/tinted/cube_column",
+  "textures": {
+    "end": "moredyes:block/tinted/quartz_chiseled_top",
+    "side": "moredyes:block/tinted/quartz_chiseled"
+  }
+}

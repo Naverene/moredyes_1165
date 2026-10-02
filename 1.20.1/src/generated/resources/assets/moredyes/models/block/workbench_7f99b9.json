@@ -1,0 +1,9 @@
+{
+  "parent": "moredyes:block/tinted/orientable_with_bottom",
+  "textures": {
+    "bottom": "moredyes:block/tinted/oak_planks",
+    "front": "moredyes:block/tinted/workbench_front",
+    "side": "moredyes:block/tinted/workbench_side",
+    "top": "moredyes:block/tinted/workbench_top"
+  }
+}

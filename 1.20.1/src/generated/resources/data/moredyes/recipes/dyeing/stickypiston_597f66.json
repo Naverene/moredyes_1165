@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:597f66_dye"
+    },
+    "S": {
+      "item": "minecraft:sticky_piston"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:stickypiston_597f66"
+  },
+  "show_notification": true
+}

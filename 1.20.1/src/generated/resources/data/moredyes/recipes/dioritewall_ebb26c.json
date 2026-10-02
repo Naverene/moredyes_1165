@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "#": {
+            "item": "moredyes:diorite_ebb26c"
+          }
+        },
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "result": {
+          "count": 6,
+          "item": "moredyes:dioritewall_ebb26c"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:5945b2_dye"
+    },
+    "S": {
+      "item": "minecraft:stone_bricks"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:stonebrick_5945b2"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:jungle_sapling"
+    },
+    {
+      "item": "moredyes:cc9999_dye"
+    }
+  ],
+  "result": {
+    "item": "moredyes:saplingjungle_cc9999"
+  }
+}

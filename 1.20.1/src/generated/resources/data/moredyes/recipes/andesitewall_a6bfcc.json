@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "#": {
+            "item": "moredyes:andesite_a6bfcc"
+          }
+        },
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "result": {
+          "count": 6,
+          "item": "moredyes:andesitewall_a6bfcc"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

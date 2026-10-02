@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:99a6d9_dye"
+    },
+    "S": {
+      "item": "minecraft:lapis_block"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:lapis_99a6d9"
+  },
+  "show_notification": true
+}

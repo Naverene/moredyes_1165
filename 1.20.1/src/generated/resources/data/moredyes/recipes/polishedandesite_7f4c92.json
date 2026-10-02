@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "moredyes:andesite_7f4c92"
+    }
+  },
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "result": {
+    "count": 4,
+    "item": "moredyes:polishedandesite_7f4c92"
+  },
+  "show_notification": true
+}

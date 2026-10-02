@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "P": {
+      "item": "moredyes:piston_99a6d9"
+    },
+    "S": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "pattern": [
+    "S",
+    "P"
+  ],
+  "result": {
+    "item": "moredyes:stickypiston_99a6d9"
+  },
+  "show_notification": true
+}

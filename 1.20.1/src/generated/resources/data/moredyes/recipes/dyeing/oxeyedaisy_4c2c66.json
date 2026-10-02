@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:4c2c66_dye"
+    },
+    "S": {
+      "item": "minecraft:oxeye_daisy"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:oxeyedaisy_4c2c66"
+  },
+  "show_notification": true
+}

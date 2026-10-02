@@ -1,0 +1,7 @@
+{
+  "parent": "moredyes:block/tinted/cross_layered",
+  "textures": {
+    "cross": "moredyes:block/tinted/tulip_petals",
+    "overlay": "moredyes:block/tinted/tulip_stem"
+  }
+}

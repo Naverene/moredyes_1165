@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "moredyes:darkoakplanks_c68c9f"
+    }
+  },
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "result": {
+    "count": 3,
+    "item": "moredyes:darkoakfence_c68c9f"
+  },
+  "show_notification": true
+}

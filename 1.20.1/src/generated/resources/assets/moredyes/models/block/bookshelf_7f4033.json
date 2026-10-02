@@ -1,0 +1,7 @@
+{
+  "parent": "moredyes:block/tinted/cube_column",
+  "textures": {
+    "end": "moredyes:block/tinted/oak_planks",
+    "side": "moredyes:block/tinted/bookshelf"
+  }
+}

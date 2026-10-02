@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "moredyes:coalstairs_a6b233"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "moredyes:blocks/coalstairs_a6b233"
+}

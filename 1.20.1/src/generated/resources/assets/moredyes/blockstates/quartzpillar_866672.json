@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "moredyes:block/quartzpillar_866672_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "moredyes:block/quartzpillar_866672"
+    },
+    "axis=z": {
+      "model": "moredyes:block/quartzpillar_866672_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "moredyes:block/shape/endstone_slab"
+    },
+    "type=double": {
+      "model": "moredyes:block/shape/endstone_double"
+    },
+    "type=top": {
+      "model": "moredyes:block/shape/endstone_slab_top"
+    }
+  }
+}

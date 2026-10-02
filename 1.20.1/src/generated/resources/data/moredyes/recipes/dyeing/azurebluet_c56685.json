@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:c56685_dye"
+    },
+    "S": {
+      "item": "minecraft:azure_bluet"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:azurebluet_c56685"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "moredyes:walls_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "#": {
+            "item": "moredyes:sandstone_7f4033"
+          }
+        },
+        "pattern": [
+          "###",
+          "###"
+        ],
+        "result": {
+          "count": 6,
+          "item": "moredyes:sandstonewall_7f4033"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

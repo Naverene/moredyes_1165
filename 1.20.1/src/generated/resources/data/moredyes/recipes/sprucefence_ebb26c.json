@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "moredyes:spruceplanks_ebb26c"
+    }
+  },
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "result": {
+    "count": 3,
+    "item": "moredyes:sprucefence_ebb26c"
+  },
+  "show_notification": true
+}

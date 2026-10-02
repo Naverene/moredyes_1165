@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:734cc5_dye"
+    },
+    "S": {
+      "item": "minecraft:rose_bush"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:rosebush_734cc5"
+  },
+  "show_notification": true
+}

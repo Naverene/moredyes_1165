@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "moredyes:concretepowderstairs_664073"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "moredyes:blocks/concretepowderstairs_664073"
+}

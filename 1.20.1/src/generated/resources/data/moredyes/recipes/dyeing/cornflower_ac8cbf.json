@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:ac8cbf_dye"
+    },
+    "S": {
+      "item": "minecraft:cornflower"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:cornflower_ac8cbf"
+  },
+  "show_notification": true
+}

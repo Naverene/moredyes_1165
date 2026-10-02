@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "moredyes:acaciaplanks_99a6d9"
+    }
+  },
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "result": {
+    "count": 3,
+    "item": "moredyes:acaciafence_99a6d9"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:ac7f6c_dye"
+    },
+    "S": {
+      "item": "minecraft:quartz_block"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:quartz_ac7f6c"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "moredyes:block/tinted/slab",
+  "textures": {
+    "bottom": "moredyes:block/tinted/cobble",
+    "side": "moredyes:block/tinted/cobble",
+    "top": "moredyes:block/tinted/cobble"
+  }
+}

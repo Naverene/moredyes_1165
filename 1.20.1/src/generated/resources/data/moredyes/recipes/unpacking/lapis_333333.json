@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "moredyes:lapis_333333"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:lapis_lazuli"
+  }
+}

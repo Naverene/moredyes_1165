@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:4c7319_dye"
+    },
+    "S": {
+      "item": "minecraft:terracotta"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:hardendclay_4c7319"
+  },
+  "show_notification": true
+}

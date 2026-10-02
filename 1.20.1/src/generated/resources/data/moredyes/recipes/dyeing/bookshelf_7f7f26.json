@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:7f7f26_dye"
+    },
+    "S": {
+      "item": "minecraft:bookshelf"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:bookshelf_7f7f26"
+  },
+  "show_notification": true
+}

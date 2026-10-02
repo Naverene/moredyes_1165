@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "moredyes:block/rosebush_664073_bottom"
+    },
+    "half=upper": {
+      "model": "moredyes:block/rosebush_664073_top"
+    }
+  }
+}

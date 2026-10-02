@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:808c66_dye"
+    },
+    "S": {
+      "item": "minecraft:lily_of_the_valley"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:lilyofthevalley_808c66"
+  },
+  "show_notification": true
+}

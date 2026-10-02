@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:8c9972_dye"
+    },
+    "S": {
+      "item": "minecraft:jungle_leaves"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:jungleleaves_8c9972"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:7f99b9_dye"
+    },
+    "S": {
+      "item": "minecraft:polished_diorite"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:polisheddiorite_7f99b9"
+  },
+  "show_notification": true
+}

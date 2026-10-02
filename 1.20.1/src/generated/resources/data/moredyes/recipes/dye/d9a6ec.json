@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:white_dye"
+    },
+    {
+      "item": "minecraft:magenta_dye"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "moredyes:d9a6ec_dye"
+  }
+}

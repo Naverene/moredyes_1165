@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:405979_dye"
+    },
+    "S": {
+      "item": "minecraft:white_concrete_powder"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:concretepowder_405979"
+  },
+  "show_notification": true
+}

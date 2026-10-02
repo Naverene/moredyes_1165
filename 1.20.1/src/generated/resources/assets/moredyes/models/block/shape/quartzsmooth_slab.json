@@ -1,0 +1,8 @@
+{
+  "parent": "moredyes:block/tinted/slab",
+  "textures": {
+    "bottom": "moredyes:block/tinted/quartz_smooth",
+    "side": "moredyes:block/tinted/quartz_smooth",
+    "top": "moredyes:block/tinted/quartz_smooth"
+  }
+}

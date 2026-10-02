@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "moredyes:diorite_b29272"
+  },
+  "result": "moredyes:dioritestairs_b29272"
+}

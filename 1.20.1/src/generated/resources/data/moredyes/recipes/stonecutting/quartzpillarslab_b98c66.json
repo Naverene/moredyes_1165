@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "moredyes:quartzpillar_b98c66"
+  },
+  "result": "moredyes:quartzpillarslab_b98c66"
+}

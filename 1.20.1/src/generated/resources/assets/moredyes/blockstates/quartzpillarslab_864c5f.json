@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "moredyes:block/shape/quartzpillar_slab"
+    },
+    "type=double": {
+      "model": "moredyes:block/shape/quartzpillar_double"
+    },
+    "type=top": {
+      "model": "moredyes:block/shape/quartzpillar_slab_top"
+    }
+  }
+}

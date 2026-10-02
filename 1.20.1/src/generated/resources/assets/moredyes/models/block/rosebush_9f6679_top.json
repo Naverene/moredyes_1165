@@ -1,0 +1,7 @@
+{
+  "parent": "moredyes:block/tinted/cross_layered",
+  "textures": {
+    "cross": "moredyes:block/tinted/rosebush_top_petals",
+    "overlay": "moredyes:block/tinted/rosebush_top_stem"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "moredyes:block/tinted/slab",
+  "textures": {
+    "bottom": "moredyes:block/tinted/dark_oak_planks",
+    "side": "moredyes:block/tinted/dark_oak_planks",
+    "top": "moredyes:block/tinted/dark_oak_planks"
+  }
+}

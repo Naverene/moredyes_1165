@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": [
+      {
+        "item": "moredyes:plank_f9bfd2"
+      },
+      {
+        "item": "moredyes:birchplanks_f9bfd2"
+      },
+      {
+        "item": "moredyes:spruceplanks_f9bfd2"
+      },
+      {
+        "item": "moredyes:jungleplanks_f9bfd2"
+      },
+      {
+        "item": "moredyes:acaciaplanks_f9bfd2"
+      },
+      {
+        "item": "moredyes:darkoakplanks_f9bfd2"
+      }
+    ]
+  },
+  "pattern": [
+    "PPP",
+    "P P",
+    "PPP"
+  ],
+  "result": {
+    "item": "moredyes:chest_f9bfd2"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+// 1.20.1	2026-10-01T18:46:48.301409922	More Dyes world generation
+f4e27e4a9094e81d984ebf619c8d5439961f9ae3 data/moredyes/forge/biome_modifier/dye_trees.json
+9cccf076f7c812908ddc412dbfa897fb14091e90 data/moredyes/forge/biome_modifier/tulips.json
+3ffae719e51033cb0723fe02e79d6a2a0c7aaa48 data/moredyes/worldgen/configured_feature/dye_trees.json
+1744450a9778942b8af6736505e25fd2d259f415 data/moredyes/worldgen/configured_feature/tulips.json
+4b77cb9bfb363d0e423b319ece095c28f9ccc6fc data/moredyes/worldgen/placed_feature/dye_trees.json
+94fb2d492485be7d309ff4292b39473f14bde11d data/moredyes/worldgen/placed_feature/tulips.json

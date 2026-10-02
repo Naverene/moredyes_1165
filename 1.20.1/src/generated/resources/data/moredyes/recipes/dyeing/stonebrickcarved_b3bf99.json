@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:b3bf99_dye"
+    },
+    "S": {
+      "item": "minecraft:chiseled_stone_bricks"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:stonebrickcarved_b3bf99"
+  },
+  "show_notification": true
+}

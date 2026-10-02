@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "moredyes:block/shape/redstone_slab"
+    },
+    "type=double": {
+      "model": "moredyes:block/shape/redstone_double"
+    },
+    "type=top": {
+      "model": "moredyes:block/shape/redstone_slab_top"
+    }
+  }
+}

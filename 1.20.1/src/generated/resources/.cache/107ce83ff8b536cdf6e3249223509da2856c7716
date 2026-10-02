@@ -1,0 +1,26 @@
+// 1.20.1	2026-10-01T18:46:48.30116173	Tags for minecraft:block mod id moredyes
+9b98ec306699a99d65617ed2369d84f8ad9f0412 data/forge/tags/blocks/chests/wooden.json
+800f226419fec3480e88dab2a80eb4ade90ce7c3 data/forge/tags/blocks/glass.json
+013f4259fb10fdf4d9531637238969a4699f2023 data/forge/tags/blocks/glass_panes.json
+2f1abdd54a8f173e5b22123848ea1ec54dfdde16 data/minecraft/tags/blocks/enchantment_power_provider.json
+9b98ec306699a99d65617ed2369d84f8ad9f0412 data/minecraft/tags/blocks/guarded_by_piglins.json
+ca4da529306cedbfcd777445a32fbda24aa8002a data/minecraft/tags/blocks/ice.json
+cc6c18a7810ef5f3b7fc7c85ec6c77af4946fca8 data/minecraft/tags/blocks/leaves.json
+80e0efbc572d896b8958609c7751161bd1f7ed23 data/minecraft/tags/blocks/logs_that_burn.json
+f751a6b5a6762f0b9c4cf30075474157b6f9f6a5 data/minecraft/tags/blocks/mineable/axe.json
+dbaffd6c07669c316778921b9f7317ccae4912d9 data/minecraft/tags/blocks/mineable/hoe.json
+5a297d7c368ffaa57c58143cb9d7432090a91f33 data/minecraft/tags/blocks/mineable/pickaxe.json
+4fb6a6c23278c8b52320368ec908b331ee06a3e5 data/minecraft/tags/blocks/mineable/shovel.json
+c6234de78d6c9114fd8a9ab295c8d03eeb9a6cbc data/minecraft/tags/blocks/needs_diamond_tool.json
+df193248d80831be462f05900f073ad23c3ddf21 data/minecraft/tags/blocks/needs_stone_tool.json
+12d52c39421d6790f33f190c5d80a00cc73798c1 data/minecraft/tags/blocks/planks.json
+5dd59e2280e40a5fd4440bb939aae36e8cb53ba3 data/minecraft/tags/blocks/saplings.json
+cdfc128d52cc5dd2d70e858b9961050879d1e75b data/minecraft/tags/blocks/slabs.json
+08f0ecbf1d1630b3e59ddc2001135d56aca77858 data/minecraft/tags/blocks/small_flowers.json
+e0fb03843bba8b8bf36ac35641d2cf2700f20dbd data/minecraft/tags/blocks/stairs.json
+0aa6986685f7340cffc0fc2248479fdb1b06e0f2 data/minecraft/tags/blocks/tall_flowers.json
+e3440c4d7c12f21d625e2ee13591edb9bb24c156 data/minecraft/tags/blocks/walls.json
+f5c878d546040e65966f80bcca6c6d034a668e35 data/minecraft/tags/blocks/wooden_fences.json
+4aba9c530c40564521291ed8a4cfdfa9ec3af09e data/minecraft/tags/blocks/wooden_slabs.json
+eaf995ac6a0deb0af706f89ae984257581fab7eb data/minecraft/tags/blocks/wooden_stairs.json
+c6e91f76a9cb0e8b8a571c16219ee02d8493bbda data/minecraft/tags/blocks/wool.json

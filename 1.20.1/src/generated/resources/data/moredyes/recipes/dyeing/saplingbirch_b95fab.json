@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:birch_sapling"
+    },
+    {
+      "item": "moredyes:b95fab_dye"
+    }
+  ],
+  "result": {
+    "item": "moredyes:saplingbirch_b95fab"
+  }
+}

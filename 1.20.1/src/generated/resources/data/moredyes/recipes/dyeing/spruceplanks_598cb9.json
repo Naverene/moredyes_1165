@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "moredyes:598cb9_dye"
+    },
+    "S": {
+      "item": "minecraft:spruce_planks"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "moredyes:spruceplanks_598cb9"
+  },
+  "show_notification": true
+}
