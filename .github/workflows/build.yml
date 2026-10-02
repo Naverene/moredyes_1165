@@ -33,6 +33,10 @@ jobs:
 
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+      with:
+        # The server check ends runServer by stopping the server, which Gradle reports as a failed
+        # task. Show the Gradle summary only when the job fails, so green runs don't list a red X.
+        add-job-summary: on-failure
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
