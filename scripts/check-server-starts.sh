@@ -20,6 +20,11 @@ echo "eula=true" > run/eula.txt
 [ -f run/server.properties ] || echo "online-mode=false" > run/server.properties
 rm -rf run/world
 
+# The server holds over 2 GB while it loads the recipes and tags for every dyed block, close to
+# the runner's default heap, where garbage collection can stall it for the whole timeout. Give it
+# 6 GB unless _JAVA_OPTIONS already sets something.
+export _JAVA_OPTIONS="${_JAVA_OPTIONS:--Xmx6g}"
+
 # runServer does not read commands from stdin under Gradle, so the server is stopped by ending
 # its process once it has started.
 ./gradlew --no-daemon runServer > "$LOG" 2>&1 &
