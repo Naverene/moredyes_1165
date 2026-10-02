@@ -1,0 +1,7 @@
+{
+  "parent": "moredyes:block/tinted/log",
+  "textures": {
+    "end": "moredyes:block/tinted/birch_log_top",
+    "side": "minecraft:block/birch_log"
+  }
+}

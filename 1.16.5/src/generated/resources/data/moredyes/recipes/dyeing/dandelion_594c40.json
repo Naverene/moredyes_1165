@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:dandelion"
+    },
+    "D": {
+      "item": "moredyes:594c40_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:dandelion_594c40",
+    "count": 8
+  }
+}

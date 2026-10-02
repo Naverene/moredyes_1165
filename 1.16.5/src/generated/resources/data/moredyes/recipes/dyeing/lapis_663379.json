@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:lapis_block"
+    },
+    "D": {
+      "item": "moredyes:663379_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:lapis_663379",
+    "count": 8
+  }
+}

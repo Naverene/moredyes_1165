@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:spruce_fence"
+    },
+    "D": {
+      "item": "moredyes:9f7f9f_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:sprucefence_9f7f9f",
+    "count": 8
+  }
+}

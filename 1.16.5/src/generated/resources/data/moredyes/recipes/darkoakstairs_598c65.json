@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:darkoakplanks_598c65"
+    }
+  },
+  "result": {
+    "item": "moredyes:darkoakstairs_598c65",
+    "count": 4
+  }
+}

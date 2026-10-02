@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:acacia_log"
+    },
+    "D": {
+      "item": "moredyes:ac5f72_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:acacialog_ac5f72",
+    "count": 8
+  }
+}

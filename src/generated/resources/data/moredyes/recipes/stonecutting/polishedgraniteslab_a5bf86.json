@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "moredyes:polishedgranite_a5bf86"
-  },
-  "result": "moredyes:polishedgraniteslab_a5bf86",
-  "count": 2
-}

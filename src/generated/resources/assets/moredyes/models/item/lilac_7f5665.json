@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "moredyes:block/tinted/lilac_top_petals",
-    "layer1": "moredyes:block/tinted/lilac_top_stem"
-  }
-}

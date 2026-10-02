@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:piston"
+    },
+    "D": {
+      "item": "moredyes:65467f_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:piston_65467f",
+    "count": 8
+  }
+}

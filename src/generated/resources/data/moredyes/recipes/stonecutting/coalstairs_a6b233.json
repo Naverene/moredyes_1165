@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "moredyes:coal_a6b233"
-  },
-  "result": "moredyes:coalstairs_a6b233",
-  "count": 1
-}

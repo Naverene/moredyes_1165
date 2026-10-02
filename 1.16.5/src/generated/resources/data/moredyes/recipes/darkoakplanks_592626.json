@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moredyes:darkoaklog_592626"
+    }
+  ],
+  "result": {
+    "item": "moredyes:darkoakplanks_592626",
+    "count": 4
+  }
+}

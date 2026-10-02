@@ -1,8 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/inner_stairs",
-  "textures": {
-    "side": "moredyes:block/tinted/andesite",
-    "top": "moredyes:block/tinted/andesite",
-    "bottom": "moredyes:block/tinted/andesite"
-  }
-}

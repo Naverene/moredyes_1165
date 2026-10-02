@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "moredyes:stonebrick_404c7f"
-  },
-  "result": "moredyes:stonebrickcracked_404c7f",
-  "experience": 0.1,
-  "cookingtime": 200
-}

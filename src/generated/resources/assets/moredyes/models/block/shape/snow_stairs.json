@@ -1,8 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/stairs",
-  "textures": {
-    "side": "moredyes:block/tinted/snow",
-    "top": "moredyes:block/tinted/snow",
-    "bottom": "moredyes:block/tinted/snow"
-  }
-}

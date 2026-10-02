@@ -1,0 +1,8 @@
+{
+  "parent": "moredyes:block/tinted/slab_top",
+  "textures": {
+    "side": "moredyes:block/tinted/glass_foggy",
+    "top": "moredyes:block/tinted/glass_foggy",
+    "bottom": "moredyes:block/tinted/glass_foggy"
+  }
+}

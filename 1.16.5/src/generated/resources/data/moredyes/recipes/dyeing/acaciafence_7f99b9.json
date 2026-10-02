@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:acacia_fence"
+    },
+    "D": {
+      "item": "moredyes:7f99b9_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:acaciafence_7f99b9",
+    "count": 8
+  }
+}

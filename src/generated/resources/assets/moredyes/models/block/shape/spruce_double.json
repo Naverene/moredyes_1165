@@ -1,8 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/cube_bottom_top",
-  "textures": {
-    "side": "moredyes:block/tinted/spruce_planks",
-    "top": "moredyes:block/tinted/spruce_planks",
-    "bottom": "moredyes:block/tinted/spruce_planks"
-  }
-}

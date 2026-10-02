@@ -1,7 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/cross_layered",
-  "textures": {
-    "cross": "moredyes:block/tinted/oxeyedaisy_petals",
-    "overlay": "moredyes:block/tinted/oxeyedaisy_stem"
-  }
-}

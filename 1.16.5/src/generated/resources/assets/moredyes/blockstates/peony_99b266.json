@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "moredyes:block/peony_99b266_top"
+    },
+    "half=lower": {
+      "model": "moredyes:block/peony_99b266_bottom"
+    }
+  }
+}

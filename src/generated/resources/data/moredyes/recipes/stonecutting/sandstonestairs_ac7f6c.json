@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "moredyes:sandstone_ac7f6c"
-  },
-  "result": "moredyes:sandstonestairs_ac7f6c",
-  "count": 1
-}

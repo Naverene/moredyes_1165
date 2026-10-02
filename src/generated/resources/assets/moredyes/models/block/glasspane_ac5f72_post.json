@@ -1,7 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/glass_pane_post",
-  "textures": {
-    "pane": "moredyes:block/tinted/glass",
-    "edge": "moredyes:block/tinted/glass_pane_top"
-  }
-}

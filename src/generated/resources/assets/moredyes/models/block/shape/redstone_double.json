@@ -1,8 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/cube_bottom_top",
-  "textures": {
-    "side": "moredyes:block/tinted/redstone",
-    "top": "moredyes:block/tinted/redstone",
-    "bottom": "moredyes:block/tinted/redstone"
-  }
-}

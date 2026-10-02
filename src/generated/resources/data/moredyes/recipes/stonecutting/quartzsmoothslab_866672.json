@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "moredyes:quartzsmooth_866672"
-  },
-  "result": "moredyes:quartzsmoothslab_866672",
-  "count": 2
-}

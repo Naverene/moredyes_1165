@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:rose_bush"
+    },
+    "D": {
+      "item": "moredyes:664073_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:rosebush_664073",
+    "count": 8
+  }
+}

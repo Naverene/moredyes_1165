@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:spruce_leaves"
+    },
+    "D": {
+      "item": "moredyes:598c65_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:spruceleaves_598c65",
+    "count": 8
+  }
+}

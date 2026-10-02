@@ -1,8 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/inner_stairs",
-  "textures": {
-    "side": "moredyes:block/tinted/lapis",
-    "top": "moredyes:block/tinted/lapis",
-    "bottom": "moredyes:block/tinted/lapis"
-  }
-}

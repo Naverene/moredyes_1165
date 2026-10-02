@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:concretepowder_594c40"
+    }
+  },
+  "result": {
+    "item": "moredyes:concretepowderslab_594c40",
+    "count": 6
+  }
+}

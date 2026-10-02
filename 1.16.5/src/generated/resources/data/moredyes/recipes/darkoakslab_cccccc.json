@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:darkoakplanks_cccccc"
+    }
+  },
+  "result": {
+    "item": "moredyes:darkoakslab_cccccc",
+    "count": 6
+  }
+}

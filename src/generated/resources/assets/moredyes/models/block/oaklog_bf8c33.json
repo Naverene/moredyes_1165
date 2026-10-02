@@ -1,7 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/log",
-  "textures": {
-    "end": "moredyes:block/tinted/oak_log_top",
-    "side": "minecraft:block/oak_log"
-  }
-}

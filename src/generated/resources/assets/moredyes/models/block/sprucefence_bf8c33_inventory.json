@@ -1,6 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/fence_inventory",
-  "textures": {
-    "texture": "moredyes:block/tinted/spruce_planks"
-  }
-}

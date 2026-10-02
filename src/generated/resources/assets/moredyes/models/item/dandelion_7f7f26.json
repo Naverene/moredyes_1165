@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "moredyes:block/tinted/dandelion_petals",
-    "layer1": "moredyes:block/tinted/dandelion_stem"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/cross_layered",
-  "textures": {
-    "cross": "moredyes:block/tinted/lilac_bottom_petals",
-    "overlay": "moredyes:block/tinted/lilac_bottom_stem"
-  }
-}

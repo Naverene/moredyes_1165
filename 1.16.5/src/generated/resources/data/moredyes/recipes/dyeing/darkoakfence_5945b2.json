@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:dark_oak_fence"
+    },
+    "D": {
+      "item": "moredyes:5945b2_dye"
+    }
+  },
+  "result": {
+    "item": "moredyes:darkoakfence_5945b2",
+    "count": 8
+  }
+}

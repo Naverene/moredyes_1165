@@ -1,7 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/log",
-  "textures": {
-    "end": "moredyes:block/tinted/jungle_log_top",
-    "side": "minecraft:block/jungle_log"
-  }
-}

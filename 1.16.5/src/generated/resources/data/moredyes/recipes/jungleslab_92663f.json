@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moredyes:jungleplanks_92663f"
+    }
+  },
+  "result": {
+    "item": "moredyes:jungleslab_92663f",
+    "count": 6
+  }
+}

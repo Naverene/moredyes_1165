@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:chest"
+    },
+    {
+      "item": "moredyes:594c40_dye"
+    }
+  ],
+  "result": {
+    "item": "moredyes:chest_594c40"
+  }
+}

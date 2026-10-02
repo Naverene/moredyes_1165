@@ -1,6 +1,0 @@
-{
-  "parent": "moredyes:block/tinted/cube_all",
-  "textures": {
-    "all": "moredyes:block/tinted/stone"
-  }
-}
